@@ -781,7 +781,7 @@
     <div class="l-lp-inner">
       <h2 class="c-lp-title">ご利用料金</h2>
       <div class="p-lp-limited-wrap">
-        <span class="p-lp-limited">月3社限定・現在受付中</span>
+        <span class="p-lp-limited">毎月10社限定・現在受付中</span>
       </div>
       <p class="p-lp-price__text">
         料金は成果（削減額）に応じて変動します。<br>
