@@ -447,7 +447,7 @@
         </ul>
       </div>
       <div class="p-lp-intro__bottom">
-        <p class="p-lp-intro__bottom-text"><strong>全国100社・11,000棟以上</strong>の</p>
+        <p class="p-lp-intro__bottom-text"><strong>全国140社・20,000棟以上</strong>の</p>
         <p class="p-lp-intro__bottom-text">支援を通して確立した<br>コスト削減方法を公開します</p>
       </div>
     </div>
