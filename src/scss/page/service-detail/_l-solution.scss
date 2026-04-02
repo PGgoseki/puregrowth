@@ -1,0 +1,54 @@
+.l-solution {
+  padding: 2rem 0 1rem 0;
+  @include media() {
+    padding: 3.75rem 0 2.5rem 0;
+  }
+  &__inner {
+    @include media() {
+      max-width: 83.75rem;
+    }
+  }
+  &__ttl {
+    margin-bottom: 2rem;
+    @include media() {
+    }
+  }
+  &__list {
+    @include media() {
+      max-width: 800px;
+      margin: auto;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    min-height: (60 / 16) + rem;
+    background: #FFFFFF;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: (30 / 16) + rem;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    @include media() {
+      min-height: (56 / 16) + rem;
+      padding: 0 1.5rem;
+    }
+    &-icon {
+      flex-shrink: 0;
+      width: (18 / 16) + rem;
+      margin: 0 0.5rem 0 0;
+      @include media() {
+        width: (24 / 16) + rem;
+      }
+    }
+    &-txt {
+      font-size: (15 / 16) + rem;
+      line-height: (20 / 15);
+      letter-spacing: 0.04em;
+      @include media() {
+        font-size: (18 / 16) + rem;
+        line-height: (32 / 18);
+        letter-spacing: 0.06em;
+      }
+    }
+  }
+}

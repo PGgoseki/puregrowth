@@ -1,0 +1,64 @@
+.l-archive {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  &.lazyloaded {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url(../img/top/archive-bg-sp.jpg) no-repeat center / 100% 100%;
+      @include media() {
+        background: url(../img/top/archive-bg-pc.png) no-repeat top left / (886 / 16) + rem 100%;
+      }
+    }
+  }
+  &__inner {
+    @include media() {
+      max-width: (1730 / 16) + rem;
+      padding-right: (113 / 16) + rem;
+      padding-left: (113 / 16) + rem;
+    }
+  }
+  &__english {
+    max-width: (221 / 16) + rem;
+    margin: 0 auto;
+    &::before {
+      padding-top: (47 / 221) * 100%;
+    }
+    @include media() {
+      max-width: (340 / 16) + rem;
+      &::before {
+        padding-top: (73 / 340) * 100%;
+      }
+    }
+  }
+  &__ttl {
+    padding-top: (45 / 16) + rem;
+    @include media() {
+      padding-top: (50 / 16) + rem;
+    }
+  }
+  &__txt {
+    padding-top: (15 / 16) + rem;
+    padding-bottom: (30 / 16) + rem;
+    @include media() {
+      padding-top: (50 / 16) + rem;
+      padding-bottom: (90 / 16) + rem;
+      max-width: (900 / 16) + rem;
+      margin: 0 auto;
+    }
+  }
+  &__slider {
+    margin-bottom: (35 / 16) + rem;
+    @include media() {
+      margin-bottom: (100 / 16) + rem;
+    }
+    .c-card__item-body {
+      background: #fff;
+    }
+  }
+}

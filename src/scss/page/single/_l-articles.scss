@@ -1,0 +1,118 @@
+.l-articles {
+  padding: 1.9rem 0;
+  @include media() {
+    padding: 3.3rem 0 3.8rem 0;;
+  }
+  &__inner {
+    @include media() {
+      max-width: 83.75rem;
+    }
+  }
+  .lower-ttl {
+    margin-bottom: 1rem;
+    @include media() {
+      margin-bottom: 2rem;
+    }
+  }
+  .lower-ttl--ja {
+    color: #21608E;
+    font-size: (18 / 16) + rem;
+    line-height: (24 / 18);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    text-align: center;
+    @include media() {
+      font-size: (32 / 16) + rem;
+      line-height: (46 / 32);
+      letter-spacing: 0.06em;
+    }
+  }
+  .c-card {
+    .c-card__list {
+      @include media() {
+        gap: 2rem 2rem;
+      }
+      .c-card__item {
+        @include media() {
+          flex-basis: 38.75rem;
+        }
+      }
+      .c-card__item-wrap {
+        align-items: flex-start;
+        @include media() {
+          display: flex;
+        }
+      }
+      .c-card__item-pic {
+        @include media() {
+          flex-basis: calc(240 / 620 * 100%);
+        }
+      }
+      .c-card__item-headline {
+        padding-top: 0.5rem;
+        @include media() {
+          display: block;
+          padding: 1rem;
+        }
+        .c-card__item-info {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.5rem;
+
+          .time {
+            display: flex;
+            align-items: center;
+            font-size: (12 / 16) + rem;
+            line-height: 1;
+            letter-spacing: 0;
+            @include media() {
+              font-size: (14 / 16) + rem;
+            }
+            &:before {
+              content: "";
+              display: inline-block;
+              width: (12 / 16) + rem;
+              height: (12 / 16) + rem;
+              background: url(../img/common/icon-date-grey.svg) no-repeat center/contain;
+              margin-right: 0.2rem;
+              @include media() {
+                font-size: (16 / 16) + rem;
+              }
+            }
+            &.update {
+              &:before {
+                background: url(../img/common/icon-update-grey.svg) no-repeat center/contain;
+              }
+            }
+          }
+        }
+        .c-card__item-ttl {
+          font-size: (14 / 16) + rem;
+          line-height: (18 / 14);
+          @include media() {
+            font-size: (20 / 16) + rem;
+            line-height: (28 / 20);
+            letter-spacing: 0.032rem;
+            margin-top: 1rem;
+          }
+        }
+        .c-card__arrow {
+          display: block;
+          bottom: 0.6rem;
+          font-size: (12 / 16) + rem;
+          @include media() {
+            bottom: 1.4rem;
+            font-size: (16 / 16) + rem;
+          }
+        }
+      }
+      .c-card__item-body {
+        display: none;
+      }
+    }
+  }
+  .c-card__nav {
+    display: none;
+  }
+}

@@ -1,0 +1,138 @@
+.l-ambience {
+  $this: &;
+  padding-bottom: (50.5 / 16) + rem;
+  overflow: hidden;
+  @include media() {
+    padding-bottom: (120 / 16) + rem;
+  }
+  &__container {
+    @include media() {
+      margin-inline: auto;
+      max-width: (900 / 16) + rem;
+    }
+  }
+  &__slider-container {
+    position: relative;
+  }
+  &__slider {
+    margin-top: (25 / 16) + rem;
+    padding-inline: (25.5 / 16) + rem !important;
+    overflow: visible !important;
+    @include media() {
+      padding: 0 !important;
+    }
+  }
+  &__item {
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+    cursor: pointer;
+    &.swiper-slide-active {
+
+    }
+    @include media() {
+      border-radius: (21 / 16) + rem;
+      &.swiper-slide-next,
+      &.swiper-slide-prev {
+        opacity: 1;
+      }
+    }
+  }
+  &__img {
+    #{$this}__slider & {
+      @include media() {
+        width: 100%;
+        height: (450 / 16) + rem;
+        aspect-ratio: 900 / 450;
+      }
+      img,
+      picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+    #{$this}__slider #{$this}__item:nth-of-type(5) & {
+      img {
+        object-position: top;
+      }
+    }
+  }
+  &__prev,
+  &__next {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: (40 / 16) + rem;
+    height: (40 / 16) + rem;
+    border-radius: 50%;
+    background: $green url(../img/common/slider-arrow.svg) no-repeat center /
+      100% auto;
+    cursor: pointer;
+    transition: 0.4s ease;
+    transition-property: opacity;
+    @include media() {
+      width: (73 / 16) + rem;
+      height: (73 / 16) + rem;
+    }
+    &:hover,
+    &:active {
+      opacity: 0.7;
+    }
+  }
+  &__prev {
+    left: (-10 / 16) + rem;
+    transform: translate(0, -50%) scale(-1, 1);
+    @include media() {
+      left: 0;
+      transform: translate(-50%, -50%) scale(-1, 1);
+    }
+  }
+  &__next {
+    right: (-10 / 16) + rem;
+    @include media() {
+      right: 0;
+      transform: translate(50%, -50%)
+    }
+  }
+  &__nav-slider {
+    margin-top: (25 / 16) + rem;
+  }
+  &__nav-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: (10 / 16) + rem (14 / 16) + rem;
+    @include media() {
+      grid-template-columns: repeat(6, 1fr);
+      gap: (18 / 16) + rem (22 / 16) + rem;
+    }
+  }
+  &__nav-item {
+    width: 100% !important;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &.swiper-slide-thumb-active {
+      opacity: .4;
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: (4 / 16) + rem solid $green;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include media() {
+          border-width: (3 / 16) + rem;
+        }
+      }
+    }
+  }
+}

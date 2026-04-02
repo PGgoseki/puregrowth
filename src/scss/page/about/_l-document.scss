@@ -1,0 +1,18 @@
+.l-document {
+  &__slide {
+    padding-inline: (50 / 16) + rem;
+    width: 100%;
+    aspect-ratio: 321/183;
+    background: $gray-bg;
+    @include media() {
+      height: (618 / 16) + rem;
+      aspect-ratio: 1100/618;
+    }
+  }
+  &__btn-box {
+    margin-top: (35 / 16) + rem;
+    @include media() {
+      margin-top: (70 / 16) + rem;
+    }
+  }
+}

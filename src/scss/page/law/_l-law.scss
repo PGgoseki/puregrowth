@@ -1,0 +1,37 @@
+.l-law__inner {
+  max-width: 960px;
+}
+
+.l-law__table {
+
+}
+.l-law__table tr {
+
+}
+.l-law__table th,
+.l-law__table td {
+  font-size: (15 / 16) + rem;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #cccccc;
+  line-height: 1.5;
+}
+.l-law__table th {
+  width: 27%;
+  background-color: #f3f3f3;
+}
+.l-law__table td {
+  width: 73%;
+  font-weight: normal;
+}
+.l-law__table td strong {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 767px) {
+  .l-law__table th,
+  .l-law__table td {
+    font-size: (14 / 16) + rem;
+  }
+}

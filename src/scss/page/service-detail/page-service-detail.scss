@@ -1,0 +1,55 @@
+@import '../../base/base';
+
+@import '../../mixin/mixin';
+
+@import './l-mv2';
+@import './l-solution';
+//@import './l-features';
+@import './l-compare';
+@import './l-support';
+@import './l-movie';
+@import './l-price';
+@import './l-project';
+@import './l-flow';
+@import './l-faq';
+@import './l-floatingbanner';
+
+.p-logo-slider {
+  padding: 2rem 0 1.8rem 0;
+  overflow: hidden;
+  background: #fff;
+  @include media() {
+    padding: 3.5rem 0;
+  }
+}
+.p-logo-slider__title {
+  margin-bottom: 1rem;
+}
+.p-logo-slider .p-logo-slider__swiper {
+  margin-top: 2rem;
+  overflow: hidden;
+}
+.p-logo-slider .p-logo-slider__swiper .swiper-slide {
+  padding: 0 1.5rem;
+}
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.lower-section {
+  &:nth-of-type(2n) {
+    background: rgba(0, 182, 201, 0.05);
+  }
+}
+
+.l-floating {
+  opacity: 1 !important;
+  display: block !important;
+  @include media() {
+    display: none !important;
+  }
+}

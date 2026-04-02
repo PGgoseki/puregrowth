@@ -1,0 +1,162 @@
+.c-nav {
+  display: flex;
+  @include media() {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  @include media(osp) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    margin-top: 4.375rem;
+    padding-bottom: (16 / 16) + rem;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: center;
+//    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
+    &.is-active {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+  h1{
+    .c-nav__logo{
+      display: flex;
+    }
+  }
+  &__logo {
+    max-width: (244 / 16) + rem;
+    &::before {
+      padding-top: (42 / 16) + rem
+    }
+    @include media(osp) {
+      margin: 0 auto  (23 / 16) + rem;
+    }
+    @include media() {
+      display: none;
+      max-width: (286 / 16) + rem;
+      flex: 0 0 auto;
+      margin-right: auto;
+    }
+    @include media(mid) {
+      display: block;
+    }
+    @include media(l) {
+      max-width: (343 / 16) + rem;
+    }
+  }
+  &__list {
+    @include media() {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+//      padding: 0 1rem 0 0;
+    }
+    & > li {
+      text-align: left;
+      &:nth-child(n + 2) {
+        margin-top: (23 / 16) + rem;
+        @include media() {
+          margin-top: (3 / 16) + rem;
+          margin-bottom: (3 / 16) + rem;
+          margin-left: 1rem;
+        }
+      }
+      & > a {
+        display: block;
+        font-size: (15 / 16) + rem;
+        letter-spacing: 0.05em;
+        line-height: (22 / 15);
+        padding-left: (26 / 16) + rem;
+        position: relative;
+        transition: 0.4s ease;
+        transition-property: opacity;
+        white-space: nowrap;
+        @include media() {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        ._border {
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            background: $blue;
+            height: 1px;
+            transition: width .4s ease;
+          }
+          @include media(osp) {
+            &::before {
+              display: none;
+            }
+          }
+        }
+        &:hover,
+        &:active {
+          ._border {
+            &::before {
+              width: 100%;
+            }
+          }
+          &::before {
+            background-color: $blue;
+          }
+        }
+        &::before {
+          content: "";
+          width: (16 / 16) + rem;
+          height: (16 / 16) + rem;
+          background: $green url(../img/common/nav-arrow.svg) no-repeat center /
+            100% auto;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          transition: background-color .4s ease;
+        }
+      }
+    }
+  }
+  &__sublist {
+    a {
+      padding-left: (16 / 16) + rem;
+
+      &:hover,
+      &:active {
+        ._border {
+          &::before {
+            width: 100%;
+          }
+        }
+        &::before {
+          background-color: $blue;
+        }
+      }
+      &::before {
+        content: "";
+        width: (16 / 16) + rem;
+        height: (16 / 16) + rem;
+        background: $green url(../img/common/nav-arrow.svg) no-repeat center /
+          100% auto;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: background-color .4s ease;
+      }
+    }
+  }
+}

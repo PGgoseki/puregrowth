@@ -1,0 +1,137 @@
+.l-faq {
+  $this: &;
+  padding: 2rem 0 4rem 0;
+  @include media() {
+    padding: 3.6rem 0 4rem 0;
+  }
+  &__ttl {
+    @include media() {
+      margin-bottom: 2rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    @include media() {
+      margin-inline: auto;
+      max-width: (900 / 16) + rem; 
+      gap: 1.8rem;
+    }
+  }
+  &__item {
+    padding: 1rem;
+    background: #fff;
+    border-radius: (10 / 16) + rem;
+    box-shadow: (3 / 16) + rem (3 / 16) + rem (10 / 16) + rem rgba(#000, .1);
+    cursor: pointer;
+    @include media() {
+      padding: 2.2rem 2rem;
+      transition: all .3s;
+    }
+    &:hover {
+      @include media() {
+        opacity: 0.7;
+      }
+    }
+    &-row {
+      display: flex;
+      #{$this}__item-question & {
+        &::after {
+          content: "";
+          margin-left: (10 / 16) + rem;
+          display: inline-block;
+          width: (21 / 16) + rem;
+          height: (21 / 16) + rem;
+          background: url(../img/service/arrow.svg) no-repeat center/contain;
+          align-self: center;
+          transform: rotate(180deg);
+          transition: transform .4s ease;
+          @include media() {
+            margin-left: (24 / 16) + rem;
+            width: (21 / 16) + rem;
+            height: (21 / 16) + rem;
+          }
+        }
+      }
+      #{$this}__item-question.--js-open &::after {
+        transform: none;
+      }
+    }
+    &-icon {
+      color: $green;
+      font-size: (18 / 16) + rem;
+      line-height: (26 / 18);
+      letter-spacing: 0.05em;
+      @include media() {
+        font-size: (25 / 16) + rem;
+        line-height: (32 / 25);
+      }
+    }
+    &-answer {
+      margin: (16 / 16) + rem 0 (8 / 16) + rem;
+      display: none;
+      @include media() {
+        margin: 1rem 0 0 0;
+      }
+      .l-faq__item-icon {
+        color: #999999;
+      }
+    }
+    &-contents {
+      flex: 1;
+      margin-left: (8 /16) + rem;
+      padding-left: (13/ 16) + rem;
+      letter-spacing: 0.04em;
+      position: relative;
+      @include media() {
+        margin-left: (28 /16) + rem;
+        padding-left: (32/ 16) + rem;
+      }
+      #{$this}__item-question & {
+        font-size: (16 / 16) + rem;
+        line-height: (22 / 16);
+        @include media() {
+          font-size: (20 / 16) + rem;
+          line-height: (32 / 20);
+          font-weight: 700;
+          letter-spacing: 0.035em;
+        }
+      }
+      #{$this}__item-answer & {
+        font-size: (15 / 16) + rem;
+        line-height: (24 / 15);
+        font-weight: normal;
+        @include media() {
+          font-size: (18 / 16) + rem;
+          line-height: (32 / 18);
+          letter-spacing: 0.045em;
+        }
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #D8D8D8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include media() {
+          margin-top: (6 / 16) + rem;
+          height: (27 /16) + rem;
+        }
+      }
+      a {
+        color: $green;
+        font-weight: bold;
+      }
+    }
+    &-btn-box {
+      margin-top: (25 / 16) + rem;
+      @include media() {
+        margin-top: (50 / 16) + rem;
+      }
+    }
+  }
+}

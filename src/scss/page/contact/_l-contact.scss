@@ -1,0 +1,268 @@
+.l-contact {
+  $this: &;
+  padding: 2rem 0 (50 / 16) + rem;
+  @include media() {
+    padding: 4rem 0 3rem 0;
+  }
+  &.--thanks {
+    padding-top: 0;
+    @include media() {
+      padding: (70 / 16) + rem 0 (237 / 16) + rem;
+    }
+    .l-contact__btn-box {
+      padding-top: 2rem;
+      @include media() {
+//        padding-top: 0;
+      }
+    }
+  }
+  &__row {
+    & + & {
+      margin-top: 0.8rem;
+      @include media() {
+        margin-top: 2rem;
+      }
+    }
+  }
+  &__ttl {
+    margin-bottom: (15 / 16) + rem;
+    font-size: (18 / 16) + rem;
+    line-height: (24 / 18);
+    font-weight: 700;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    display: flex;
+    gap: 0.2rem 0.5rem;
+    @include media() {
+      margin-bottom: 1rem;
+      font-size: (18 / 16) + rem;
+      line-height: (26 / 18);
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+    .hissu,
+    .nini {
+      flex-shrink: 0;
+      margin-top: (2 / 16) + rem;
+      display: inline-block;
+      white-space: nowrap;
+      color: #fff;
+      font-size: (12 / 16) + rem;
+      line-height: (17 / 16) + rem;
+//      width: 2.5rem;
+      text-align: center;
+      border-radius: (4 / 16) + rem;
+      letter-spacing: 0;
+      font-weight: 400;
+      padding: 0.03rem 0.4rem 0.07rem 0.4rem;
+      @include media() {
+        margin-top: (2 / 16) + rem;
+        font-size: (16 / 16) + rem;
+        line-height: (24 / 16) + rem;
+//        width: (56 / 16) + rem;
+        border-radius: (6 / 16) + rem;
+        font-weight: normal;
+      }
+    }
+    .hissu {
+      background: #D12B2B;
+    }
+    .nini {
+      background: #999999;
+    }
+    .note {
+      display: block;
+      flex-basis: 100%;
+      font-size: (15 / 16) + rem;
+      line-height: (24 / 15) + rem;
+      font-weight: 400;
+      @include media() {
+        flex-basis: auto;
+        font-size: (18 / 16) + rem;
+        line-height: (26 / 18);
+        font-weight: 500;
+      }
+    }
+    a {
+      color: #00B6C9;
+      text-decoration: underline;
+      @include media() {
+        transition: 0.4s ease;
+      }
+      &:hover {
+        @include media() {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  &__attention {
+    margin-top: (10 / 16) + rem;
+    font-size: (12 / 16) + rem;
+    line-height: (17 / 12);
+    letter-spacing: 0;
+    font-weight: normal;
+    @include media() {
+      margin-top: 0.1rem;
+      font-size: (15 / 16) + rem;
+      line-height: (24 / 15);
+    }
+  }
+  &__checkbox {
+    &-wrap {
+      &.--grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: (15 / 16) + rem;
+        @include media() {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5em 1rem;
+        }
+      }
+      > span {
+        margin-left: 0 !important;
+      }
+    }
+  }
+  &__submit-wrap {
+    width: fit-content;
+    margin: (35 / 16) + rem auto 0;
+    @include media() {
+      margin: 3.75em auto 0 auto;
+    }
+    .btn {
+      padding: 0;
+    }
+  }
+  &__submit {
+    color: #fff;
+    transition: color .4s ease;
+    width: 100%;
+    height: 100%;
+    font-size: (16 / 16) + rem;
+    letter-spacing: 0;
+    padding: 1.1rem 1.25rem 1.2rem 1.25rem;
+    cursor: pointer;
+    @include media() {
+      font-size: (18 / 16) + rem;
+      letter-spacing: 0.04rem;
+    }
+//    #{$this}__submit-wrap:hover & {
+//      color: $green;
+//    }
+  }
+  input[type=text],
+  textarea {
+    padding-left: (15 / 16) + rem;
+    width: 100%;
+    font-weight: 400;
+    background: #fff;
+    border-radius: (7 / 16) + rem;
+    border: (1 / 16) + rem solid #959595;
+    @include media() {
+      padding-left: (20 / 16) + rem;
+      font-size: (18 / 16) + rem;
+      border-radius: (10 / 16) + rem;
+    }
+    &::placeholder {
+      color: #C3C0C0;
+    }
+  }
+  textarea {
+    padding-top: (11 / 16) + rem;
+    height: (180 / 16) + rem;
+    resize: none;
+    @include media() {
+      padding-top: (14 / 16) + rem;
+      height: (305 / 16) + rem;
+    }
+  }
+  input[type=text] {
+    height: (48 / 16) + rem;
+    @include media() {
+      max-width: (480 / 16) + rem;
+      height: (59 / 16) + rem;
+    }
+  }
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=checkbox] + span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: (15 / 16) + rem;
+    letter-spacing: 0;
+    line-height: (21 / 15);
+    position: relative;
+    @include media() {
+      gap: 0.5rem;
+      font-size: (18 / 16) + rem;
+      letter-spacing: .05em;
+      line-height: (34 / 18);
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: (24 / 16) + rem;
+      height: (24 / 16) + rem;
+      background: #fff;
+      border-radius: (3 / 16) + rem;
+      border: (1 / 16) + rem solid #959595;
+      @include media() {
+        width: (24 / 16) + rem;
+        height: (24 / 16) + rem;
+      }
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: (12 / 16) + rem;
+      height: (8 / 16) + rem;
+      border-left: (2 / 16) + rem solid $green;
+      border-bottom: (2 / 16) + rem solid $green;
+      position: absolute;
+      left: (5 / 16) + rem;
+      top: 50%;
+      transform: translateY(-68%) rotate(-45deg);
+      display: none;
+      @include media() {
+        width: (20 / 16) + rem;
+        height: (14 / 16) + rem;
+        border-width: (4 / 16) + rem;
+        left: (6.5 / 16) + rem;
+        transform: translateY(-80%) rotate(-45deg);
+      }
+    }
+  }
+  input[type=checkbox]:checked + span {
+    &::after {
+      display: inline-block;
+    }
+  }
+  .error {
+    margin-top: (10 / 16) + rem;
+    @include media() {
+      padding-top: (16 / 16) + rem;
+      font-size: (20 / 16) + rem;
+    }
+  }
+  &__btn-box {
+    text-align: center;
+  }
+}
+
+.l-single {
+  &__main {
+  }
+  &__content {
+    h2 {
+    }
+    p {
+      .circle {
+      }
+    }
+    .lower-mv__para {
+    }
+  }
+}

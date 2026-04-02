@@ -1,0 +1,40 @@
+.l-strength {
+  &__list {
+    @include media() {
+      margin-inline: auto;
+      max-width: (900 / 16) + rem;
+    }
+  }
+  &__item {
+    padding: (35 / 16) + rem 0;
+    border-bottom: 1px solid #D8D8D8;
+    @include media() {
+      padding: (65 / 16) + rem 0 (70 / 16) + rem;
+    }
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &-ttl {
+      font-size: (25 / 16) + rem;
+      line-height: (36 / 25);
+      font-weight: bold;
+      text-align: center;
+      @include media() {
+        font-size: (40 / 16) + rem;
+        line-height: (58 / 40);
+      }
+    }
+    &-para {
+      margin-top: (35 / 16) + rem;
+      @include media() {
+        margin-top: (40 / 16) + rem;
+      }
+    }
+  }
+  &__btn-box {
+    margin-top: (35 / 16) + rem;
+    @include media() {
+      margin-top: (75 / 16) + rem;
+    }
+  }
+}

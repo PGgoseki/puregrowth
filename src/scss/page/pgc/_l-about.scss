@@ -1,0 +1,38 @@
+.l-about {
+  padding-bottom: 0;
+  @include media() {
+    padding-bottom: 0;
+  }
+  &__inner {
+  }
+  &__ttl {
+  }
+  &__heading {
+    color: #21608E;
+    font-size: (18 / 16) + rem;
+    line-height: (30 / 18);
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    text-align: center;
+    @include media() {
+      font-size: (32 / 16) + rem;
+      line-height: (48 / 32);
+      letter-spacing: 0.08em;
+    }
+    span {
+      background: linear-gradient(transparent 60%, #FFF500 60%);
+    }
+  }
+  &__img {
+    margin-top: 1rem;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    padding-inline: (17 / 16) + rem;
+    @include media() {
+      margin-top: 2rem;
+      width: 100%;
+      margin-inline: auto;
+      padding-inline: 0;
+    }
+  }
+}

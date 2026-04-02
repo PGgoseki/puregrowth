@@ -1,0 +1,36 @@
+.l-project {
+  overflow-x: hidden;
+  &__inner {
+    padding-inline: (17 / 16) + rem;
+    &.wide {
+      max-width: 91.125rem;
+    }
+  }
+  &__para {
+    font-size: (15/ 16) + rem;
+    line-height: calc(24 / 15);
+    letter-spacing: 0.04em;
+    @include media() {
+      margin-inline: auto;
+      max-width: (900 / 16) + rem;
+      font-size: (18/ 16) + rem;
+      line-height: calc(32 / 18);
+      letter-spacing: 0.045em;
+    }
+  }
+  &__slider {
+    margin-top: 1.9rem;
+    @include media() {
+      margin-top: 3.6rem;
+      max-width: none;
+    }
+  }
+  &__btn-box {
+    width: fit-content;
+    margin-top: 1rem;
+    margin-inline: auto;
+    @include media() {
+      margin-top: 2rem;
+    }
+  }
+}

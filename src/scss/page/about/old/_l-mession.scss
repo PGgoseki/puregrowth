@@ -1,0 +1,51 @@
+.l-mission {
+  &__heading {
+    margin-bottom: (40 / 16) + rem;
+    font-size: (25 / 16) + rem;
+    line-height: (36/ 25);
+    letter-spacing: .02em;
+    text-align: center;
+    @include media() {
+      font-size: (40 / 16) + rem;
+      line-height: (58/ 40);
+    }
+  }
+  &__para {
+    &.--right {
+      margin-right: calc(50% - 50vw);
+      text-align: right;
+      @include media() {
+        margin-inline: auto;
+        text-align: center;
+      }
+    }
+    &.--left {
+      margin-left: calc(50% - 50vw);
+      @include media() {
+        margin-inline: auto;
+        text-align: center;
+      }
+    }
+    & + & {
+      margin-top: (30 / 16) + rem;
+      @include media() {
+        margin-top: (20 / 16) + rem;
+      }
+    }
+    span {
+      display: inline-block;
+      padding: (8 / 16) + rem (20 / 16) + rem (11 / 16) + rem;
+      background: $green;
+      color: #fff;
+      font-size: (18 / 16) + rem;
+      @include media() {
+        padding-inline: (27 / 16) + rem;
+        font-size: (22 / 16) + rem;
+        line-height: (30 / 22);
+      }
+      &:nth-of-type(2) {
+        margin-top: (7 / 16) + rem;
+      }
+    }
+  }
+}

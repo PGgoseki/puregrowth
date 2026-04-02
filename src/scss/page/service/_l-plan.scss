@@ -1,0 +1,90 @@
+.l-plan {
+  padding: 2rem 0 0 0;
+  @include media() {
+    padding: 4rem 0 0 0;
+  }
+  &#consulting,
+  &#channel,
+  &#pgc {
+    .l-plan__img {
+      order: 2;
+    }
+    .l-plan__text {
+      order: 1;
+    }
+  }
+  &#pgc {
+    padding-bottom: 1rem;
+    .l-plan__wrap {
+      border-bottom: 0;
+    }
+  }
+  &__inner {
+    @include media() {
+      max-width: 83.75rem;
+    }
+  }
+  &__wrap {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #CCCCCC;
+    @include media() {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 4rem;
+    }
+  }
+  &__img {
+    width: (321 / 16) + rem;
+    margin: 0 auto 1rem auto;
+    @include media() {
+      width: (620 / 16) + rem;
+      margin: 0;
+    }
+  }
+  &__text {
+    @include media() {
+      width: (580 / 16) + rem;
+    }
+  }
+  &__ttl {
+    color: #21608E;
+    font-size: (20 / 16) + rem;
+    line-height: (29 / 20);
+    letter-spacing: 0.09em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    @include media() {
+      font-size: (34 / 16) + rem;
+      line-height: (48 / 34);
+      letter-spacing: 0.06em;
+      text-align: left;
+      margin-bottom: 1.75rem;
+    }
+  }
+  &__para {
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04em;
+    padding: 0 0.7rem;
+    @include media() {
+      font-size: (18 / 16) + rem;
+      line-height: (32 / 18);
+      letter-spacing: 0.045em;
+      padding: 0;
+    }
+    .marker {
+      color: #21608E;
+      font-weight: 700;
+      font-style: normal;
+      background: linear-gradient(transparent 80%, #FFF500 80%);
+    }
+  }
+  &__btn-box {
+    padding-top: 0.9rem;
+    @include media() {
+      text-align: left;
+      padding-top: 3.8rem;
+    }
+  }
+}

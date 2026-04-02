@@ -1,0 +1,104 @@
+.l-sitemap {
+  padding: 1.2rem 0 1.8rem 0;
+  @include media() {
+    padding: 3.2rem 0 1.8rem 0;
+  }
+  &__inner {
+    padding: 0 2.3rem;
+    @include media() {
+      max-width: 64rem;
+    }
+  }
+  &__totop {
+    margin-bottom: 3.2rem;
+    @include media() {
+      margin-bottom: 4.2rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: (13.5 / 16) + rem;
+    @include media() {
+      margin-inline: auto;
+      max-width: (984 / 16) + rem;
+      height: (362.7 / 16) + rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: (54.8 / 16) + rem (88 / 16) + rem;
+    }
+  }
+  &__item {
+    &-link {
+      display: block;
+      position: relative;
+      color: #123770;
+      font-size: (18 / 16) + rem;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 1rem 0.6rem;
+      border-bottom: 1px solid #CCCCCC;
+      @include media() {
+        width: 18.75rem;
+        transition: all .3s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      &::after {
+        content: "";
+        pointer-events: none;
+        width: (10 / 16) + rem;
+        height: (4 / 16) + rem;
+        background: url(../img/common/btn-arrow-blue.svg) no-repeat center / 100% auto;
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: right 0.4s ease;
+        @include media() {
+          width: (13 / 16) + rem;
+          height: (5 / 16) + rem;
+          right: 0.4rem;
+        }
+      }
+      &:hover::before {
+        opacity: .7;
+      }
+    }
+    &:nth-of-type(7) {
+      @include media() {
+        margin-top: (-19.8 / 16) + rem;
+      }
+    }
+    &:nth-of-type(n+9) {
+      @include media() {
+        margin-left: (5 / 16) + rem;
+      }
+    }
+  }
+  &__lower-list {
+    margin-top: (13.5 / 16) + rem;
+    padding-left: (56 / 16) + rem;
+    display: flex;
+    flex-direction: column;
+    gap: (13.5 / 16) + rem;
+    @include media() {
+      margin-top: (34.5 / 16) + rem;
+      padding-left: (60 / 16) + rem;
+      gap: (34/ 16) + rem;
+
+    }
+  }
+  &__lower-item {
+    &-link {
+      color: #123770;
+      text-decoration: underline;
+      display: flex;
+      align-items: center;
+      letter-spacing: .05em;
+      line-height: 1.75;
+    }
+  }
+}

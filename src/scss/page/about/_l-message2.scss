@@ -1,0 +1,95 @@
+.l-message2 {
+  padding: 2rem 0 2rem 0;
+  @include media() {
+    padding: 3.4rem 0 5rem 0;
+  }
+  &__inner {
+    @include media() {
+      max-width: 83.75rem;
+    }
+  }
+  &__ttl {
+    margin-bottom: 2rem;
+    @include media() {
+      margin-bottom: 4.2rem;
+    }
+  }
+  &__wrap {
+    @include media() {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__img {
+    width: (240 / 16) + rem;
+    margin: 0 auto 2.35rem auto;
+    @include media() {
+      width: (310 / 16) + rem;
+      margin: 0;
+    }
+  }
+  &__name {
+    text-align: center;
+    .post {
+      display: block;
+      font-size: (16 / 16) + rem;
+      line-height: (16 / 16);
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      margin: 0.8rem 0 0.6rem 0;
+      @include media() {
+        font-size: (20 / 16) + rem;
+        margin: 1.4rem 0 0.8rem 0;
+      }
+    }
+    .name {
+      display: block;
+      font-size: (24 / 16) + rem;
+      line-height: (24 / 24);
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      @include media() {
+        font-size: (28 / 16) + rem;
+      }
+    }
+  }
+  &__text {
+    @include media() {
+      flex-basis: (906 / 16) + rem;
+    }
+  }
+  &__copy {
+    color: #21608E;
+    font-size: (24 / 16) + rem;
+    line-height: (35 / 24);
+    letter-spacing: 0.04em;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+    @include media() {
+      font-size: (34 / 16) + rem;
+      line-height: (48 / 34);
+      letter-spacing: 0.06em;
+      text-align: left;
+      margin-bottom: 1.9rem;
+    }
+  }
+  &__para {
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04em;
+    padding: 0 0.7rem;
+    @include media() {
+      font-size: (18 / 16) + rem;
+      line-height: (32 / 18);
+      letter-spacing: 0.02em;
+      padding: 0;
+    }
+    &.mb {
+      margin-bottom: 1.4rem;
+      @include media() {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

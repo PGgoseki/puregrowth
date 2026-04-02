@@ -1,0 +1,87 @@
+.l-mv2 {
+  @include media() {
+  }
+  &__ttl {
+    @include media() {
+    }
+  }
+//  &__wrap {
+//    overflow: hidden;
+//    min-height: calc(100vh - 4.375rem);
+//    background-position: center center;
+//    background-repeat: no-repeat;
+//    background-size: cover;
+//    padding: 5.1rem 0 1.4rem 0;
+//    @include media() {
+//      display: flex;
+//      align-items: center;
+//      justify-content: center;
+//      min-height: auto;
+//      min-height: initial;
+//      padding: 0;
+//      aspect-ratio: 1920 / 1080;
+//    }
+//  }
+//  &__inner {
+//    @include media() {
+//      max-width: (715 / 16) + rem;
+//      padding: 0 0 13rem 0;
+//    }
+//  }
+//  &__ttl {
+//text-indent: -9999em;
+//    color: #123770;
+//    font-size: (28 / 16) + rem;
+//    line-height: (40 / 28);
+//    letter-spacing: 0.06em;
+//    font-weight: 900;
+//    text-align: center;
+//    margin-bottom: 2rem;
+//    @include media() {
+//      font-size: (40 / 16) + rem;
+//      line-height: (58 / 40);
+//      text-align: left;
+//      margin-bottom: 2rem;
+//    }
+//  }
+//  &__point {
+//    margin-bottom: 1.75rem;
+//    padding: 0 1rem;
+//    @include media() {
+//      padding: 0;
+//    }
+//    &-item {
+//      display: flex;
+//      font-size: (20 / 16) + rem;
+//      line-height: (32 / 20);
+//      letter-spacing: 0.045em;
+//      font-weight: 700;
+//      @include media() {
+//        font-size: (24 / 16) + rem;
+//        line-height: (32 / 24);
+//      }
+//      &:before {
+//        content: "";
+//        flex-shrink: 0;
+//        width: (20 / 16) + rem;
+//        height: (20 / 16) + rem;
+//        background-color: #0096B4;
+//        margin: 0.4rem 0.4rem 0 0;
+//        border-radius: 50%;
+//        @include media() {
+//          margin-right: 0.8rem;
+//        }
+//      }
+//    }
+//  }
+//  &__text {
+//    font-size: (15 / 16) + rem;
+//    line-height: (24 / 15);
+//    letter-spacing: 0.04em;
+//    @include media() {
+//      font-size: (18 / 16) + rem;
+//      line-height: (32 / 18);
+//      letter-spacing: 0.045em;
+//    }
+//  }
+}

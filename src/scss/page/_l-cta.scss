@@ -1,0 +1,212 @@
+.l-cta {
+  padding: 2rem 0 4rem 0;
+
+  @include media() {
+    padding: 4.1rem 0 5rem 0;
+  }
+  &.lazyloaded {
+    background: url(../img/common/cta-bg-sp.jpg) no-repeat center / 100% 100%;
+    @include media() {
+      background-image:url(../img/common/cta-bg-pc.jpg);
+    }
+  }
+  &__inner {
+    padding: 0;
+  }
+  &__wrap {
+    @include media() {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__area {
+    &+.l-cta__area {
+      margin-top: 2rem;
+      padding-top: 2.2rem;
+      border-top: 1px solid #FFFFFF;
+    }
+    @include media() {
+      flex-basis: 50%;
+      position: relative;
+      padding-bottom: (80 / 16) + rem;
+      &+.l-cta__area {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+        border-left: 1px solid #FFFFFF;
+      }
+    }
+    .l-cta__btn-box .btn._orange {
+      @include media() {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: (400 / 16) + rem;
+        max-height: 5rem;
+        font-size: (24 / 16) + rem;
+        line-height: (24 / 24);
+        letter-spacing: 0;
+        margin: auto;
+        padding: 1.8rem 0;
+      }
+    }
+  }
+  &__ttl {
+    color: #fff;
+    font-size: (40 / 16) + rem;
+    line-height: (58 / 40);
+    font-weight: 900;
+    letter-spacing: -0.005em;
+    text-align: center;
+    margin: 0 0 2rem 0;
+    @include media() {
+      font-size: (48 / 16) + rem;
+      line-height: (70 / 48);
+      letter-spacing: 0.06em;
+      margin-bottom: 3.6rem;
+    }
+  }
+  &__ttl2 {
+    color: #fff;
+    font-size: (24 / 16) + rem;
+    line-height: (35 / 24);
+    font-weight: 900;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    @include media() {
+      font-size: (32 / 16) + rem;
+      line-height: (46 / 32);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.8rem;
+    }
+  }
+  &__txt {
+    color: #fff;
+    font-size: (20 / 16) + rem;
+    line-height: (32 / 20);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    @include media() {
+      font-size: (24 / 16) + rem;
+      line-height: (35 / 24);
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+  }
+  &__txt2 {
+    color: #fff;
+    font-size: (24 / 16) + rem;
+    line-height: (35 / 24);
+    letter-spacing: 0;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 2rem;
+    @include media() {
+      font-size: (40 / 16) + rem;
+      line-height: (58 / 40);
+      letter-spacing: 0.06em;
+      margin-bottom: 2rem;
+    }
+  }
+  &__txt3 {
+    color: #fff;
+    font-size: (18 / 16) + rem;
+    line-height: (26 / 18);
+    letter-spacing: 0.12rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0.2rem;
+    @include media() {
+      margin-top: 0.9rem;
+    }
+  }
+  &__txt4 {
+    color: #fff;
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    @include media() {
+      font-size: (18 / 16) + rem;
+      line-height: (32 / 18);
+      letter-spacing: 0.045rem;
+      margin-bottom: 1.7rem;
+    }
+    a {
+      text-decoration: underline;
+      transition: opacity 0.4s ease;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  &__txt5 {
+    color: #fff;
+    font-size: (24 / 16) + rem;
+    line-height: (35 / 24);
+    letter-spacing: 0;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 2rem;
+    @include media() {
+      font-size: (32 / 16) + rem;
+      line-height: (46 / 32);
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+  }
+  &__btn-box {
+    &.flex {
+      @include media() {
+        display: flex;
+        justify-content: center;
+        gap: (32 / 16) + rem;
+      }
+      .btn {
+        &._orange {
+          @include media() {
+            width: (400 / 16) + rem;
+            min-width: auto;
+            min-width: initial;
+          }
+        }
+      }
+    }
+    &>div {
+      &+div {
+        margin-top: 1rem;
+        @include media() {
+          margin-top: 0;
+        }
+      }
+    }
+    .btn {
+      &._orange {
+        width: 20rem;
+        max-height: 4rem;
+        font-size: (18 / 16) + rem;
+        padding: 1.2rem 0;
+        box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.36);
+        @include media() {
+          width: 40rem;
+          font-size: (24 / 16) + rem;
+          line-height: (35 / 24);
+          padding: 1.4rem 0;
+        }
+        &:after {
+          @include media() {
+            width: 2.25rem;
+            height: 3rem;
+            right: 1.75rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../base/base';
+
+@import '../../mixin/mixin';
+
+@import './l-intro';
+@import './l-nav';
+@import './l-profile';
+@import './l-project';
+@import './l-movie';
+@import './l-column';
+
+.breadcrumbs {
+  position: relative;
+  z-index: 2;
+}
+
+.lower-section {
+  &:nth-of-type(2n) {
+    background: rgba(0, 182, 201, 0.05);
+  }
+}

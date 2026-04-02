@@ -1,0 +1,16 @@
+.l-management {
+  &__para {
+    @include media() {
+      margin-inline: auto;
+      max-width: (900 / 16) + rem;
+    }
+  }
+  &__img {
+    margin-top: (30 / 16) + rem;
+    @include media() {
+      margin-top: (42 / 16) + rem;
+      margin-inline: auto;
+      max-width: (900 / 16) + rem;
+    }
+  }
+}

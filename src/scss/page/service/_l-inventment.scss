@@ -1,0 +1,19 @@
+.l-investment {
+  &__para {
+    margin-inline: auto;
+    max-width: (900 / 16) + rem;
+  }
+  &__img {
+    margin: (10 / 16) + rem auto 0;
+    max-width: (179 / 321 * 100%);
+    @include media() {
+      margin: (50 / 16) + rem auto 0;
+    }
+  }
+  &__btn-box {
+    margin-top: (35 / 16) + rem;
+    @include media() {
+      margin-top: (70 / 16) + rem;
+    }
+  }
+}

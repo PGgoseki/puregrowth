@@ -1,0 +1,90 @@
+.l-fv {
+  padding-top: (200 / 16) + rem;
+  padding-bottom: (50 / 16) + rem;
+  background: url(../img/top/fv-bg-sp.jpg) no-repeat center / cover;
+  position: relative;
+  @include media() {
+    background: url(../img/top/fv-bg-pc.jpg) no-repeat center / (1920 / 16) + rem 100%;
+    padding-top: (316 / 16) + rem;
+    padding-bottom: (252 / 16) + rem;
+    height: (1000 / 16) + rem;
+  }
+  @include media(max) {
+    background: url(../img/top/fv-bg-pc.jpg) no-repeat center / cover;
+  }
+  &__inner {
+    z-index: 1;
+    @include media() {
+      max-width: (1416 / 16) + rem;
+    }
+  }
+  &__logo {
+    max-width: (226 / 16) + rem;
+    position: absolute;
+    top: (103 / 16) + rem;
+    left: 50%;
+    transform: translateX((-65 / 16) + rem);
+    &::before {
+      padding-top: (260 / 226) * 100%;
+    }
+    @include media() {
+      transform: translateX((174 / 16) + rem);
+      top: (236 / 16) + rem;
+      max-width: (504 / 16) + rem;
+    }
+  }
+  &__head {
+    max-width: (288 / 16) + rem;
+    margin: 0 auto (33 / 16) + rem;
+    &::before {
+      padding-top: (204 / 288) * 100%;
+    }
+    @include media() {
+      max-width: (1138 / 16) + rem;
+      margin-bottom: (45 / 16) + rem;
+      margin-left: 0;
+      &::before {
+        padding-top: (119 / 1138) * 100%;
+      }
+    }
+  }
+  &__ttl {
+    font-size: (22 / 16) + rem;
+    letter-spacing: 0.12em;
+    line-height: (32 / 22);
+    max-width: (268 / 16) + rem;
+    white-space: nowrap;
+    margin: 0 auto;
+    @include media() {
+      font-size: (36 / 16) + rem;
+      line-height: (52 / 36);
+      max-width: 100%;
+      margin-left: 0;
+    }
+    @include media(osp) {
+      ._line {
+        display: block;
+        &:nth-child(n + 2) {
+          margin-top: (8 / 16) + rem;
+        }
+      }
+    }
+  }
+  &__txt {
+    padding-top: (15 / 16) + rem;
+    padding-bottom: (30 / 16) + rem;
+    font-weight: 700;
+    @include media() {
+      font-size: (20 / 16) + rem;
+      letter-spacing: 0.12em;
+      line-height: 2;
+      padding-top: (30 / 16) + rem;
+      padding-bottom: (66 / 16) + rem;
+    }
+  }
+  &__btn-box {
+    @include media() {
+      text-align: left;
+    }
+  }
+}

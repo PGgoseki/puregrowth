@@ -1,0 +1,30 @@
+.l-movie {
+  padding: 2rem 0 2rem 0;
+  @include media() {
+    padding: 2.5rem 0 4rem 0;
+  }
+  &__inner {
+    @include media() {
+    }
+  }
+  &__ttl {
+    margin-bottom: 2rem;
+    @include media() {
+    }
+  }
+  &__wrap {
+    @include media() {
+      max-width: 900px;
+      margin: auto;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 343 / 193;
+      object-fit: 100%;
+      @include media() {
+        aspect-ratio: 900 / 504.4;
+      }
+    }
+  }
+}

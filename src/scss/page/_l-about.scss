@@ -1,0 +1,83 @@
+.l-about {
+  position: relative;
+  &.lazyloaded {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url(../img/top/archive-bg-sp.jpg) no-repeat center / 100% 100%;
+      @include media() {
+        background: url(../img/top/about-bg-pc.png) no-repeat left top / (886 / 16) + rem 100%;
+      }
+    }
+  }
+  &__english {
+    max-width: (168 / 16) + rem;
+    margin: 0 auto;
+    &::before {
+      padding-top: (47 / 168) * 100%;
+    }
+    @include media() {
+      max-width: (258 / 16) + rem;
+      margin-right: 0;
+      &::before {
+        padding-top: (47 / 168) * 100%;
+      }
+    }
+  }
+  &__english-ttl {
+    padding: (30 / 16) + rem 0;
+    @include media() {
+      padding: (50 / 16) + rem 0;
+      text-align: right;
+    }
+  }
+  &__ttl {
+    padding-top: (30 / 16) + rem;
+    @include media() {
+      padding-top: 0;
+      text-align: left;
+    }
+  }
+  &__txt {
+    padding-top: (15 / 16) + rem;
+    padding-bottom: (30 / 16) + rem;
+    @include media() {
+      padding-top: (50 / 16) + rem;
+      padding-bottom: 0;
+    }
+  }
+  &__box {
+    @include media() {
+      display: flex;
+      align-items: stretch;
+    }
+  }
+  &__box-top {
+    @include media() {
+      order: 2;
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      padding-left: (80 / 1200) * 100%;
+    }
+  }
+  &__box-body {
+    @include media() {
+      flex: 0 1 auto;
+      width: 100%;
+      max-width: (700 / 16) + rem;
+      padding-right: (80 / 1200) * 100%;
+      border-right: 1px solid #D8D8D8;
+    }
+  }
+  &__btn-box {
+    @include media() {
+      text-align: right;
+      margin-top: auto;
+    }
+  }
+}

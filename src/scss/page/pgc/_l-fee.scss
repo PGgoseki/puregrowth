@@ -1,0 +1,119 @@
+.l-fee {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: (11 / 16) + rem;
+    @include media() {
+      gap: 2rem;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    @include media() {
+      gap: 0.5rem;
+    }
+    &-heading {
+      width: 6.5rem;
+      height: 2.2rem;
+      font-size: (18 / 16) + rem;
+      border-radius: (19 / 13) + rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+      font-weight: 700;
+      background: $green;
+      display: grid;
+      place-items: center;
+      padding-bottom: 0.15rem;
+      @include media() {
+        width: (124 / 16) + rem;
+        height: (43 / 16) + rem;
+        font-size: (24 / 16) + rem;
+        line-height: (35 / 24);
+        border-radius: (19 / 13) + rem;
+      }
+    }
+    &-price {
+      font-size: (24 / 16) + rem;
+      line-height: (35 / 24);
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      @include media() {
+        font-size: (40 / 16) + rem;
+        line-height: (58 / 40);
+        letter-spacing: 0;
+      }
+      span:nth-of-type(1) {
+        @include media() {
+          font-size: (32 / 16) + rem;
+        }
+      }
+      span:nth-of-type(2) {
+        font-size: (18 / 16) + rem;
+        @include media() {
+          font-size: (24 / 16) + rem;
+        }
+      }
+    }
+  }
+  &__para {
+    margin-top: 1.9rem;
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04em;
+    font-weight: normal;
+    @include media() {
+      margin-top: 1.8rem;
+      margin-inline: auto;
+      max-width: 45rem;
+      font-size: (18 / 16) + rem;
+      line-height: (32 / 18);
+      letter-spacing: 0.045em;
+    }
+    .box {
+      display: block;
+      font-size: (16 / 16) + rem;
+      line-height: (28 / 16);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      padding: 1rem 1.5rem 1.3rem 1.5rem;
+      border: 2px solid #21608E;
+      border-radius: 0.5rem;
+      @include media() {
+        font-size: (18 / 16) + rem;
+        line-height: (32 / 18);
+        letter-spacing: 0.045em;
+        text-align: center;
+        padding: 2.1rem 1.5rem 2.1rem 1.5rem;
+        border-radius: 1rem;
+      }
+      span {
+        @include media() {
+          display: inline-block;
+          text-align: left;
+        }
+      }
+      em {
+        display: block;
+        color: #21608E;
+        font-size: (20 / 16) + rem;
+        line-height: (29 / 20);
+        letter-spacing: 0.09em;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+        @include media() {
+          font-size: (25 / 16) + rem;
+          line-height: (32 / 25);
+          letter-spacing: 0.045em;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

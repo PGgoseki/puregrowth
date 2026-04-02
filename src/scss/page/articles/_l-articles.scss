@@ -1,0 +1,111 @@
+.l-articles {
+  .l-lead {
+    padding-bottom: 2rem;
+  }
+  &__inner {
+    padding-inline: (17 / 16) + rem;
+    @include media() {
+      &.inner {
+        max-width: 92.75rem;
+      }
+    }
+  }
+  &__pagination {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    @include media() {
+      margin-top: 4rem;
+      gap: 1rem;
+      a{
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .page-numbers {
+      width: (40 / 16) + rem;
+      height: (40 / 16) + rem;
+      color: $green;
+      border: 1px solid $green;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: (16 /16) + rem;
+      font-weight: 500;
+      padding-bottom: 0.15em;
+      @include media() {
+      }
+      &.current {
+        background: $green;
+        color: #fff;
+      }
+      &.dots {
+        width: (16 / 16) + rem;
+        border: none;
+      }
+      &.prev,
+      &.next {
+        border: none;
+        width: (36 / 16) + rem;
+        height: (32 / 16) + rem;
+        background: url(../img/common/icon-prev2.svg) no-repeat center/contain;
+        @include media() {
+        }
+        &[disabled] {
+          opacity: 0.5;
+        }
+      }
+      &.prev {
+        margin-right: 1rem;
+        @include media() {
+          margin-right: (21 / 16) + rem;
+        }
+      }
+      &.next {
+        margin-left: 1rem;
+        background: url(../img/common/icon-next2.svg) no-repeat center/contain;
+        @include media() {
+          margin-left: (21 / 16) + rem;
+        }
+      }
+      &.head,
+      &.last {
+        border: none;
+        width: (10.38 / 16) + rem;
+        height: (10.36 / 16) + rem;
+        background: url(../img/articles/icon-arrow-double.svg) no-repeat center/contain;
+        @include media() {
+          width: (14.12 / 16) + rem;
+          height: (14.1 / 16) + rem;
+        }
+      }
+      &.head {
+        margin-right: (5 / 16) + rem;
+        @include media() {
+          margin-right: (21 / 16) + rem;
+        }
+      }
+      &.last {
+        margin-left: (5 / 16) + rem;
+        transform: rotateY(180deg);
+        @include media() {
+          margin-left: (21 / 16) + rem;
+        }
+      }
+      a {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+  .c-card__nav {
+    display: none;
+  }
+  .c-card__item-body {
+    padding: 0.4rem 0 2.5rem 0 !important;
+  }
+}

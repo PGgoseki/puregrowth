@@ -1,0 +1,1226 @@
+<?php
+function my_setup()
+{
+  add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
+  add_theme_support('html5',);
+  add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+
+  // デフォルトのタイトルタグ出力削除
+  remove_action('wp_head', '_wp_render_title_tag', 1);
+
+  // 著者ページ削除
+  add_filter( 'author_rewrite_rules', '__return_empty_array' );
+
+  // 不要なメディアサイズを削除
+  add_image_size('thumbnail', 0, 0);
+  add_image_size('medium', 0, 0);
+  add_image_size('medium_large', 0, 0);
+  add_image_size('large', 0, 0);
+  add_image_size('1536x1536', 0, 0);
+  add_image_size('2048x2048', 0, 0);
+
+  // メディアサイズを追加
+  add_image_size('article-thumbnail_pc', 1280, 830, true);
+  add_image_size('article-thumbnail_sp', 1280, 830, true);
+  add_image_size('aside-thumbnail_pc', 100, 103, true);
+}
+
+add_action('after_setup_theme', 'my_setup');
+
+function my_script_init()
+{
+  wp_enqueue_style('my-css', get_template_directory_uri() . '/css/style.css', array(), '1.0.0', 'all');
+  wp_enqueue_script('my-js', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.0', true);
+  wp_enqueue_script('lazysizes-js', get_template_directory_uri() . '/js/lazysizes.min.js', array( 'jquery' ), '1.0.0', true);
+
+  if(is_front_page()) {
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('page-top-new', get_template_directory_uri() . '/css/page-top-new.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('top-js', get_template_directory_uri() . '/js/top.js', array( 'jquery' ), '1.0.0', true);
+  } elseif(is_page('about')) {
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('lightbox-css', get_template_directory_uri() . '/css/lightbox.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('lightbox-js', get_template_directory_uri() . '/js/lightbox.min.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('page-about', get_template_directory_uri() . '/css/page-about.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('about-js', get_template_directory_uri() . '/js/about.js', array( 'jquery' ), '1.0.0', true);
+  } elseif(is_page('service')) {
+    wp_enqueue_style('page-service', get_template_directory_uri() . '/css/page-service.css', array(), '1.0.0', 'all');
+  } elseif(is_page('pgc')) {
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('page-pgc', get_template_directory_uri() . '/css/page-pgc.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('pgc-js', get_template_directory_uri() . '/js/pgc.js', array( 'jquery' ), '1.0.0', true);
+  } elseif(is_parent_slug() == 'service') {
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('page-service-detail', get_template_directory_uri() . '/css/page-service-detail.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('service-detail-js', get_template_directory_uri() . '/js/service-detail.js', array( 'jquery' ), '1.0.0', true);
+  }
+/** 20230801　PG五関追加 */
+	elseif(is_page('client-voice')) {
+    wp_enqueue_style('page-client-voice', get_template_directory_uri() . '/css/page-project.css', array(), '1.0.0', 'all');
+  }
+/** END */
+	elseif(is_post_type_archive('post') || is_category() || is_tag() || is_post_type_archive('seminar') || is_post_type_archive('download') || is_tax() ) {
+    wp_enqueue_style('archive-articles', get_template_directory_uri() . '/css/archive-articles.css', array(), '1.0.0', 'all');
+	    wp_enqueue_style('page-client-voice', get_template_directory_uri() . '/css/page-project.css', array(), '1.0.0', 'all');
+				    wp_enqueue_style('page-top-new', get_template_directory_uri() . '/css/page-top-new.css', array(), '1.0.0', 'all');
+  }  elseif( is_single() ) {
+//    if(wp_is_mobile()) {
+      wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+      wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+//    }
+    wp_enqueue_style('single', get_template_directory_uri() . '/css/single.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('single-js', get_template_directory_uri() . '/js/single.js', array( 'jquery' ), '1.0.0', true);
+    if(has_category('member')) {
+      wp_enqueue_style('single-member', get_template_directory_uri() . '/css/single-member.css', array(), '1.0.0', 'all');
+      wp_enqueue_script('single-member-js', get_template_directory_uri() . '/js/single-member.js', array( 'jquery' ), '1.0.0', true);
+    }
+  } elseif(is_page('project')) {
+//    if(wp_is_mobile()) {
+      wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+      wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+//    }
+    wp_enqueue_script('project-js', get_template_directory_uri() . '/js/project.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('page-project', get_template_directory_uri() . '/css/page-project.css', array(), '1.0.0', 'all');
+  } elseif(is_page('contact') || is_page('newcon') || is_page('thanks') || is_page('seminar-thanks') || is_page('download-thanks') || is_page('mail') || is_page('mail/thanks')) {
+    wp_enqueue_style('page-contact', get_template_directory_uri() . '/css/page-contact.css', array(), '1.0.0', 'all');
+  } elseif(is_page_template('page_questionnaire.php')) {
+    wp_enqueue_style('page-contact', get_template_directory_uri() . '/css/page-contact.css', array(), '1.0.0', 'all');
+  } elseif(is_404()) {
+    wp_enqueue_style('page-404', get_template_directory_uri() . '/css/page-404.css', array(), '1.0.0', 'all');
+  } elseif(is_page('sitemap')) {
+    wp_enqueue_style('page-sitemap', get_template_directory_uri() . '/css/page-sitemap.css', array(), '1.0.0', 'all');
+  } elseif(is_page('privacy-policy')) {
+    wp_enqueue_style('page-privacy-policy', get_template_directory_uri() . '/css/page-privacy-policy.css', array(), '1.0.0', 'all');
+  } elseif(is_page('law')) {
+    wp_enqueue_style('page-law', get_template_directory_uri() . '/css/page-law.css', array(), '1.0.0', 'all');
+	} elseif(is_page('2639')) {
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('costcut-style', get_template_directory_uri() . '/css/lp-style.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('costcut-js', get_template_directory_uri() . '/js/lp-script.js', array( 'jquery' ), '1.0.0', true);
+		wp_enqueue_style('page-top-new', get_template_directory_uri() . '/css/page-top-new.css', array(), '1.0.0', 'all');
+		    wp_enqueue_script('top-js', get_template_directory_uri() . '/js/top.js', array( 'jquery' ), '1.0.0', true);
+	}
+
+	  if(is_singular( 'seminar' ) || is_singular( 'download' )) {
+    wp_enqueue_style('sidebar-form', get_template_directory_uri() . '/css/sidebar-form.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('sidebar-form-js', get_template_directory_uri() . '/js/sidebar-form.js', array( 'jquery' ), '1.0.0', true);
+  }
+}
+add_action('wp_enqueue_scripts', 'my_script_init');
+
+/*************************
+文字数設定
+*************************/
+// タイトル文字数制限
+function my_get_title($number=null) {
+	if(mb_strlen( get_the_title() ) > $number ) {
+		$title= mb_substr(get_the_title(), 0, $number);
+		echo $title.'…';
+	} else {
+		the_title();
+	}
+}
+
+// 記事抜粋文字数制限
+function my_get_excerpt($number=null) {
+  if(mb_strlen( get_the_excerpt() ) > $number ) {
+		$excerpt= mb_substr(get_the_excerpt(), 0, $number);
+		echo $excerpt.'…';
+	} else {
+		the_excerpt();
+	}
+}
+add_filter('excerpt_mblength', 'my_get_excerpt');
+
+// 抜粋末尾の省略文字変更
+function my_excerpt_more($more) {
+  return '…';
+}
+add_filter('excerpt_more', 'my_excerpt_more');
+
+/*************************
+ページネーション出力
+*************************/
+function my_custom_pagination($term, $term_id, $project, $pages = '', $range = 2) {
+    global $paged, $wp_query;
+    $bignum = 999999999;
+
+    if($term_id) {
+        $url = 'post/'. $term. '/' . $term_id;
+    } else {
+        if($project) {
+            $url = 'post/project/'. $term;
+        } else {
+            $url = 'post/'. $term;
+        }
+    }
+
+    // 現在ページの変数が空の場合
+    if (empty($paged)) {
+        $paged = 1;
+    }
+
+    // 総ページ数をセット
+    if ($pages == '') {
+        global $wp_query;
+        $pages = $wp_query->max_num_pages;
+        if (!$pages) {
+            $pages = 1;
+        }
+    }
+
+    // 総ページ数が１より小さい場合
+    if ($wp_query->max_num_pages <= 1)
+        return;
+
+    // ========ここからページネーション出力 ========
+    echo '<ul class="l-articles__pagination">';
+
+    // 先頭ページへ戻る
+//    if ($paged == 1) {
+//        echo '<li><span class="page-numbers head" disabled></span></li>';
+//    } else {
+//        echo '<li><span class="page-numbers head"><a href="'. esc_url(home_url($url)) .'/"></a></span></li>';
+//    }
+
+    // 現在のページが１ページの場合
+    if ($paged == 1) {
+        echo '<li><span class="page-numbers prev" disabled></span></li>';
+    }
+
+    // スマホの場合
+    if( wp_is_mobile()) {
+        $paginationArgs = array(
+            'base'          => str_replace($bignum, '%#%', esc_url(get_pagenum_link($bignum))),
+            'format'        => '?page=%#%',
+            'current'       => max(1, get_query_var('paged')),
+            'total'         => $wp_query->max_num_pages,
+            'end_size'      => 1,
+            'mid_size'      => 1,
+            'prev_next'     => true,
+            'prev_text'     => '　',
+            'next_text'     => '　',
+            'type'          => 'array',
+        );
+        $paginate_links = paginate_links($paginationArgs);
+
+        if(!empty($paginate_links)) {
+            printf("\n\t<li>%s</li>\n", join("</li>\n\t<li>", $paginate_links));
+        }
+    } else {
+        // PCの場合
+        $paginationArgs = array(
+            'base'          => str_replace($bignum, '%#%', esc_url(get_pagenum_link($bignum))),
+            'format'        => '?page=%#%',
+            'current'       => max(1, get_query_var('paged')),
+            'total'         => $wp_query->max_num_pages,
+            'end_size'      => 1,
+            'mid_size'      => 6,
+            'prev_next'     => true,
+            'prev_text'     => '　',
+            'next_text'     => '　',
+            'type'          => 'array',
+        );
+        $paginate_links = paginate_links($paginationArgs);
+
+        $c = $paginationArgs['current'];
+        $allowed = [
+            ' current',
+            'prev',
+            'next',
+            ' dots',
+            sprintf('/page/%d/', $c-6),
+            sprintf('/page/%d/', $c-5),
+            sprintf('/page/%d/', $c-4),
+            sprintf('/page/%d/', $c-3),
+            sprintf('/page/%d/', $c-2),
+            sprintf('/page/%d/', $c-1),
+            sprintf('/page/%d/', $c+1),
+            sprintf('/page/%d/', $c+2),
+            sprintf('/page/%d/', $c+3),
+            sprintf('/page/%d/', $c+4),
+            sprintf('/page/%d/', $c+5),
+            sprintf('/page/%d/', $c+6)
+        ];
+        $paginate_links = array_filter(
+            $paginate_links,
+            function($value) use ($allowed) {
+                foreach((array)$allowed as $tag) {
+                    if(false !== strpos($value, $tag))
+                        return true;
+                }
+                return false;
+            }
+        );
+
+        if(!empty($paginate_links)) {
+            printf("\n\t<li>%s</li>\n", join("</li>\n\t<li>", $paginate_links));
+        }
+    }
+
+    // 現在ページが最後のページの場合
+    if ($paged == $pages) {
+        echo '<li><span class="page-numbers next" disabled></span></li>';
+    }
+
+    // 最後のページへ
+//    if ($paged == $pages) {
+//        echo '<li><span class="page-numbers last"></span></li>';
+//    } else {
+//        echo '<li><span class="page-numbers last" disabled><a href="'. esc_url(home_url($url)) .'/page/'. $pages .'/"></a></span></li>';
+//    }
+
+    echo '</ul>';
+}
+
+/*************************
+ブログカード
+*************************/
+// 記事IDを指定して抜粋文を取得
+function ltl_get_the_excerpt($post_id){
+
+  global $post;
+  $post_bu = $post;
+  $post = get_post($post_id);
+  setup_postdata($post_id);
+  $output = get_the_excerpt();
+  $post = $post_bu;
+  return $output;
+  }
+
+  //ショートコード
+  function nlink_scode($atts) {
+  extract(shortcode_atts(array(
+  'url'=>"",
+  'title'=>"",
+  'excerpt'=>""
+  ),$atts));
+
+  $id = url_to_postid($url);//URLから投稿IDを取得
+
+  $no_image = 'noimageに指定したい画像があればここにパス';//アイキャッチ画像がない場合の画像を指定
+
+  //タイトルを取得
+  if(empty($title)){
+  $title = esc_html(get_the_title($id));
+  }
+  //抜粋文を取得
+  if(empty($excerpt)){
+  $excerpt = esc_html(ltl_get_the_excerpt($id));
+  }
+
+  //アイキャッチ画像を取得
+  if(has_post_thumbnail($id)) {
+  $img = wp_get_attachment_image_src(get_post_thumbnail_id($id),'medium');
+  $img_tag = "<img class='lazyload' data-src='" . $img[0] . "' alt='{$title}'/>";
+  }else{
+  $img_tag ='<img class="lazyload" data-src="'.$no_image.'" alt="'.$title.'" width="'.$img_width.'" height="'.$img_height.'" />';
+  }
+
+  $nlink .='
+  <div class="blog-card">
+  <a href="'. $url .'">
+  <div class="blog-card-title">'. $title .' </div>
+  <div class="blog-card-thumbnail">'. $img_tag .'</div>
+  <div class="blog-card-content">
+  <div class="blog-card-excerpt">'. $excerpt .'</div>
+  </div>
+  <div class="blog-card-btn">> 続きを読む</div>
+  </a>
+  </div>';
+
+  return $nlink;
+}
+add_shortcode("nlink", "nlink_scode");
+
+/*************************
+タグのアーカイブページURL変更
+*************************/
+function numeric_term_link( $url, $term, $taxonomy ) {
+  global $wp_rewrite;
+
+  // post_tag only
+  if ( $taxonomy == 'post_tag' ) {
+      if ( $wp_rewrite->using_permalinks() ) {
+          $permastruct = $wp_rewrite->get_extra_permastruct( 'post_tag' );
+          $permastruct = str_replace( '%post_tag%', $term->term_id, $permastruct );
+          $url = home_url( user_trailingslashit( $permastruct, 'tag' ) );
+      }
+  }
+  return $url;
+}
+add_filter( 'term_link', 'numeric_term_link', 10, 3 );
+
+function add_tag_id_to_qvar( $vars ) {
+  $vars[] = 'tag_id';
+  return $vars;
+}
+add_filter( 'query_vars', 'add_tag_id_to_qvar' );
+
+function numeric_tag_rewrite_rules( $rules ) {
+  $custom_rules = array();
+  foreach ( $rules as $regex => $rewrite ) {
+      $regex = str_replace( '/(.+?)/', '/([0-9]{1,})/', $regex );
+      $rewrite = str_replace( '?tag=', '?tag_id=', $rewrite );
+      $custom_rules[$regex] = $rewrite;
+  }
+  return $custom_rules;
+}
+add_filter( 'post_tag_rewrite_rules', 'numeric_tag_rewrite_rules' );
+
+/*************************
+カテゴリー一覧パーマリンク変更(URLからcategoryを削除)
+*************************/
+function rename_cat_function($link) {
+  return str_replace("/category/", "/", $link);
+}
+add_filter('user_trailingslashit', 'rename_cat_function');
+
+function rename_cat_flush_rules() {
+  global $wp_rewrite;
+  $wp_rewrite->flush_rules();
+}
+add_action('init', 'rename_cat_flush_rules');
+
+// function rename_cat_rewrite($wp_rewrite) {
+//   $new_rules = array('(.+)/page/(.+)/?' => 'index.php?category_name='.$wp_rewrite->preg_index(1).'&paged='.$wp_rewrite->preg_index(2));
+//   $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+// }
+// add_filter('generate_rewrite_rules', 'rename_cat_rewrite');
+
+
+// タグ一覧、カテゴリー一覧のリライト
+// ※順番重要
+function tag_category_rewrite()
+{
+  add_rewrite_rule(
+    'post/tag/(.+)/page/(.+)/?',
+    'index.php?tag_id=$matches[1]&paged=$matches[2]',
+    'top'
+  );
+//   add_rewrite_rule(
+//     'post/project/(.+)/(.+)/?',
+//     'index.php?category_name=$matches[1]&name=$matches[2]',
+//     'top'
+//   );
+//   add_rewrite_rule(
+//     'post/project/(.+)/?',
+//     'index.php?category_name=$matches[1]',
+//     'top'
+//   );
+  add_rewrite_rule(
+    'post/(.+)/page/(.+)/?',
+    'index.php?category_name=$matches[1]&paged=$matches[2]',
+    'top'
+  );
+}
+add_action('init', 'tag_category_rewrite');
+
+
+
+/* -----------------------------------------------------------------------------
+ * Schema.org
+----------------------------------------------------------------------------- */
+function cst_structured_data_application_ld_json () {
+
+	global $post;
+	$post__type = $post->post_type;
+	$post__name = $post->post_name;
+
+	$home_url = get_permalink( $post->ID);
+	if (is_home()){
+		$home_url = get_home_url();
+	}
+	if( substr($home_url, -1) !== "/" ) {
+		$home_url .= "/";
+	}
+	// main entity
+  $title_after = ' | '.get_bloginfo('name');
+  $page_id = get_page_by_path('top')->ID;
+  $title =  get_field('meta_title',$page_id ) ? get_field('meta_title',$page_id ): get_the_title().$title_after;
+  $description = get_field('meta_desc',$page_id) ? get_field('meta_desc',$page_id): get_bloginfo('description');
+	$main__name = $title;
+	$main__desc = $description;
+	$main__logo = get_template_directory_uri(). "/img/OGP.png";
+	$main__email = "k-miyauchi@pure-growth.net";
+	$main__tel = "+813-6894-4158";
+  $main__type = "Website";
+
+	$main__img = get_the_post_thumbnail_url($post->ID, 'medium');
+	if ( !$main__img ) {
+		$main__img = get_template_directory_uri() . "/img/OGP.png";
+	}
+
+	// + address
+	$address = array(
+		"@type" => "PostalAddress",
+		"addressCountry" => "JP",
+		"addressRegion" => "東京都",
+		"addressLocality" => "港区",
+		"postalCode" => "1080075",
+		"streetAddress" => "港南2-16-1 East One Tower 7F"
+	);
+  $geo =  array(
+    "@type" => "GeoCoordinates",
+    "latitude" => '35.628312395740785',
+    "longitude" => '139.7403448465556'
+  );
+
+	// Organization
+	$stData = null;
+
+	// + contact contact point
+	$contactPoints = [
+		array(
+			"@type" => "ContactPoint",
+			"telephone" => $main__tel,
+			"contactType" => "customer support",
+			"email" => $main__email,
+			"areaServed" => "JP"
+		)
+	];
+
+	if ( is_page('about') ) {
+		$main__name = get_bloginfo('name');
+    $main__type = "Organization";
+	} else if ( is_single()) {
+		$main__type = "Article";
+		$main__name = get_field('meta_title') ? get_field('meta_title'): get_the_title().$title_after;
+  }
+
+	$stData = array(
+		"@context" => "https://schema.org",
+		"@type" => $main__type,
+		"@id" => "{$home_url}#{$main__type}",
+		"url" => $home_url,
+		"image" => $main__img,
+	);
+
+	if ( $main__type == 'Organization' ||  $main__type == 'Website') {
+
+		// Type : Organization
+
+		if ( $main__type == 'Website') {
+      $stData["headline"] = $main__name;
+      $stData["inLanguage"] = "jp";
+      $stData["publisher"] = array("@type" => "Organization", "name" => "ピュアグロース株式会社");
+    }
+    $stData["founder"] = "宮内 和也";
+    $stData["email"] = $main__email;
+    $stData["address"] = $address;
+    $stData["geo"] = $geo;
+    $stData["telephone"] = $main__tel;
+    $stData["contactPoint"] = $contactPoints;
+		$stData["name"] = $main__name;
+		$stData["description"] = $main__desc;
+		$stData["logo"] = $main__logo;
+	}
+	else if ( $main__type == "Article" ) {
+		// Type : Article
+    // $author_id = get_field('author');
+    // $author_name = get_field('author_name',$author_id) ? get_field('author_name',$author_id) : '坂本 貴志';
+    // $author_url = get_field('author_url',$author_id);
+
+    $author_name = get_field('author_name');
+
+		$stData["headline"] = $main__name;
+    $stData["author"] = array("@type" => "Person", "name" => $author_name);
+    // if($author_url) {
+    //   $stData["author"]["url"] =  $author_url;
+    // }
+		$stData['publisher'] = array("@type" => "Organization", "name" => get_bloginfo('name'));
+		$stData['datePublished'] = EXPLODE(" ", $post->post_date)[0];
+		$stData['dateModified'] = EXPLODE(" ", $post->post_modified)[0];
+	}
+
+	$beforeencode = $stData;
+	// <script type="application/ld+json"> ... </script>
+	if ( $beforeencode  != null ){
+		echo JSON_ENCODE($beforeencode);
+	}
+}
+
+/*************************
+自動生成サイトマップ
+*************************/
+// お問い合わせ完了ページ削除
+add_filter(
+  'wp_sitemaps_posts_query_args',
+  function( $args ) {
+    $args['post__not_in'] = isset( $args['post__not_in'] ) ? $args['post__not_in'] : [];
+    // pageをすべて取得
+    $sitemap_pages = get_pages();
+    foreach ( $sitemap_pages as $sitemap_page ) {
+      $page_name = $sitemap_page->post_name;
+      if ( $page_name === 'thanks' ) {
+        $args['post__not_in'][] = $sitemap_page->ID;
+      }
+    }
+    return $args;
+  }
+);
+
+// ユーザーページ（著者ページ削除）
+add_filter(
+  'wp_sitemaps_add_provider',
+  function ( $provider, $name ) {
+    return ( $name == 'users' ) ? false : $provider;
+  },
+10, 2 );
+
+// タグページ削除
+add_filter( 'wp_sitemaps_taxonomies', function( $taxonomies ) {
+  unset( $taxonomies['post_tag'] );
+  return $taxonomies;
+} );
+
+
+///////////////////////////////////////
+// 投稿ページからリダイレクトできる機能を追加
+///////////////////////////////////////
+add_action('admin_menu', 'add_redirect_custom_box');
+if ( !function_exists( 'add_redirect_custom_box' ) ):
+function add_redirect_custom_box(){
+
+  //リダイレクト
+  add_meta_box( 'singular_redirect_settings', 'リダイレクト', 'redirect_custom_box_view', 'post', 'side' );
+  add_meta_box( 'singular_redirect_settings', 'リダイレクト', 'redirect_custom_box_view', 'page', 'side' );
+}
+endif;
+
+///////////////////////////////////////
+// リダイレクト
+///////////////////////////////////////
+if ( !function_exists( 'redirect_custom_box_view' ) ):
+function redirect_custom_box_view(){
+  $redirect_url = get_post_meta(get_the_ID(),'redirect_url', true);
+
+  echo '<label for="redirect_url">リダイレクトURL</label>';
+  echo '<input type="text" name="redirect_url" size="20" value="'.esc_attr(stripslashes_deep(strip_tags($redirect_url))).'" placeholder="https://" style="width: 100%;">';
+  echo '<p class="howto">このページに訪れるユーザーを設定したURLに301リダイレクトします。</p>';
+}
+endif;
+
+add_action('save_post', 'redirect_custom_box_save_data');
+if ( !function_exists( 'redirect_custom_box_save_data' ) ):
+function redirect_custom_box_save_data(){
+  $id = get_the_ID();
+  //リダイレクトURL
+  if ( isset( $_POST['redirect_url'] ) ){
+    $redirect_url = $_POST['redirect_url'];
+    $redirect_url_key = 'redirect_url';
+    add_post_meta($id, $redirect_url_key, $redirect_url, true);
+    update_post_meta($id, $redirect_url_key, $redirect_url);
+  }
+}
+endif;
+
+//リダイレクトURLの取得
+if ( !function_exists( 'get_singular_redirect_url' ) ):
+function get_singular_redirect_url(){
+  return trim(get_post_meta(get_the_ID(), 'redirect_url', true));
+}
+endif;
+
+//リダイレクト処理
+if ( !function_exists( 'redirect_to_url' ) ):
+function redirect_to_url($url){
+  header( "HTTP/1.1 301 Moved Permanently" );
+  header( "location: " . $url  );
+  exit;
+}
+endif;
+
+//URLの正規表現
+define('URL_REG_STR', '(https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)');
+define('URL_REG', '/'.URL_REG_STR.'/');
+
+//リダイレクト
+add_action( 'wp','wp_singular_page_redirect', 0 );
+if ( !function_exists( 'wp_singular_page_redirect' ) ):
+function wp_singular_page_redirect() {
+  //リダイレクト
+  if (is_singular() && $redirect_url = get_singular_redirect_url()) {
+    //URL形式にマッチする場合
+    if (preg_match(URL_REG, $redirect_url)) {
+      redirect_to_url($redirect_url);
+    }
+  }
+}
+endif;
+
+
+
+///////////////////////////////////////
+// セミナーメール文章入力
+///////////////////////////////////////
+function my_mwform_value_email_text($value, $name)
+{
+    if ($name === 'email_text') {
+
+        $email_text = get_field("email_text", get_the_ID());
+		// 改行を実体参照に変換
+		$email_text = str_replace(array("\r\n", "\r", "\n"), "&#10;&#13;", $email_text);
+		// HTMLエスケープ（UTF-8 を指定）
+		$email_text = htmlspecialchars($email_text, ENT_QUOTES | ENT_HTML5, 'UTF-8', false);
+		return $email_text;
+    }
+    return $value;
+}
+
+add_filter('mwform_value_mw-wp-form-1417', 'my_mwform_value_email_text', 10, 2);
+add_filter('mwform_value_mw-wp-form-1420', 'my_mwform_value_email_text', 10, 2);
+
+
+///////////////////////////////////////
+// 資料ダウンロードリンク入力（自動返信メール）
+///////////////////////////////////////
+function my_mwform_value_download_url($value, $name)
+{
+    if ($name === 'download_url') {
+        $download_url = get_field("download_url", get_the_ID());
+        return $download_url;
+    }
+    return $value;
+}
+
+add_filter('mwform_value_mw-wp-form-1418', 'my_mwform_value_download_url', 10, 2);
+
+
+
+///////////////////////////////////////
+// 参加希望日時自動入力
+///////////////////////////////////////
+function add_select_colors( $children, $atts ) {
+	if( $atts['name'] == 'dates' ){
+		if( have_rows( 'item' ) ){
+			while( have_rows( 'item' ) ){
+				the_row();
+				$select = get_sub_field( 'item_text' );
+				$children[$select] = $select;
+			}
+		}
+	}
+	return $children;
+}
+add_filter( 'mwform_choices_mw-wp-form-1420', 'add_select_colors', 10, 2 );
+add_filter( 'mwform_choices_mw-wp-form-1423', 'add_select_colors', 10, 2 );
+add_filter( 'mwform_choices_mw-wp-form-1425', 'add_select_colors', 10, 2 );
+add_filter( 'mwform_choices_mw-wp-form-1427', 'add_select_colors', 10, 2 );
+
+
+///////////////////////////////////////
+// 資料ダウンロードフォーム mw-wp-form 送信完了後に完了ページへ遷移
+///////////////////////////////////////
+function my_mwform_after_send_download($Data)
+{
+    $form_key = $Data->get_form_key();
+    $allowed_form_keys = array(
+        'mw-wp-form-1418',
+    );
+
+    if (in_array($form_key, $allowed_form_keys)) {
+        $download_post_id = isset($_POST['download_post_id']) ? $_POST['download_post_id'] : '';
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+
+        $redirect_url = add_query_arg(
+            array(
+                'download_post_id' => $download_post_id,
+                'mw_name' => $name
+            ),
+            home_url('/download-thanks/')
+        );
+
+        wp_redirect($redirect_url, 302);
+        exit;
+    }
+}
+add_action('mwform_after_send_mw-wp-form-1418', 'my_mwform_after_send_download');
+
+
+///////////////////////////////////////
+// オフラインセミナーフォーム mw-wp-form サンクスページの出しわけ
+///////////////////////////////////////
+function my_offlineform_redirect_url( $url, $Data) {
+  if ( $Data->get( '参加人数' ) ) {
+
+      $participants = $Data->get( '参加人数' );
+
+      // 参加人数に応じてサンクスページのURLを変更します
+      if ( $participants == '1人(経営者のみ)' ) {
+          $url = home_url( '/seminar1-1/' );
+      } elseif ( $participants == '2人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-2/' );
+      } elseif ( $participants == '3人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-3/' );
+      } elseif ( $participants == '4人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-4/' );
+      } elseif ( $participants == '5人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-5/' );
+      } elseif ( $participants == '6人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-6/' );
+      } elseif ( $participants == '1人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-1/' );
+      } elseif ( $participants == '2人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-2/' );
+      } elseif ( $participants == '3人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-3/' );
+      } elseif ( $participants == '4人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-4/' );
+      } elseif ( $participants == '5人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-5/' );
+      } elseif ( $participants == '6人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-6/' );
+      } else {
+
+      }
+  }
+
+  return $url;
+}
+add_filter( 'mwform_redirect_url_mw-wp-form-1421', 'my_offlineform_redirect_url', 10, 2 );
+add_filter( 'mwform_redirect_url_mw-wp-form-1420', 'my_offlineform_redirect_url', 10, 2 );
+
+
+///////////////////////////////////////
+// セミナーフォーム（デフォルト） mw-wp-form 送信完了後に完了ページへ遷移
+///////////////////////////////////////
+function my_mwform_after_send_seminar($Data)
+{
+    $form_key = $Data->get_form_key();
+    $allowed_form_keys = array(
+        'mw-wp-form-1417',
+		'mw-wp-form-4488',
+    );
+
+    if (in_array($form_key, $allowed_form_keys)) {
+        $seminar_post_id = isset($_POST['seminar_post_id']) ? $_POST['seminar_post_id'] : '';
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+
+        $redirect_url = add_query_arg(
+            array(
+                'seminar_post_id' => $seminar_post_id,
+                'mw_name' => $name
+            ),
+            home_url('/seminar-thanks/')
+        );
+
+        wp_redirect($redirect_url, 302);
+        exit;
+    }
+}
+add_action('mwform_after_send_mw-wp-form-1417', 'my_mwform_after_send_seminar');
+add_action('mwform_after_send_mw-wp-form-4488', 'my_mwform_after_send_seminar');
+
+
+///////////////////////////////////////
+// オンラインセミナーフォーム mw-wp-form 送信完了後に完了ページへ遷移
+///////////////////////////////////////
+function my_onlineform_after_send_seminar($Data)
+{
+    $form_key = $Data->get_form_key();
+    $allowed_form_keys = array(
+		'mw-wp-form-1422',
+		'mw-wp-form-1423',
+    );
+
+    if (in_array($form_key, $allowed_form_keys)) {
+        $seminar_post_id = isset($_POST['seminar_post_id']) ? $_POST['seminar_post_id'] : '';
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+
+        $redirect_url = add_query_arg(
+            array(
+                'seminar_post_id' => $seminar_post_id,
+                'mw_name' => $name
+            ),
+            home_url('/seminar-online/')
+        );
+
+        wp_redirect($redirect_url, 302);
+        exit;
+    }
+}
+add_action('mwform_after_send_mw-wp-form-1422', 'my_onlineform_after_send_seminar');
+add_action('mwform_after_send_mw-wp-form-1423', 'my_onlineform_after_send_seminar');
+
+
+
+///////////////////////////////////////
+// オフラインセミナーフォーム mw-wp-form サンクスページの出しわけ
+///////////////////////////////////////
+function my_oflineform_redirect_url( $url, $Data) {
+  if ( $Data->get( '参加人数' ) ) {
+
+      $participants = $Data->get( '参加人数' );
+
+      // 参加人数に応じてサンクスページのURLを変更します
+      if ( $participants == '1人(経営者のみ)' ) {
+          $url = home_url( '/seminar1-1/' );
+      } elseif ( $participants == '2人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-2/' );
+      } elseif ( $participants == '3人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-3/' );
+      } elseif ( $participants == '4人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-4/' );
+      } elseif ( $participants == '5人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-5/' );
+      } elseif ( $participants == '6人(経営者同伴あり)' ) {
+          $url = home_url( '/seminar1-6/' );
+      } elseif ( $participants == '1人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-1/' );
+      } elseif ( $participants == '2人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-2/' );
+      } elseif ( $participants == '3人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-3/' );
+      } elseif ( $participants == '4人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-4/' );
+      } elseif ( $participants == '5人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-5/' );
+      } elseif ( $participants == '6人(経営者同伴なし)' ) {
+          $url = home_url( '/seminar2-6/' );
+      } else {
+
+      }
+  }
+
+  return $url;
+}
+add_filter( 'mwform_redirect_url_mw-wp-form-1420', 'my_oflineform_redirect_url', 10, 2 );
+add_filter( 'mwform_redirect_url_mw-wp-form-1421', 'my_oflineform_redirect_url', 10, 2 );
+
+
+///////////////////////////////////////
+// 視察ツアー フォーム mw-wp-form サンクスページの出しわけ
+///////////////////////////////////////
+function my_inspectiontourform_redirect_url( $url, $Data) {
+  if ( $Data->get( '参加人数' ) ) {
+
+      $participants = $Data->get( '参加人数' );
+
+      // 参加人数に応じてサンクスページのURLを変更します
+      if ( $participants == '1人' ) {
+          $url = home_url( '/tour1/' );
+      } elseif ( $participants == '2人' ) {
+          $url = home_url( '/tour2/' );
+      } elseif ( $participants == '3人' ) {
+          $url = home_url( '/tour3/' );
+      } elseif ( $participants == '4人' ) {
+          $url = home_url( '/tour4/' );
+      } elseif ( $participants == '5人' ) {
+          $url = home_url( '/tour5/' );
+      } elseif ( $participants == '6人' ) {
+          $url = home_url( '/tour6/' );
+      } else {
+
+      }
+  }
+
+  return $url;
+}
+add_filter( 'mwform_redirect_url_mw-wp-form-1424', 'my_inspectiontourform_redirect_url', 10, 2 );
+add_filter( 'mwform_redirect_url_mw-wp-form-1425', 'my_inspectiontourform_redirect_url', 10, 2 );
+
+
+///////////////////////////////////////
+// 経営合宿 フォーム mw-wp-form サンクスページの出しわけ
+///////////////////////////////////////
+function my_trainingcampform_redirect_url( $url, $Data) {
+  if ( $Data->get( '参加人数' ) ) {
+
+      $participants = $Data->get( '参加人数' );
+
+      // 参加人数に応じてサンクスページのURLを変更します
+      if ( $participants == '1人' ) {
+          $url = home_url( '/camp1/' );
+      } elseif ( $participants == '2人' ) {
+          $url = home_url( '/camp2/' );
+      } elseif ( $participants == '3人' ) {
+          $url = home_url( '/camp3/' );
+      } elseif ( $participants == '4人' ) {
+          $url = home_url( '/camp4/' );
+      } elseif ( $participants == '5人' ) {
+          $url = home_url( '/camp5/' );
+      } elseif ( $participants == '6人' ) {
+          $url = home_url( '/camp6/' );
+      } else {
+
+      }
+  }
+
+  return $url;
+}
+add_filter( 'mwform_redirect_url_mw-wp-form-1426', 'my_trainingcampform_redirect_url', 10, 2 );
+add_filter( 'mwform_redirect_url_mw-wp-form-1427', 'my_trainingcampform_redirect_url', 10, 2 );
+
+
+///////////////////////////////////////
+// 新卒採用　生年月日
+///////////////////////////////////////
+function entry_validation_rule( $Validation, $data) {
+  $validation_message2 = '未入力項目があります。';
+
+  if ( empty( $data['year'] ) ) {
+    $Validation->set_rule( 'year', 'noempty', array( 'message' => $validation_message2 ) );
+  } elseif ( empty( $data['month'] ) ) {
+    $Validation->set_rule( 'month', 'noempty', array( 'message' => $validation_message2 ) );
+  } elseif ( empty( $data['day'] ) ) {
+    $Validation->set_rule( 'day', 'noempty', array( 'message' => $validation_message2 ) );
+  }
+
+  return $Validation;
+}
+add_filter( 'mwform_validation_mw-wp-form-4488', 'entry_validation_rule', 10, 2 );
+
+add_filter( 'mwform_choices_mw-wp-form-4488', 'mwform_add_signature_options', 10, 2 );
+
+function mwform_add_signature_options( $children, $atts ) {
+  // 年設定
+  if ( $atts['name'] === 'year' ) {
+    $children[''] = '年';
+    for ( $i = 1960; $i <= date( 'Y' ); $i++ ) {
+      $children[$i] = $i;
+    }
+  }
+
+  // 月設定
+  if ( $atts['name'] === 'month' ) {
+    $children[''] = '月';
+    for ( $i = 1; $i <= 12; $i++ ) {
+      $children[$i] = $i;
+    }
+  }
+
+  // 日設定
+  if ( $atts['name'] === 'day' ) {
+    $children[''] = '日';
+    for ( $i = 1; $i <= 31; $i++ ) {
+      $children[$i] = $i;
+    }
+  }
+
+  return $children;
+}
+
+///////////////////////////////////////
+// 新卒採用　卒業、入社年月日　来年から5年
+///////////////////////////////////////
+function mwform_add_graduation_year_options( $children, $atts ) {
+    if ( $atts['name'] === '卒業予定年' ) { // フィールド名を確認
+        $current_year = date("Y") + 1; // 来年スタート
+        $children[''] = ' '; // 最初の選択肢
+        for ( $i = $current_year; $i <= $current_year + 4; $i++ ) {
+            $children[$i] = $i;
+        }
+    }
+	 if ( $atts['name'] === '入社予定年' ) { // フィールド名を確認
+        $current_year = date("Y") + 1; // 来年スタート
+        $children[''] = ' '; // 最初の選択肢
+        for ( $i = $current_year; $i <= $current_year + 4; $i++ ) {
+            $children[$i] = $i;
+        }
+    }
+    return $children;
+}
+add_filter( 'mwform_choices_mw-wp-form-4488', 'mwform_add_graduation_year_options', 10, 2 );
+///////////////////////////////////////
+// noindexの記事をループ出力しない際に、投稿記事数にはカウントされてしまいページャーに反映されることを防止するためのコード
+///////////////////////////////////////
+function exclude_noindex_posts_from_query($query) {
+    if (!is_admin() && $query->is_main_query()) {
+        // カスタム投稿タイプのアーカイブページまたは特定のカテゴリーアーカイブページの場合
+        if (is_post_type_archive('download') || is_category() ) {
+            $meta_query = array(
+                array(
+                    'key' => 'meta_noindex',
+                    'value' => '1',
+                    'compare' => '!='
+                )
+            );
+
+            $query->set('meta_query', $meta_query);
+        }
+    }
+}
+add_action('pre_get_posts', 'exclude_noindex_posts_from_query');
+
+// 親スラッグ
+function is_parent_slug() {
+    global $post;
+    if ($post && $post->post_parent) {
+        $post_data = get_post($post->post_parent);
+        return $post_data->post_name;
+    }
+}
+
+/* 固定ページ一覧にスラッグを追加する */
+function add_page_column_slug_title( $columns ) {
+	$columns[ 'slug' ] = "スラッグ";
+	return $columns;
+}
+function add_page_column_slug( $column_name, $post_id ) {
+	if( $column_name == 'slug' ) {
+		$post = get_post( $post_id );
+		$slug = $post->post_name;
+		echo esc_attr( $slug );
+	}
+}
+add_filter( 'manage_pages_columns', 'add_page_column_slug_title' );
+add_action( 'manage_pages_custom_column', 'add_page_column_slug', 10, 2 );
+
+/* パスワードなしで閲覧可能にする */
+function auto_authenticate_password_protected_post() {
+    if (isset($_GET['post_password'])) {
+        $password = sanitize_text_field($_GET['post_password']);
+
+        // クッキーを設定（WordPress のパスワード認証で使う）
+        global $wp_hasher;
+        if (empty($wp_hasher)) {
+            require_once ABSPATH . 'wp-includes/class-phpass.php';
+            $wp_hasher = new PasswordHash(8, true);
+        }
+
+        // パスワードのハッシュを取得
+        $hashed_password = $wp_hasher->HashPassword($password);
+
+        // クッキーを設定
+        setcookie('wp-postpass_' . COOKIEHASH, $hashed_password, time() + 3600, COOKIEPATH, COOKIE_DOMAIN);
+
+        // リダイレクトして適用
+        wp_redirect(remove_query_arg('post_password'));
+        exit;
+    }
+}
+add_action('template_redirect', 'auto_authenticate_password_protected_post');
+
+
+add_filter('protected_title_format', 'remove_protected');
+function remove_protected($title) {
+return '%s';
+}
+
+// ===========================
+// seminar_category アーカイブページの投稿タイプ補正
+// ===========================
+function fix_seminar_category_archive($query) {
+    if (!is_admin() && $query->is_main_query() && is_tax('seminar_category')) {
+        $query->set('post_type', 'seminar');
+    }
+}
+add_action('pre_get_posts', 'fix_seminar_category_archive');
+
+// ===========================
+// download_category アーカイブページの投稿タイプ補正
+// ===========================
+function fix_download_category_archive($query) {
+    if (!is_admin() && $query->is_main_query() && is_tax('download_category')) {
+        $query->set('post_type', 'download');
+    }
+}
+add_action('pre_get_posts', 'fix_download_category_archive');
+
+// ===========================
+// カスタム投稿タイプの登録
+// ===========================
+function register_download_post_type() {
+    register_post_type('download', array(
+        'label' => 'ダウンロード',
+        'public' => true,
+        'has_archive' => true,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'rewrite' => array(
+            'slug' => 'download',
+            'with_front' => false
+        ),
+        'taxonomies' => array('download_category'),
+    ));
+}
+add_action('init', 'register_download_post_type');
+
+function register_seminar_post_type() {
+    register_post_type('seminar', array(
+        'label' => 'セミナー',
+        'public' => true,
+        'has_archive' => true,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'rewrite' => array(
+            'slug' => 'seminar',
+            'with_front' => false
+        ),
+        'taxonomies' => array('seminar_category'),
+    ));
+}
+add_action('init', 'register_seminar_post_type');
+
+// ===========================
+// タクソノミー登録
+// ===========================
+function register_download_category_taxonomy() {
+    register_taxonomy('download_category', 'download', array(
+        'label' => '資料カテゴリー',
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'rewrite' => array(
+            'slug' => 'download_category',
+            'with_front' => false
+        ),
+    ));
+}
+add_action('init', 'register_download_category_taxonomy');
+
+function register_seminar_category_taxonomy() {
+    register_taxonomy('seminar_category', 'seminar', array(
+        'label' => 'セミナーカテゴリー',
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'rewrite' => array(
+            'slug' => 'seminar_category',
+            'with_front' => false
+        ),
+    ));
+}
+add_action('init', 'register_seminar_category_taxonomy');
+
+// ===========================
+// /post/ からのリダイレクト一括管理
+// ===========================
+function redirect_invalid_post_prefix_all() {
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    $patterns = [
+        '#^/post/download/?$#'             => '/download/',
+        '#^/post/download_category(/.*)?$#' => '/download_category$1',
+        '#^/post/seminar/?$#'              => '/seminar/',
+        '#^/post/seminar_category(/.*)?$#' => '/seminar_category$1',
+    ];
+
+    foreach ($patterns as $pattern => $replacement) {
+        if (preg_match($pattern, $request_uri, $matches)) {
+            $redirect = preg_replace($pattern, $replacement, $request_uri);
+            wp_redirect(home_url($redirect), 301);
+            exit;
+        }
+    }
+}
+add_action('template_redirect', 'redirect_invalid_post_prefix_all');
+
+// ===========================
+// /Contact Form 7の自動pタグ無効
+// ===========================
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+  return false;
+}

@@ -1,0 +1,44 @@
+.l-price {
+  padding: 2rem 0 2.4rem 0;
+  @include media() {
+    padding: 3.3rem 0 4rem 0;
+  }
+  &__inner {
+    @include media() {
+      max-width: 83.75rem;
+    }
+  }
+  &__ttl {
+    margin-bottom: 2rem;
+    @include media() {
+    }
+  }
+  &__wrap {
+    @include media() {
+    }
+  }
+  &__para {
+    width: (320 / 16) + rem;
+    color: #0096B4;
+    text-align: center;
+    background-color: #FFFFFF;
+    margin: auto;
+    padding: 0.45rem;
+    border: 1px solid #0096B4;
+    border-radius: 4px;
+    @include media() {
+    }
+    .num {
+      font-size: (40 / 16) + rem;
+      line-height: (58 / 40);
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+    .unit {
+      font-size: (28 / 16) + rem;
+      line-height: (40 / 18);
+      letter-spacing: 0.06em;
+      font-weight: 900;
+    }
+  }
+}

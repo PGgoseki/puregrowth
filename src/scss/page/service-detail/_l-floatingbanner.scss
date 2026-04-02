@@ -1,0 +1,54 @@
+.l-floatingbanner {
+//  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 10px;
+  z-index: 8999;
+  width: 25%;
+  min-width: 200px;
+  max-width: 400px;
+  @include media() {
+    bottom: 10px;
+  }
+  &__btn {
+    background-color: #fff;
+  }
+  a {
+    @include media() {
+      transition: 0.4s ease;
+    }
+    &:hover {
+      @include media() {
+        opacity: 0.7;
+      }
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    &-btn {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        height: 11px;
+        background: #333;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+  }
+}

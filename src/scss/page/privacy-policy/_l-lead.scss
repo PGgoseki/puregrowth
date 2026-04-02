@@ -1,0 +1,35 @@
+.l-lead {
+  &__para {
+    padding-top: 2rem;
+    font-size: (15 / 16) + rem;
+    line-height: (25 / 15);
+    letter-spacing: .07em;
+    font-weight: normal;
+    @include media() {
+      padding-top: 2rem;
+      font-size: (18 / 16) + rem;
+      line-height: (32 / 18);
+      letter-spacing: .06em;
+    }
+  }
+  &__list {
+    margin-top: 1.2em;
+    padding-bottom: 2rem;
+    padding-left: 1em;
+    text-indent: -1em;
+    font-size: (15 / 16) + rem;
+    line-height: 1.6666666667;
+    letter-spacing: 0.07em;
+    font-weight: normal;
+    @include media() {
+      margin-top: 1.5em;
+      padding-bottom: 3rem;
+      font-size: (18 / 16) + rem;
+      line-height: (36 / 18);
+      letter-spacing: 0.06em;
+    }
+  }
+  &__item {
+    list-style: none;
+  }
+}

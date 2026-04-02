@@ -1,0 +1,42 @@
+.l-info {
+  background: url(../img/top/information-bottom-sp.jpg) no-repeat center bottom / 100% (305 / 16) + rem;
+  padding-bottom: (385 / 16) + rem;
+  position: relative;
+  @include media() {
+    background: url(../img/top/information-bottom-pc.png) no-repeat top right (-107 / 16) + rem / (993 / 16) + rem 100%;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 150, 180, .05);
+  }
+  &__english {
+    max-width: (316 / 16) + rem;
+    margin: 0 auto;
+    &::before {
+      padding-top: (47 / 316) * 100%;
+    }
+    @include media() {
+      max-width: (486 / 16) + rem;
+      &::before {
+        padding-top: (4 / 27) * 100%;
+      }
+    }
+  }
+  &__ttl {
+    padding: (45 / 16) + rem 0 (30 / 16) + rem;
+    @include media() {
+      padding: (50 / 16) + rem 0 (65 / 16) + rem;
+    }
+  }
+  &__btn-box {
+    margin-top: (35 / 16) + rem;
+    @include media() {
+      margin-top: (100 / 16) + rem;
+    }
+  }
+}

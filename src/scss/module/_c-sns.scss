@@ -1,0 +1,28 @@
+.c-sns {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  max-width: (60 / 16) + rem;
+  margin: 0 auto;
+  @include media() {
+    justify-content: flex-start;
+    margin-left: 0;
+    max-width: 60px;
+  }
+  img {
+    width: auto;
+    height: auto;
+  }
+  &__item {
+    flex: 0 0 auto;
+    & > a {
+      transition: 0.4s ease;
+      transition-property: transform, filter;
+      &:hover,
+      &:active {
+        filter: drop-shadow(3px 3px 6px rgba(255,255,255,.4));
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

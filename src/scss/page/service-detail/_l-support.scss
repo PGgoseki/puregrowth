@@ -1,0 +1,87 @@
+.l-support {
+  padding: 0.8rem 0 0.7rem 0;
+  @include media() {
+    padding: 3.5rem 0 2rem 0;
+  }
+  &__inner {
+    @include media() {
+      max-width: 92.75rem;
+    }
+  }
+  &__ttl {
+    margin-bottom: 2.1rem;
+    @include media() {
+      margin-bottom: 1.85rem;
+    }
+  }
+  &__wrap {
+    @include media() {
+      display: flex;
+      justify-content: center;
+      gap: (40 / 16) + rem;
+      margin-bottom: 1.85rem;
+    }
+  }
+  &__box {
+    overflow: hidden;
+    background: #FFFFFF;
+    margin: 0 0.65rem 1rem 0.65rem;
+    border-radius: (8 / 16) + rem;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.1));
+    @include media() {
+      flex-basis: (448 / 16) + rem;
+      margin: 0;
+    }
+    &-img {
+      margin-bottom: 0.5rem;
+      @include media() {
+        margin-bottom: 0.8rem;
+      }
+    }
+    &-text {
+      margin-bottom: 1.4rem;
+      @include media() {
+      }
+    }
+    &-ttl {
+      color: #21608E;
+      font-size: (20 / 16) + rem;
+      line-height: (29 / 20);
+      letter-spacing: 0.09em;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.4rem;
+      @include media() {
+        font-size: (22 / 16) + rem;
+        line-height: (32 / 22);
+        margin-bottom: 0.5rem;
+      }
+    }
+    &-para {
+      font-size: (15 / 16) + rem;
+      line-height: (24 / 15);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.4rem;
+      padding: 0 1rem;
+      @include media() {
+        font-size: (18 / 16) + rem;
+        line-height: (32 / 18);
+        letter-spacing: 0.045em;
+        padding: 0 1rem;
+      }
+    }
+    &-note {
+      font-size: (15 / 16) + rem;
+      line-height: (24 / 15);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.4rem;
+      padding: 0 1rem;
+      @include media() {
+        font-size: (18 / 16) + rem;
+        line-height: (32 / 18);
+        letter-spacing: 0.045em;
+        padding: 0 1rem;
+      }
+    }
+  }
+}

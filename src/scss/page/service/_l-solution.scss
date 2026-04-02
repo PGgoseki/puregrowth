@@ -1,0 +1,59 @@
+.l-solution {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: (16 / 16) + rem;
+    @include media() {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: (35 / 16) + rem (48 / 16) + rem;
+    }
+  }
+  &__item {
+    padding: (14 / 16) + rem (13 / 16) + rem (14 / 16) + rem;
+    background: #fff;
+    border-radius: (10 / 16) + rem;
+    box-shadow: (3 / 16) + rem (3 / 16) + rem (10 / 16) + rem rgba(#000, .1);
+    display: flex;
+    align-items: center;
+    gap: (12 / 16) + rem;
+    @include media() {
+      padding: (28 / 16) + rem (31 / 16) + rem (27 / 16) + rem (28 / 16) + rem;
+      border-radius: (21 / 16) + rem;
+      gap: (13 / 16) + rem;
+      box-shadow: (5 / 16) + rem (5 / 16) + rem (10 / 16) + rem rgba(#000, .1);
+    }
+    &-icon {
+      width: (25 / 16) + rem;
+      height: (25 / 16) + rem;
+      flex-shrink: 0;
+      @include media() {
+        width: (31 / 16) + rem;
+        height: (31 / 16) + rem;
+      }
+    }
+    &-txt {
+      font-size: (15 / 16) + rem;
+      line-height: (25 / 15);
+      letter-spacing: .03em;
+      font-weight: normal;
+      @include media() {
+        font-size: (17 / 16) + rem;
+        line-height: (27 / 17);
+        letter-spacing: .06em;
+      }
+      span {
+        margin: (3 / 16) + rem 0;
+        display: block;
+        color: $green;
+        font-weight: bold;
+        @include media() {
+          margin: (4 / 16) + rem 0;
+          font-size: (20 / 16) + rem;
+          line-height: (27 / 20);
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

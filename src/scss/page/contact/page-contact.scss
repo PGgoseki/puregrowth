@@ -1,0 +1,54 @@
+@import '../../base/base';
+
+@import '../../mixin/mixin';
+
+@import './l-contact';
+@import './l-intro';
+
+.breadcrumbs {
+  background-color: rgba(0, 182, 201, 0.05);
+}
+
+@media only screen and (min-width: 768px) {
+.l-contact__btn-box.--left {
+	text-align:left;
+}
+}
+.l-contact__btn-text {
+	margin-bottom:3.75rem;
+	font-size:1.25rem;
+	line-height:1.75;	
+}
+
+@media only screen and (max-width: 767px) {
+	.l-contact__btn-text {
+		font-size:1rem;
+		text-align:left;
+		margin-bottom:3rem;
+	}
+}
+
+.l-contact__btn-box.--col2 {
+	display:flex;
+	gap:2rem;
+}
+
+.l-contact__btn-box.--col2 a {
+    font-family: "Zen Old Mincho", serif!important;
+}
+
+@media only screen and (max-width: 767px) {
+.l-contact__btn-box.--col2 {
+	flex-direction:column;
+	gap:1rem;
+}
+	.l-contact__btn-box.--col2 a {
+	        font-size: 0.875rem!important;
+        padding: 0.875rem 2.5rem 0.875rem 2.25rem!important;
+	}
+}
+
+.l_fbagjs,
+.l_qspkvy {
+  display: none;
+}

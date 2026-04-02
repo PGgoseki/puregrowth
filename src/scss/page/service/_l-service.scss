@@ -1,0 +1,34 @@
+.l-service {
+  padding: 0.8rem 0 1rem 0;
+  @include media() {
+    padding: 3.5rem 0 1rem 0;
+  }
+  &__ttl {
+    margin-bottom: 1rem;
+    .lower-ttl--ja {
+      font-size: (24 / 16) + rem;
+      line-height: (35 / 24);
+      @include media() {
+        font-size: (40 / 16) + rem;
+        line-height: (58 / 40);
+      }
+    }
+  }
+  &__img {
+    display: flex;
+    flex-wrap: wrap;
+    gap: (8 / 16) + rem (15 / 16) + rem;
+    @include media() {
+      flex-wrap: nowrap;
+      gap: (8 / 16) + rem (15 / 16) + rem;
+      max-width: (848 / 16) + rem;
+      margin: auto;
+    }
+    .image {
+      flex-basis: (164 / 16) + rem;
+      @include media() {
+        flex-basis: calc(200 / 848 * 100%);
+      }
+    }
+  }
+}

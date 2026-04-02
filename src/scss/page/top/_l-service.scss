@@ -1,0 +1,102 @@
+.l-service {
+  &.lazyloaded {
+    background: url(../img/top/service-bottom-sp.jpg) no-repeat center bottom / 100% (305 / 16) + rem;
+    @include media() {
+      background: url(../img/top/service-bottom-pc.png) no-repeat top right / (883 / 16) + rem 100%;
+    }
+  }
+  padding-bottom: (385 / 16) + rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 150, 180, .05);
+  }
+  @include media() {
+    padding-bottom: (200 / 16) + rem;
+    &__box {
+      display: flex;
+      margin-bottom: (120 / 16) + rem;
+      &-top {
+        display: flex;
+        flex-direction: column;
+        padding-right: (80 / 1200) * 100%;
+      }
+      &-body {
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: (700 / 16) + rem;
+        padding-left: (80 / 1200) * 100%;
+        margin-left: (90 / 1200) * 100%;
+        border-left: 1px solid #D8D8D8;
+        margin-left: auto;
+      }
+    }
+  }
+  &__english {
+    max-width: (197 / 16) + rem;
+    margin: 0 auto;
+    &::before {
+      padding-top: (45 / 197) * 100%;
+    }
+    @include media() {
+      margin-left: 0;
+      max-width: (302 / 16) + rem;
+      &::before {
+        padding-top: (69 / 302) * 100%;
+      }
+    }
+  }
+  &__english-ttl {
+    padding-top: (30 / 16) + rem;
+    padding-bottom: (30 / 16) + rem;
+    @include media() {
+      text-align: left;
+      padding-top: (50 / 16) + rem;
+    }
+  }
+  &__ttl {
+    padding-top: (30 / 16) + rem;
+    @include media() {
+      padding-top: 0;
+      text-align: left;
+    }
+  }
+  &__btn-box {
+    padding-top: (35 / 16) + rem;
+    @include media() {
+      margin-top: auto;
+    }
+  }
+  &__txt {
+    padding-top: (15 / 16) + rem;
+    padding-bottom: (30 / 16) + rem;
+    @include media() {
+      padding-bottom: 0;
+      padding-top: (50 / 16) + rem;
+    }
+  }
+  &__pic-box {
+    margin: 0 (-10 / 16) + rem;
+    @include media() {
+      margin: 0 auto;
+      max-width: (900 / 16) + rem;
+    }
+  }
+  &__pic {
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,.06));
+    &::before {
+      padding-top: (273 / 341) * 100%;
+    }
+    @include media() {
+      filter: drop-shadow(5px 5px 20px rgba(0,0,0,.06));
+      &::before {
+        padding-top: (157 / 225) * 100%;
+      }
+    }
+  }
+}

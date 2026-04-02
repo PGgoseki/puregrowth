@@ -1,0 +1,252 @@
+.l-single__aside {
+  border-top: none;
+}
+
+.l-single__aside-inner {
+  top: 8.375rem;
+  box-shadow: 0 3px 10px rgba(0,0,0, .16);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.l-single__aside-title {
+  text-align: center;
+  line-height: 1.5;
+  font-weight: bold;
+  font-size: 1.25rem;
+  background: #00B6C9;
+  color: #fff;
+  padding: 1rem;
+}
+
+.mw_wp_form {
+	overflow: auto;
+	max-height: calc(100vh - 17.5rem);
+}
+
+.mw_wp_form::-webkit-scrollbar{
+  display: none;
+}
+
+.l-seminar-form {
+  padding: 2rem 1rem;
+  background-color: rgba(0, 150, 180, 0.05);
+}
+
+.l-seminar-form__row {
+
+}
+
+
+.l-seminar-form__row + .l-seminar-form__row {
+  margin-top: 1rem;
+}
+
+.l-seminar-form__name {
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.l-seminar-form__required,
+.l-seminar-form__any {
+  color: #fff;
+  margin-top: 0.125rem;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  width: 3rem;
+  border-radius: 0.375rem;
+  font-weight: normal;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0;
+  margin-left: 0.5rem;
+  line-height: 1.75;
+}
+
+.l-seminar-form__required {
+  background:#D1572B;
+}
+
+.l-seminar-form__any {
+  background:#999;
+}
+
+.l-seminar-form__parts {
+
+}
+
+.l-seminar-form__parts input[type="text"],
+.l-seminar-form__parts input[type="tel"],
+.l-seminar-form__parts input[type="email"],
+.l-seminar-form__parts textarea,
+.l-seminar-form__parts select {
+  width: 100%;
+  border: 0.0625rem solid #959595;
+  border-radius: 0.5rem;
+  background:#fff;
+  padding: 0.5rem 0.875rem;
+}
+
+.l-seminar-form__parts textarea {
+  height: 10rem;
+}
+
+.l-seminar-form__parts input[type="radio"] {
+  
+}
+
+.l-seminar-form__parts input::placeholder,
+.l-seminar-form__parts textarea::placeholder {
+  color: #bbb;
+}
+
+.l-seminar-form__parts select {
+  padding: 0.8rem;
+}
+
+select {
+  color:#333;
+}
+
+select.placeholder {
+  color: #bbb;
+}
+
+.l-seminar-form__select {
+  position: relative;
+
+}
+
+.l-seminar-form__select::after {
+  position: absolute;
+  content: '';
+  right: 1rem;
+  top:1rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 0.46875rem solid transparent;
+  border-left: 0.46875rem solid transparent;
+  border-top: 0.625rem solid #000000;
+  border-bottom: 0;
+  pointer-events:none;
+}
+
+.l-seminar-form__btn {
+  margin-top: 1rem;
+}
+
+.l-seminar-form__btn input {
+  color: #fff;
+  transition: color 0.4s ease;
+  width: 100%;
+  height: 100%;
+  padding: 0.625rem 2.5rem 0.8125rem 1.25rem;
+  cursor: pointer;
+  background: #00B6C9;
+  border-radius: 3.75rem;
+  transition: 0.4s ease;
+  transition-property: opacity, background-color, color, box-shadow;
+}
+
+.l-seminar-form__btn input:hover {
+  opacity: 0.7;
+}
+
+.l-seminar-form__caution {
+  font-size: 0.8125rem;
+  font-weight: normal;
+  margin-top: 1rem;
+  letter-spacing: -0.08em;
+  line-height: 1.5;
+}
+
+.l-seminar-form__caution a {
+  color: #123770;
+  text-decoration: underline;
+  transition: all .3s;
+}
+
+.l-seminar-form__caution a:hover {
+  opacity: .7;
+}
+
+.mw_wp_form .error {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.l-seminar-form__radio input[type=radio] {
+  display: none;
+}
+.l-seminar-form__radio .mwform-radio-field {
+  display: block;
+  width: 100%;
+  margin-left: 0!important;
+}
+.l-seminar-form__radio .mwform-radio-field + .mwform-radio-field {
+  display: block;
+  width: 100%;
+  margin-left: 0!important;
+  margin-top: 0.5rem;
+}
+.l-seminar-form__radio label {
+  display: inline-block;
+  width: 100%;
+}
+.l-seminar-form__radio input[type=radio] + span {
+  padding-left: 1.875rem;
+  display: inline-block;
+  position: relative;
+}
+.l-seminar-form__radio input[type=radio] + span::after,
+.l-seminar-form__radio input[type=radio] + span::before {
+  border-radius: 50%;
+  content: '';
+  display: block;
+  position: absolute;
+}
+.l-seminar-form__radio input[type=radio] + span::before {
+  border: 1px solid #AAAAAA;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  height: 1.0625rem;
+  width: 1.0625rem;
+}
+.l-seminar-form__radio input[type=radio] + span::after{
+  background: #123770;
+  height: 0.625rem;
+  left: 0.22rem;
+  opacity: 0;
+  top: 0.22rem;
+  width: 0.625rem;
+}
+.l-seminar-form__radio input[type=radio]:checked + span::after {
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 767px) {
+  .sp-active {
+    display: block!important;
+    border-top: none!important;
+    margin-top: 4rem;
+  }
+  .l-single__aside-sp-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+	.mw_wp_form {
+		max-height: 100%;
+	}
+}
+
+.l_fbagjs,
+.l_qspkvy {
+  display: none;
+}

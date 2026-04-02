@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 31">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2e4177"/>
+      <stop offset="1" stop-color="#00aec7"/>
+    </linearGradient>
+  </defs>
+  <g id="グループ_11528" data-name="グループ 11528" transform="translate(-633 -1666)">
+    <circle id="楕円形_3" data-name="楕円形 3" cx="15.5" cy="15.5" r="15.5" transform="translate(633 1666)" fill="url(#linear-gradient)"/>
+    <path id="パス_7391" data-name="パス 7391" d="M5633.066,1699.882a1.685,1.685,0,0,1-1.405-.755l-3.814-5.764a1.685,1.685,0,0,1,2.811-1.859l2.865,4.33,10.687-7.388a1.685,1.685,0,0,1,1.917,2.772l-12.1,8.366A1.684,1.684,0,0,1,5633.066,1699.882Z" transform="translate(-4988.647 -12.102)" fill="#fff"/>
+  </g>
+</svg>

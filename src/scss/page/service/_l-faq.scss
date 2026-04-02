@@ -1,0 +1,111 @@
+.l-faq {
+  $this: &;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: (15 / 16) + rem;
+    @include media() {
+      margin-inline: auto;
+      max-width: (900 / 16) + rem; 
+    }
+  }
+  &__item {
+    padding: (14 / 16) + rem (13 / 16) + rem (16 / 16) + rem (14 / 16) + rem;
+    background: #fff;
+    border-radius: (10 / 16) + rem;
+    box-shadow: (3 / 16) + rem (3 / 16) + rem (10 / 16) + rem rgba(#000, .1);
+    cursor: pointer;
+    @include media() {
+      padding: (50 / 16) + rem (51 / 16) + rem;
+    }
+    &-row {
+      display: flex;
+      #{$this}__item-question & {
+        &::after {
+          content: "";
+          margin-left: (10 / 16) + rem;
+          display: inline-block;
+          width: (15 / 16) + rem;
+          height: (15 / 16) + rem;
+          background: url(../img/service/arrow.svg) no-repeat center/contain;
+          align-self: center;
+          transform: rotate(180deg);
+          transition: transform .4s ease;
+          @include media() {
+            margin-left: (24 / 16) + rem;
+            width: (21 / 16) + rem;
+            height: (21 / 16) + rem;
+          }
+        }
+      }
+      #{$this}__item-question.--js-open &::after {
+        transform: none;
+      }
+    }
+    &-icon {
+      color: $green;
+      font-size: (20 / 16) + rem;
+      line-height: (26 / 20);
+      @include media() {
+        font-size: (25 / 16) + rem;
+        line-height: (32 / 25);
+      }
+    }
+    &-answer {
+      margin: (16 / 16) + rem 0 (8 / 16) + rem;
+      display: none;
+    }
+    &-contents {
+      flex: 1;
+      margin-left: (8 /16) + rem;
+      padding-left: (13/ 16) + rem;
+      letter-spacing: .03em;
+      position: relative;
+      @include media() {
+        margin-left: (28 /16) + rem;
+        padding-left: (32/ 16) + rem;
+      }
+      #{$this}__item-question & {
+        font-size: (15 / 16) + rem;
+        line-height: (25 / 15);
+        @include media() {
+          font-size: (20 / 16) + rem;
+          line-height: (42 / 20);
+        }
+      }
+      #{$this}__item-answer & {
+        font-size: (14 / 16) + rem;
+        line-height: (25 / 14);
+        font-weight: normal;
+        @include media() {
+          font-size: (18 / 16) + rem;
+          line-height: (42 / 18);
+        }
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #D8D8D8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include media() {
+          margin-top: (6 / 16) + rem;
+          height: (27 /16) + rem;
+        }
+      }
+      a {
+        color: $green;
+        font-weight: bold;
+      }
+    }
+    &-btn-box {
+      margin-top: (25 / 16) + rem;
+      @include media() {
+        margin-top: (50 / 16) + rem;
+      }
+    }
+  }
+}

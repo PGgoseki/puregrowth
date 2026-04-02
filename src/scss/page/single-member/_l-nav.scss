@@ -1,0 +1,69 @@
+.l-nav {
+  overflow-x: hidden;
+  padding: 2rem 0 2rem 0;
+  @include media() {
+    padding: 3.9rem 0 4rem 0;
+  }
+  &__inner {
+    @include media() {
+      max-width: 83.75rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem calc(17 / 343 * 100%);
+    @include media() {
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 1rem calc(27 / 1280 * 100%);
+    }
+  }
+  &__item {
+    flex-basis: calc(163 / 343 * 100%);
+    @include media() {
+      flex-basis: calc(300 / 1280 * 100%);
+    }
+    a {
+      display: block;
+      position: relative;
+      width: 100%;
+      color: #123770;
+      font-size: (15 / 16) + rem;
+      line-height: (28 / 15);
+      letter-spacing: 0.045em;
+      font-weight: 700;
+      text-align: center;
+      background-color: #FFFFFF;
+      padding: 0.5rem 1rem 0.5rem 0;
+      border: 2px solid #123770;
+      border-radius: (8 / 16) + rem;
+      box-sizing: border-box;
+      @include media() {
+        font-size: (24 / 16) + rem;
+        line-height: (28 / 24);
+        padding: 1rem 1rem;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0.6rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin: auto;
+        border-bottom: 2px solid #123770;
+        border-right: 2px solid #123770;
+        transform: rotate(45deg);
+        @include media() {
+          bottom: 0.2rem;
+          right: 1.35rem;
+          width: 0.7rem;
+          height: 0.7rem;
+        }
+      }
+    }
+  }
+}

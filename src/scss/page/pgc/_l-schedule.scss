@@ -1,0 +1,100 @@
+.l-schedule {
+  padding-bottom: 0;
+  @include media() {
+    padding-bottom: 4.3rem;
+  }
+  &__row {
+    @include media() {
+      margin-top: 3.5rem;
+      display: flex;
+      gap: 4.5rem;
+    }
+  }
+  &__txt {
+    @include media() {
+      padding-right: 4rem;
+      max-width: 32rem;
+      border-right: 1px solid #D8D8D8;
+    }
+  }
+  &__heading {
+    font-size: (20 / 16) + rem;
+    line-height: (29 / 20);
+    letter-spacing: .07em;
+    text-align: center;
+    color: #21608E;
+    font-weight: 700;
+    @include media() {
+      font-size: (34 / 16) + rem;
+      line-height: (48 / 34);
+      letter-spacing: 0.06em;
+      text-align: left;
+      margin-top: 0.5rem;
+    }
+  }
+  &__para {
+    margin-top: (25 / 16) + rem;
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04em;
+    font-weight: normal;
+    padding: 0 0.7rem 1rem 0.7rem;
+    @include media() {
+      margin-top: 1.8rem;
+      font-size: (18 / 16) + rem;
+      line-height: (32 / 18);
+      letter-spacing: 0.045em;
+      padding: 0;
+    }
+    span {
+      font-size: (18 / 16) + rem;
+      line-height: (28 / 18);
+      font-weight: 900;
+      @include media() {
+        font-size: (18 / 16) + rem;
+        line-height: (32 / 18);
+        letter-spacing: 0.045em;
+        font-weight: 700;
+      }
+    }
+  }
+  &__example {
+    padding: 0 0.7rem;
+    @include media() {
+      padding: 0;
+    }
+  }
+  &__table-ttl {
+    margin-top: (25 / 16) + rem;
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    @include media() {
+      margin-top: 0;
+      font-size: (18 / 16) + rem;
+      line-height: (42 / 18);
+      letter-spacing: .045em;
+      text-align: left;
+    }
+  }
+  &__table-img {
+    margin-top: 0.5rem;
+    @include media() {
+      margin-top: (14 / 16) + rem;
+    }
+  }
+  &__attention {
+    margin-top: (10.3 / 16) + rem;
+    font-size: (15 / 16) + rem;
+    line-height: (25 / 15);
+    letter-spacing: .07em;
+    font-weight: normal;
+    @include media() {
+      margin-top: (14 / 16) + rem;
+      font-size: (18 / 16) + rem;
+      line-height: (42 / 18);
+      letter-spacing: .045em;
+    }
+  }
+}

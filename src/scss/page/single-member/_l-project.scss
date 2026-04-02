@@ -1,0 +1,22 @@
+.l-project {
+  overflow-x: hidden;
+  padding: 2rem 0 2rem 0;
+  @include media() {
+    padding: 3.5rem 0 4rem 0;
+  }
+  &__inner {
+    @include media() {
+      max-width: 92.75rem;
+    }
+  }
+  &__ttl {
+    margin-bottom: 2rem;
+    @include media() {
+      margin-bottom: 4rem;
+    }
+  }
+  &__slider {
+    @include media() {
+    }
+  }
+}

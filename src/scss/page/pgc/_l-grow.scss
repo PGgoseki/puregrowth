@@ -1,0 +1,60 @@
+.l-grow {
+  padding: 2rem 0 4rem 0;
+  @include media() {
+    padding: 4rem 0 5rem 0;
+  }
+  &.lazyloaded {
+    background: url(../img/common/cta-bg-sp.jpg) no-repeat center / 100% 100%;
+    @include media() {
+      background-image:url(../img/common/cta-bg-pc.jpg);
+    }
+  }
+  &__ttl {
+    color: #FFFFFF;
+    font-size: (40 / 16) + rem;
+    line-height: (58 / 40);
+    letter-spacing: 0;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 auto 1.9rem;
+    @include media() {
+      font-size: (48 / 16) + rem;
+      line-height: (58 / 40);
+      letter-spacing: 0.06rem;
+      margin-bottom: 3.5rem;
+    }
+    &::before {
+      padding-top: (124.63 / 224.81) * 100%;
+      @include media() {
+        padding-top: (99.47 / 598.91) * 100%;
+      }
+    }
+  }
+  &__txt {
+    color: #fff;
+    font-size: (20 / 16) + rem;
+    line-height: (32 / 20);
+    letter-spacing: 0.07em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.9rem;
+    @include media() {
+      font-size: (24 / 16) + rem;
+      letter-spacing: 0.12em;
+      line-height: (35 / 24);
+      margin-bottom: 2rem;
+    }
+  }
+  .btn {
+    width: 20rem;
+    font-size: (18 / 16) + rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    @include media() {
+      width: 40rem;
+      font-size: (24 / 16) + rem;
+      padding-top: 1.45rem;
+      padding-bottom: 1.45rem;
+    }
+  }
+}

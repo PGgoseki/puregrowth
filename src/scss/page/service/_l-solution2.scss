@@ -1,0 +1,53 @@
+.l-solution2 {
+  margin-bottom: 2rem;
+  padding: 1.25rem 0 1.5rem 0;
+  @include media() {
+    margin-bottom: 5rem;
+    padding: 3.5rem 0 1.5rem 0;
+  }
+  &__ttl {
+    color: #21608E;
+    font-size: (20 / 16) + rem;
+    line-height: (29 / 20);
+    letter-spacing: 0.04em;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+    @include media() {
+      font-size: (32 / 16) + rem;
+      line-height: (46 / 32);
+      letter-spacing: 0.06em;
+      margin-bottom: 2.1rem;
+    }
+  }
+  &__copy {
+    font-size: (18 / 16) + rem;
+    line-height: (24 / 18);
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    @include media() {
+      font-size: (24 / 16) + rem;
+      line-height: (32 / 24);
+      letter-spacing: 0.045em;
+      margin-bottom: 0.85rem;
+    }
+    .marker {
+      font-style: normal;
+      background: linear-gradient(transparent 80%, #FFF500 80%);
+    }
+  }
+  &__para {
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04em;
+    padding: 0 0.7rem;
+    @include media() {
+      font-size: (18 / 16) + rem;
+      line-height: (32 / 18);
+      letter-spacing: 0.045em;
+      text-align: center;
+    }
+  }
+}

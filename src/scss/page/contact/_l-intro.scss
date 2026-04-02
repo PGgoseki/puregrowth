@@ -1,0 +1,102 @@
+.l-intro {
+  padding-top: 0;
+  padding-bottom: 1.2rem;
+  @include media() {
+    padding-bottom: 3rem;
+  }
+  &__inner {
+    padding: 0 1rem;
+    @include media() {
+      max-width: 58.25rem;
+      margin: auto;
+    }
+  }
+  &__title {
+    color: #ffffff;
+    font-size: (20 / 16) + rem;
+    line-height: (32 / 20);
+    font-weight: 700;
+    text-align: center;
+    background: url(../img/common/bg-intro-title-sp.jpg) no-repeat center / cover;
+    margin-top: 2.3rem;
+    margin-bottom: 1rem;
+    padding: 0.65rem 0;
+    @include media() {
+      font-size: (24 / 16) + rem;
+      line-height: (32 / 24);
+      background: url(../img/common/bg-intro-title.jpg) no-repeat center / cover;
+      padding: 1.25rem 0;
+    }
+  }
+  &__text {
+    font-size: (15 / 16) + rem;
+    line-height: (24 / 15);
+    letter-spacing: 0.04rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    @include media() {
+    }
+    &.strong {
+      color: #123770;
+      font-size: (18 / 16) + rem;
+      line-height: (26 / 18);
+      font-weight: 700;
+      margin-top: 1.8rem;
+      @include media() {
+        line-height: (32 / 18);
+        margin-top: 3.6rem;
+        text-align: center;
+      }
+    }
+    .marker {
+      background: linear-gradient(transparent 70%, #FFF500 70%);
+    }
+  }
+  &__list {
+    margin-bottom: 0.9rem;
+    @include media() {
+      margin-bottom: 1.7rem;
+    }
+  }
+  &__item {
+    display: flex;
+    font-size: (15 / 16) + rem;
+    line-height: (20 / 15);
+    letter-spacing: 0.04rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    @include media() {
+      font-size: (15 / 16) + rem;
+      line-height: (24 / 15);
+      margin-bottom: 0;
+    }
+    &:before {
+      content: "";
+      display: block;
+      flex-shrink: 0;
+      width: (15 / 16) + rem;
+      height: (15 / 16) + rem;
+      background-color: #CDEEF2;
+      margin-top: (5 / 16) + rem;
+      margin-right: 0.5rem;
+      border-radius: 50%;
+      @include media() {
+        content: "・";
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        margin-top: 0;
+        margin-right: 0;
+        border-radius: 0;
+        font-size: (15 / 16) + rem;
+        line-height: (24 / 15);
+      }
+    }
+  }
+  &__btn-box {
+    text-align: center;
+      @include media() {
+        padding: 1rem 0 1.5rem 0;
+      }
+  }
+}
