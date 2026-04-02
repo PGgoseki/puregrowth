@@ -12,12 +12,12 @@
     <div class="cc2-fv__bg"></div>
     <div class="cc2-fv__inner">
       <div class="cc2-fv__content">
-        <p class="cc2-fv__eyebrow">住宅不動産業界特化｜成功報酬型</p>
+        <p class="cc2-fv__eyebrow">住宅不動産業界特化｜成功報酬型コンサルティング</p>
         <h1 class="cc2-fv__heading">
           職人単価を叩かず、<br>
           <em>60日で原価を下げる</em>
         </h1>
-        <p class="cc2-fv__sub">コスト削減コンサルティング</p>
+        <p class="cc2-fv__sub">商社・大手ハウスメーカー出身のプロが、<br>市場価格を根拠に交渉を代行します。</p>
         <ul class="cc2-fv__stats">
           <li>
             <strong>140<span>社</span></strong>
@@ -45,197 +45,54 @@
     </div>
   </section>
 
-  <!-- ========== Logo Slider ========== -->
-  <section class="cc2-logos">
-    <p class="cc2-logos__label">導入企業 140社以上（一部）</p>
-    <div class="cc2-logos__track">
-      <div class="logo-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo01.png" alt="企業ロゴ" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo05.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo09.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo13.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo17.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo21.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo25.PNG" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo29.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo33.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-1.webp" alt="オフィスHanako株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-2.png" alt="GRAND HOUSE株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-3.png" alt="アーキテックス株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-4.png" alt="エーステクノロジー株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-5.svg" alt="WITHDOM GROUP株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-6.jpg" alt="エスワイズ株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-7.svg" alt="納得住宅工房株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-8.png" alt="イーデザインホーム株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-9.svg" alt="アートテラスホーム株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-10.png" alt="エステージ株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-41.png" alt="株式会社ロゴスホーム様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-42.png" alt="株式会社ナスキー様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-43.png" alt="株式会社ひかり工務店様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-44.png" alt="株式会社ビュー様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-45.png" alt="株式会社みのりホーム様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-46.png" alt="株式会社ヤマウラ様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-81.webp" alt="平松建築株式会社様" /></div>
-        </div>
-      </div>
-      <div class="logo-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo02.png" alt="企業ロゴ" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo06.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo10.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo14.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo18.jpg" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo22.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo26.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo30.jpg" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-11.png" alt="タカマツビルド株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-12.jpg" alt="デイライフ株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-13.png" alt="デバイス株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-14.png" alt="ネクストイノベーション様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-15.gif" alt="びわこホーム様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-16.png" alt="ライフベイシス株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-17.svg" alt="河窪建設株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-18.svg" alt="オプトホーム株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-19.png" alt="クオレ・ホーム株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-20.svg" alt="グローバルハウス株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-51.jpg" alt="株式会社栄都様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-52.gif" alt="株式会社永井建設様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-53.png" alt="株式会社丸山コーポレーション様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-82.webp" alt="悠悠ホーム株式会社様" /></div>
-        </div>
-      </div>
-      <div class="logo-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo03.png" alt="企業ロゴ" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo07.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo11.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo15.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo19.jpg" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo23.jpg" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo27.jpg" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo31.jpg" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-21.webp" alt="株式会社クリエイト礼文様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-22.png" alt="株式会社アートホーム様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-23.jpg" alt="株式会社ヴィータデザイン様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-24.png" alt="株式会社グリーンランド様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-25.svg" alt="株式会社アート建工様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-26.svg" alt="株式会社オレンジハウス様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-27.png" alt="株式会社カワムラホーム様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-28.svg" alt="株式会社AXSデザイン様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-29.svg" alt="株式会社マーベックス様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-30.jpg" alt="株式会社LIFEFUND様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-61.webp" alt="鬼丸ホーム株式会社" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-62.webp" alt="株式会社大一建設様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-83.png" alt="有限会社メモリアルプラザたけや様" /></div>
-        </div>
-      </div>
-      <div class="logo-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo04.png" alt="企業ロゴ" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo08.jpg" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo12.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo16.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo20.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo24.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/top/logo32.png" alt="" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-31.png" alt="株式会社タカラサービス様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-32.gif" alt="株式会社サーティーフォー様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-33.webp" alt="株式会社サイトーホーム様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-34.png" alt="株式会社サンアイホーム様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-35.jpg" alt="株式会社サンタ不動産様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-36.png" alt="株式会社シーキューブ様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-37.webp" alt="株式会社ジェイトラスト様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-38.svg" alt="株式会社ジョンソンホームズ様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-39.svg" alt="株式会社スタイルハウス様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-40.gif" alt="株式会社スペースエージェンシー様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-71.png" alt="南青山リアルエステート株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-72.png" alt="坂上建設株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-73.svg" alt="篠河建設株式会社様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-84.jpg" alt="有限会社大崎建築様" /></div>
-          <div class="swiper-slide"><img src="<?php echo get_template_directory_uri() ?>/img/pgc/member2-85.png" alt="波多野工務店様" /></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== Problem ========== -->
   <section class="cc2-problem">
     <div class="cc2-inner">
-      <p class="cc2-label">PROBLEM</p>
-      <h2 class="cc2-heading">こんな課題を<br>抱えていませんか？</h2>
+      <h2 class="cc2-problem__heading">こんな状況、<br class="is-sp">心当たりはありませんか？</h2>
       <div class="cc2-problem__layout">
         <ul class="cc2-problem__list">
-          <li class="cc2-problem__item">
-            <span class="cc2-problem__icon">01</span>
-            <p>現在の仕入れ掛け率・平均単価が<strong>適正かどうか判断できない</strong></p>
-          </li>
-          <li class="cc2-problem__item">
-            <span class="cc2-problem__icon">02</span>
-            <p>資材高騰の影響で<strong>粗利が年々圧迫されている</strong></p>
-          </li>
-          <li class="cc2-problem__item">
-            <span class="cc2-problem__icon">03</span>
-            <p>社内に購買担当がおらず<strong>メーカーの言い値で購入し続けている</strong></p>
-          </li>
-          <li class="cc2-problem__item">
-            <span class="cc2-problem__icon">04</span>
-            <p><strong>原価交渉のやり方・ノウハウ</strong>が社内にまったくない</p>
-          </li>
-          <li class="cc2-problem__item">
-            <span class="cc2-problem__icon">05</span>
-            <p>コスト削減を試みたが<strong>思うような結果が出なかった</strong></p>
-          </li>
-          <li class="cc2-problem__item">
-            <span class="cc2-problem__icon">06</span>
-            <p>品質を落とさずに<strong>コストを下げる方法が分からない</strong></p>
-          </li>
+          <li>今の仕入れ掛け率が<strong>適正かどうか判断できない</strong></li>
+          <li>資材高騰が続き、<strong>粗利が年々削られている</strong></li>
+          <li>購買担当がいないため<strong>メーカーの言い値のまま</strong>になっている</li>
+          <li>交渉を試みたことはあるが、<strong>具体的な手法がわからない</strong></li>
+          <li>コスト削減に取り組んだが、<strong>思うような結果が出なかった</strong></li>
+          <li>品質を落とさずに<strong>原価を下げる方法がわからない</strong></li>
         </ul>
         <div class="cc2-problem__img">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/cost/intro-img.jpg" alt="課題を抱える経営者" loading="lazy">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/cost/intro-img.jpg" alt="" loading="lazy">
         </div>
       </div>
-      <div class="cc2-problem__resolve">
-        <p><strong>全国140社・20,000棟以上</strong>の支援実績から確立した<br>再現性のあるコスト削減メソッドで、これらをすべて解決します。</p>
-      </div>
+      <p class="cc2-problem__resolve">
+        全国140社・20,000棟以上の支援実績から確立したメソッドで、これらをすべて解決します。
+      </p>
     </div>
   </section>
 
-  <!-- ========== Strengths ========== -->
-  <section class="cc2-strengths">
+  <!-- ========== Why ========== -->
+  <section class="cc2-why">
     <div class="cc2-inner">
-      <p class="cc2-label">OUR STRENGTH</p>
-      <h2 class="cc2-heading">ピュアグロースが<br>選ばれる3つの理由</h2>
-      <div class="cc2-strengths__grid">
-        <div class="cc2-strength">
-          <div class="cc2-strength__img">
+      <h2 class="cc2-why__heading">なぜ、ピュアグロースの支援で<br>結果が出るのか</h2>
+      <div class="cc2-why__grid">
+        <div class="cc2-why__card">
+          <div class="cc2-why__card-img">
             <img src="<?php echo get_template_directory_uri(); ?>/img/cost/mv-appeal01.webp" alt="1棟当たり100万円削減の事例有り" loading="lazy">
           </div>
-          <div class="cc2-strength__body">
-            <span class="cc2-strength__num">01</span>
-            <h3>市場の限界価格を知る<br>プロが直接交渉</h3>
-            <p>「安くしてほしい」ではなく、実際の市場価格を提示しての指値交渉。商社・大手ハウスメーカーの購買部門出身のプロが動くから、確実に結果が出ます。</p>
-          </div>
+          <h3>「安くして」ではなく<br>価格を提示して交渉する</h3>
+          <p>市場の限界価格を知らずに交渉しても成果は出ません。商社・大手ハウスメーカーの購買部門出身のプロが実際の相場を根拠に指値交渉を行います。</p>
         </div>
-        <div class="cc2-strength">
-          <div class="cc2-strength__img">
+        <div class="cc2-why__card">
+          <div class="cc2-why__card-img">
             <img src="<?php echo get_template_directory_uri(); ?>/img/cost/mv-appeal02.webp" alt="60日で結果を出す集中プロジェクト" loading="lazy">
           </div>
-          <div class="cc2-strength__body">
-            <span class="cc2-strength__num">02</span>
-            <h3>60日間で<br>結果を出す集中型</h3>
-            <p>ダラダラ続く長期契約ではなく、60日間に凝縮した集中プロジェクト型。最短で削減効果を実感でき、社内のコスト意識も同時に高めます。</p>
-          </div>
+          <h3>ダラダラ続く契約ではなく<br>60日間で結果を出す</h3>
+          <p>数年にわたる固定費の支払いが続く他社とは異なり、60日間の集中プロジェクト型。削減効果を最短で実感できます。</p>
         </div>
-        <div class="cc2-strength">
-          <div class="cc2-strength__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/cost/mv-appeal03.webp" alt="完全成功報酬型・リスクゼロ" loading="lazy">
+        <div class="cc2-why__card">
+          <div class="cc2-why__card-img">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/cost/mv-appeal03.webp" alt="完全成功報酬型" loading="lazy">
           </div>
-          <div class="cc2-strength__body">
-            <span class="cc2-strength__num">03</span>
-            <h3>完全成功報酬型<br>リスクゼロ</h3>
-            <p>削減できなかった場合は費用ゼロ。1年間のみの成果報酬型のため、固定費は一切不要。他社のように数年にわたる契約義務もありません。</p>
-          </div>
+          <h3>削減できなければ<br>費用は一切いただかない</h3>
+          <p>完全成功報酬型・1年間のみの契約。初期費用も固定月額もゼロ。下がった金額に応じてのみ費用が発生します。</p>
         </div>
       </div>
     </div>
@@ -244,7 +101,7 @@
   <!-- ========== Mid CTA ========== -->
   <div class="cc2-cta-band">
     <div class="cc2-inner cc2-cta-band__inner">
-      <p>大手ハウスメーカーの原価をまとめた<br><strong>コストダウン実例集を無料プレゼント</strong></p>
+      <p>大手ハウスメーカーの原価をまとめた<strong>コストダウン実例集を無料プレゼント</strong></p>
       <a href="#form" class="cc2-btn cc2-btn--outline">実例集を無料ダウンロード</a>
     </div>
   </div>
@@ -252,17 +109,15 @@
   <!-- ========== How We Work ========== -->
   <section class="cc2-how">
     <div class="cc2-inner">
-      <p class="cc2-label">HOW WE WORK</p>
-      <h2 class="cc2-heading">コスト削減の<br>3つのアプローチ</h2>
+      <h2 class="cc2-how__heading">原価を下げるための<br>3つのアプローチ</h2>
 
       <div class="cc2-how__item">
         <div class="cc2-how__img">
           <img src="<?php echo get_template_directory_uri(); ?>/img/cost/point-img01.webp" alt="市場価格を把握したプロがサポート" loading="lazy">
         </div>
         <div class="cc2-how__body">
-          <span class="cc2-how__num">01</span>
           <h3>市場での限界価格を把握した<br>プロがサポートします</h3>
-          <p>価格の相場を知らずに交渉してもコスト削減は不可能です。ピュアグロースは商社・大手ハウスメーカーの購買部を経験したプロ人財が担当。適正な市場価格を根拠にした指値交渉で、交渉の余地を明確にします。</p>
+          <p>価格の相場を知らずに交渉しても、コスト削減はできません。ピュアグロースでは商社・大手ハウスメーカーの購買部を経験したプロが担当。適正な市場価格を根拠にした指値交渉で、交渉の余地を明確にしてから動きます。</p>
         </div>
       </div>
 
@@ -271,7 +126,6 @@
           <img src="<?php echo get_template_directory_uri(); ?>/img/cost/point-img02.webp" alt="メーカーとの交渉を代行" loading="lazy">
         </div>
         <div class="cc2-how__body">
-          <span class="cc2-how__num">02</span>
           <h3>ピュアグロースが直接<br>メーカーとの交渉を代行します</h3>
           <p>社長自身が経営方針・事業計画というビジョンを交渉の場で示すことで、仕入れ先からの協力を引き出せます。現地に赴き、すべての交渉をピュアグロースが全面代行。社長の時間を奪わずに成果を出します。</p>
         </div>
@@ -282,9 +136,8 @@
           <img src="<?php echo get_template_directory_uri(); ?>/img/cost/point-img03.webp" alt="業務フローの見直し" loading="lazy">
         </div>
         <div class="cc2-how__body">
-          <span class="cc2-how__num">03</span>
-          <h3>業務フローの見直しによる<br>中長期コスト削減</h3>
-          <p>交渉代行だけでなく、標準仕様の見直し・設計基準の最適化・工期短縮まで対応。単発の削減で終わらず、会社全体のコスト構造を変える持続的な仕組みを構築します。</p>
+          <h3>業務フローの見直しで<br>中長期のコスト構造を変える</h3>
+          <p>単発の交渉で終わらせません。標準仕様の見直し・設計基準の最適化・工期短縮まで対応し、会社全体のコスト構造を変える持続的な仕組みを構築します。</p>
         </div>
       </div>
     </div>
@@ -293,8 +146,7 @@
   <!-- ========== Cases ========== -->
   <section class="cc2-cases">
     <div class="cc2-inner">
-      <p class="cc2-label">CASE STUDY</p>
-      <h2 class="cc2-heading">50万〜100万円/棟の<br>コスト削減 多数事例</h2>
+      <h2 class="cc2-cases__heading">50万〜100万円/棟の<br>削減事例</h2>
 
       <div class="cc2-case">
         <div class="cc2-case__head">
@@ -381,8 +233,7 @@
   <!-- ========== Voices ========== -->
   <section class="cc2-voices">
     <div class="cc2-inner">
-      <p class="cc2-label">VOICE</p>
-      <h2 class="cc2-heading">お客様の声</h2>
+      <h2 class="cc2-voices__heading">お客様の声</h2>
     </div>
     <div class="p-lp-voice__slider cc2-voices__slider">
       <div class="p-lp-voice__posts swiper-wrapper">
@@ -455,7 +306,7 @@
   <!-- ========== Mid CTA 2 ========== -->
   <div class="cc2-cta-band">
     <div class="cc2-inner cc2-cta-band__inner">
-      <p>大手ハウスメーカーの原価をまとめた<br><strong>コストダウン実例集を無料プレゼント</strong></p>
+      <p>大手ハウスメーカーの原価をまとめた<strong>コストダウン実例集を無料プレゼント</strong></p>
       <a href="#form" class="cc2-btn cc2-btn--outline">実例集を無料ダウンロード</a>
     </div>
   </div>
@@ -463,22 +314,15 @@
   <!-- ========== Consultant ========== -->
   <section class="cc2-consultant">
     <div class="cc2-inner">
-      <p class="cc2-label">CONSULTANT</p>
-      <h2 class="cc2-heading">コンサルタント紹介</h2>
+      <h2 class="cc2-consultant__heading">担当コンサルタント</h2>
       <div class="cc2-consultant__layout">
         <div class="cc2-consultant__img">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/cost/kishimoto.webp" width="400" height="395" alt="岸本 大輔（きしもと だいすけ）" loading="lazy">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/cost/kishimoto.webp" width="400" height="395" alt="岸本 大輔" loading="lazy">
         </div>
         <div class="cc2-consultant__body">
           <h3 class="cc2-consultant__name">岸本 大輔<span>（きしもと だいすけ）</span></h3>
-          <ul class="cc2-consultant__career">
-            <li>奈良県出身・奈良県在住</li>
-            <li>大手住宅資材商社 ナイス㈱ — 大手ハウスメーカー・地場ビルダーの西日本開発営業責任者として資材販売・施工請負事業に従事</li>
-            <li>大手商社 阪和興業 — 国産・輸入木材の調達及び販売で実績</li>
-            <li>アイ工務店 — 地場工務店支援事業（Ai-Coss）立ち上げ営業責任者</li>
-            <li>2024年 ピュアグロース参画</li>
-          </ul>
-          <p class="cc2-consultant__note">販売側・購買側の両方を知るプロが、貴社の原価交渉を全面サポートします。</p>
+          <p class="cc2-consultant__bio">奈良県出身・在住。大手住宅資材商社ナイス㈱にて大手ハウスメーカー・地場ビルダーの西日本開発営業責任者として従事。その後、大手商社・阪和興業にて国産・輸入木材の調達・販売で実績を積む。アイ工務店では地場工務店支援事業（Ai-Coss）の立ち上げ営業責任者として活躍し、2024年にピュアグロース参画。</p>
+          <p class="cc2-consultant__message">「売る側も買う側も経験してきたからこそ、メーカーがどこまで下げられるかがわかります。根拠のある交渉をすれば、必ず結果は出ます。」</p>
         </div>
       </div>
     </div>
@@ -487,17 +331,16 @@
   <!-- ========== Pricing ========== -->
   <section class="cc2-pricing">
     <div class="cc2-inner">
-      <p class="cc2-label">PRICING</p>
-      <h2 class="cc2-heading">ご利用料金</h2>
+      <h2 class="cc2-pricing__heading">ご利用料金</h2>
       <div class="cc2-pricing__box">
-        <div class="cc2-pricing__badge">毎月10社限定・現在受付中</div>
+        <p class="cc2-pricing__badge">毎月10社限定・現在受付中</p>
         <p class="cc2-pricing__type">完全成功報酬型</p>
-        <p class="cc2-pricing__price">削減できた金額に応じてのみ発生</p>
+        <p class="cc2-pricing__desc">削減できた金額に応じてのみ費用が発生します。<br>下がらなければ、費用は一切いただきません。</p>
         <ul class="cc2-pricing__list">
-          <li>初期費用 <strong>0円</strong></li>
-          <li>固定月額費用 <strong>0円</strong></li>
-          <li>削減できなかった場合の費用 <strong>0円</strong></li>
-          <li>契約期間 <strong>1年間のみ</strong>（更新義務なし）</li>
+          <li><span>初期費用</span><strong>0円</strong></li>
+          <li><span>固定月額費用</span><strong>0円</strong></li>
+          <li><span>削減できなかった場合</span><strong>0円</strong></li>
+          <li><span>契約期間</span><strong>1年間のみ</strong></li>
         </ul>
         <p class="cc2-pricing__note">料金の詳細はお問い合わせの際にご説明いたします。</p>
       </div>
@@ -507,31 +350,35 @@
   <!-- ========== Process ========== -->
   <section class="cc2-process">
     <div class="cc2-inner">
-      <p class="cc2-label">PROCESS</p>
-      <h2 class="cc2-heading">ご支援の流れ</h2>
+      <h2 class="cc2-process__heading">ご支援の流れ</h2>
       <div class="cc2-process__steps">
         <div class="cc2-process__step">
-          <span class="cc2-process__step-num">STEP 01</span>
-          <h3>無料相談・ヒアリング</h3>
-          <p>現状の原価構造・仕入れ状況をヒアリング。課題を整理します。</p>
+          <span class="cc2-process__num">01</span>
+          <div class="cc2-process__body">
+            <h3>無料相談・ヒアリング</h3>
+            <p>現状の原価構造・仕入れ状況をヒアリングし、課題を整理します。</p>
+          </div>
         </div>
-        <span class="cc2-process__arrow">▼</span>
         <div class="cc2-process__step">
-          <span class="cc2-process__step-num">STEP 02</span>
-          <h3>コスト削減診断レポート</h3>
-          <p>エリア別市場価格・事業規模をもとに、工種ごとのコストダウン余地をレポートで提示。約2週間でお届けします。</p>
+          <span class="cc2-process__num">02</span>
+          <div class="cc2-process__body">
+            <h3>コスト削減診断レポート</h3>
+            <p>エリア別市場価格・事業規模をもとに、工種ごとのコストダウン余地をレポートで提示。約2週間でお届けします。</p>
+          </div>
         </div>
-        <span class="cc2-process__arrow">▼</span>
         <div class="cc2-process__step">
-          <span class="cc2-process__step-num">STEP 03</span>
-          <h3>原価交渉・購買代行</h3>
-          <p>診断レポートをもとに、約3ヶ月で現状の仕入れ先への直接原価交渉・新規仕入れ先のご紹介を実施します。</p>
+          <span class="cc2-process__num">03</span>
+          <div class="cc2-process__body">
+            <h3>原価交渉・購買代行</h3>
+            <p>診断レポートをもとに、約3ヶ月で現状の仕入れ先への直接原価交渉・新規仕入れ先のご紹介を実施します。</p>
+          </div>
         </div>
-        <span class="cc2-process__arrow">▼</span>
         <div class="cc2-process__step">
-          <span class="cc2-process__step-num">STEP 04</span>
-          <h3>業務フロー見直し</h3>
-          <p>4ヶ月目以降は標準仕様の見直し・設計基準の最適化・工期短縮による中長期コスト削減を推進します。</p>
+          <span class="cc2-process__num">04</span>
+          <div class="cc2-process__body">
+            <h3>業務フロー見直し</h3>
+            <p>4ヶ月目以降は標準仕様の見直し・設計基準の最適化・工期短縮による中長期コスト削減を推進します。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -540,8 +387,7 @@
   <!-- ========== FAQ ========== -->
   <section class="cc2-faq">
     <div class="cc2-inner">
-      <p class="cc2-label">FAQ</p>
-      <h2 class="cc2-heading">よくあるご質問</h2>
+      <h2 class="cc2-faq__heading">よくあるご質問</h2>
       <ul class="cc2-faq__list">
         <li class="cc2-faq__item">
           <div class="cc2-faq__q"><span>Q</span>既存の仕入れ先の変更がありますか？</div>
@@ -549,14 +395,14 @@
         </li>
         <li class="cc2-faq__item">
           <div class="cc2-faq__q"><span>Q</span>コストダウン診断だけで依頼することは可能ですか？</div>
-          <div class="cc2-faq__a"><span>A</span>可能ですが、購買部署などの担当者が不在だとやりきることが難しく、コストダウンの削減効果は限定的になる場合が多いです。</div>
+          <div class="cc2-faq__a"><span>A</span>可能ですが、購買部署などの担当者が不在だとやりきることが難しく、削減効果は限定的になる場合が多いです。</div>
         </li>
         <li class="cc2-faq__item">
           <div class="cc2-faq__q"><span>Q</span>成功報酬型とはどのような仕組みですか？</div>
-          <div class="cc2-faq__a"><span>A</span>1棟当たりのコストダウンできた金額に対して一定の料率を乗じ、1年間の完工棟数が成功報酬金額となります。削減できなかった場合は費用が発生しません。</div>
+          <div class="cc2-faq__a"><span>A</span>1棟あたりのコストダウンできた金額に対して一定の料率を乗じ、1年間の完工棟数が成功報酬金額となります。削減できなかった場合は費用が発生しません。</div>
         </li>
         <li class="cc2-faq__item">
-          <div class="cc2-faq__q"><span>Q</span>他社コンサルとの違いは何ですか？</div>
+          <div class="cc2-faq__q"><span>Q</span>他社との違いは何ですか？</div>
           <div class="cc2-faq__a"><span>A</span>商社・大手ハウスメーカー購買部門出身のプロが直接交渉を代行する点と、1年間のみの成果報酬型である点が主な違いです。削減できなければ費用ゼロのため、リスクなくご利用いただけます。</div>
         </li>
         <li class="cc2-faq__item">
@@ -567,12 +413,11 @@
     </div>
   </section>
 
-  <!-- ========== Final CTA ========== -->
+  <!-- ========== Final CTA + Form ========== -->
   <section class="cc2-final-cta" id="form">
     <div class="cc2-inner">
-      <p class="cc2-label">CONTACT</p>
-      <h2 class="cc2-final-cta__heading">まずは無料で<br>実例集をダウンロード</h2>
-      <p class="cc2-final-cta__text">フォームにご入力いただくと、大手ハウスメーカー・パワービルダーの<br>原価をまとめたコストダウン実例集を無料でお届けします。</p>
+      <h2 class="cc2-final-cta__heading">まずは実例集を<br>ダウンロードしてみてください</h2>
+      <p class="cc2-final-cta__text">大手ハウスメーカー・パワービルダーの原価をまとめたコストダウン実例集を無料でお届けします。<br>フォームにご入力いただくだけで受け取れます。</p>
       <?php the_content(); ?>
     </div>
   </section>
