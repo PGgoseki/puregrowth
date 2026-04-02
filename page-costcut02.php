@@ -18,7 +18,8 @@
         </picture>
       </div>
       <div class="p-lp-fv__btn">
-        <a href="#form" class="btn">コストダウン実例集を<br class="is-sp">ダウンロード</a>
+        <a href="#form" class="btn">無料でコストダウン実例集を<br class="is-sp">ダウンロード</a>
+        <p class="p-lp-fv__btn-note">60秒で完了・登録不要</p>
       </div>
     </div>
     <div class="p-lp-fv__img">
@@ -28,6 +29,28 @@
           <img src="<?php echo get_template_directory_uri() ?>/img/cost/fv-text02.png" width="584" height="556" alt="1棟あたり130万円削減 エリア別の最新市場価格を公開 職人単価は叩かず60日間で原価を下げる">
         </picture>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="p-lp-fv__stats">
+  <div class="p-lp-fv__stats-inner">
+    <div class="p-lp-fv__stats-item">
+      <span class="p-lp-fv__stats-badge p-lp-fv__stats-badge--before">導入前</span>
+      <p class="p-lp-fv__stats-num">原価が<strong>高止まり</strong></p>
+    </div>
+    <span class="p-lp-fv__stats-arrow">→</span>
+    <div class="p-lp-fv__stats-item">
+      <span class="p-lp-fv__stats-badge p-lp-fv__stats-badge--after">導入後</span>
+      <p class="p-lp-fv__stats-num">最大<strong>130万円</strong>/棟削減</p>
+    </div>
+    <div class="p-lp-fv__stats-item">
+      <p class="p-lp-fv__stats-label">平均削減額</p>
+      <p class="p-lp-fv__stats-num"><strong>50〜100万円</strong>/棟</p>
+    </div>
+    <div class="p-lp-fv__stats-item">
+      <p class="p-lp-fv__stats-label">支援実績</p>
+      <p class="p-lp-fv__stats-num"><strong>140社・20,000棟</strong>以上</p>
     </div>
   </div>
 </div>
@@ -632,7 +655,7 @@
                 <span class="p-lp-voice__badge">国分ハウジング様</span>
               </div>
               <div class="p-lp-voice__body">
-                <h3 class="p-lp-voice__heading">コストダウン額：30万円／棟</h3>
+                <h3 class="p-lp-voice__heading"><span class="p-lp-voice__result">削減成功</span>コストダウン額：30万円／棟</h3>
                 <p class="p-lp-voice__text">鹿児島を中心に九州エリアで700棟規模を誇る国分ハウジング様。九州No.1を目指す中で、商品体制の見直しが急務であり、断熱性能向上とコスト削減の両立という難題に直面していた。<br>
 約10カ月にわたるプロジェクトで、鹿児島から宮崎・大分に加えて熊本にも出店しているというスケールメリットを活かした交渉を実施。その結果、断熱仕様の向上により分譲住宅でZEH仕様を実現。また、制震ダンパーを標準採用とし、最終的に1棟あたり30万円のコストを下げることに成功。</p>
               </div>
@@ -643,7 +666,7 @@
                 <span class="p-lp-voice__badge">WITHDOM Group様</span>
               </div>
               <div class="p-lp-voice__body">
-                <h3 class="p-lp-voice__heading">コストダウン額：50万円／棟</h3>
+                <h3 class="p-lp-voice__heading"><span class="p-lp-voice__result">削減成功</span>コストダウン額：50万円／棟</h3>
                 <p class="p-lp-voice__text">福岡を拠点に200棟を展開するWITHDOM様は、今後の全国展開を見据え、組織体制の整備を目的にコストダウンプロジェクトを導入。<br>
 交渉の現場には、「売上高成長率No.1」と評される社長自ら挑んだ。ビジョンや成長戦略を社長の言葉で伝えることでお付き合い先の信頼を獲得し、結果的に取引する資材の量を強化し、コストダウンを実現するというwin-winの関係性を築くことに成功。そして、1棟あたり50万円のコスト削減で着地。拡大に向けた強固な基盤を築くことができた。</p>
               </div>
@@ -654,7 +677,7 @@
                 <span class="p-lp-voice__badge">ホームライフ様</span>
               </div>
               <div class="p-lp-voice__body">
-                <h3 class="p-lp-voice__heading">コストダウン額：36万円／棟</h3>
+                <h3 class="p-lp-voice__heading"><span class="p-lp-voice__result">削減成功</span>コストダウン額：36万円／棟</h3>
                 <p class="p-lp-voice__text">京都・大阪エリアを中心に350棟規模を展開するホームライフ様は、「10年後に3000棟・1000億企業へ」という大きな目標に向け、初期プロジェクトとしてコストダウンに着手。成長ビジョンを描きながら、仕入れ先に指値交渉を実施。その結果、品質を維持しつつ1棟あたり36万円のコスト削減を実現した。将来の飛躍に向けての第一歩となった。</p>
               </div>
             </div>
@@ -664,7 +687,7 @@
                 <span class="p-lp-voice__badge">大英産業様</span>
               </div>
               <div class="p-lp-voice__body">
-                <h3 class="p-lp-voice__heading">コストダウン額：40万円／棟</h3>
+                <h3 class="p-lp-voice__heading"><span class="p-lp-voice__result">削減成功</span>コストダウン額：40万円／棟</h3>
                 <p class="p-lp-voice__text">福岡県北九州市を中心に分譲事業で400棟を展開する大英産業様。商品のコモディティ化が進む市場において、自社の商品力の強化を目的に、全棟2×4工法からZEH対応の在来工法へと舵を切った。<br>
 性能値の計算や商品開発のノウハウを共有しながら、ZEH基準を満たす仕様を構築。交渉だけでなく、コスト構造に関するノウハウ提供を通じて1棟あたり40万円のコスト削減を実現。性能アップとコストダウンを同時に達成した。</p>
               </div>
@@ -675,7 +698,7 @@
                 <span class="p-lp-voice__badge">ライフファンド（PGHブランド）様</span>
               </div>
               <div class="p-lp-voice__body">
-                <h3 class="p-lp-voice__heading">コストダウン額：130万円／棟</h3>
+                <h3 class="p-lp-voice__heading"><span class="p-lp-voice__result">削減成功</span>コストダウン額：130万円／棟</h3>
                 <p class="p-lp-voice__text">年間60棟規模のLIFE FUND様は、デザイン系高価格帯の既存ブランドでは出会うことのできなかったお客様にも快適な住宅を届けるために新ブランド「PGハウス」の立ち上げた。新ブランド発足に伴い、新しいパートナーを開拓し、価格交渉や原価構造の再整備を実施。<br>
 新ブランドの仕様を整えると同時に、共通項目については既存ブランドにも反映させることで、会社全体最適の仕組みを構築。その結果、1棟あたり130万円もの大幅なコストダウンに成功。新ブランドを核とした事業拡大の基盤を築いた。</p>
               </div>
@@ -686,7 +709,7 @@
                 <span class="p-lp-voice__badge">平松建築様</span>
               </div>
               <div class="p-lp-voice__body">
-                <h3 class="p-lp-voice__heading">コストダウン額：60万円／棟</h3>
+                <h3 class="p-lp-voice__heading"><span class="p-lp-voice__result">削減成功</span>コストダウン額：60万円／棟</h3>
                 <p class="p-lp-voice__text">静岡県掛川市を拠点に50棟規模で事業を展開する平松建築様。ウッドショックなどの影響で原価が大幅に上昇し、コストを抑える方法を模索していた。<br>
 導入を後押ししたのは、成果報酬型で「下がった分から支払えばよい」という仕組み。実績とロジックに基づいたリスクのない取り組みに魅力を感じ、即決でプロジェクトを導入。<br>
 結果として、1棟あたり約60万円、年間で3,000万円のコスト削減に成功。浮いた資金は採用へ投資し、組織を強化していく方針。</p>
@@ -757,6 +780,9 @@
   <section class="p-lp-price">
     <div class="l-lp-inner">
       <h2 class="c-lp-title">ご利用料金</h2>
+      <div class="p-lp-limited-wrap">
+        <span class="p-lp-limited">月3社限定・現在受付中</span>
+      </div>
       <p class="p-lp-price__text">
         料金は成果（削減額）に応じて変動します。<br>
         削減できなかった場合は成果報酬はいただきません。<br>
@@ -804,9 +830,42 @@
             </p>
           </div>
         </li>
+        <li itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="p-lp-faq__item">
+          <div itemprop="name" class="p-lp-faq__head">
+            <div class="p-lp-faq__icon"><img src="<?php echo get_template_directory_uri() ?>/img/cost/question-icon.svg" width="25" height="32" class="" alt="Q."></div><span class="p-lp-faq__head-text">他社のコンサルティングとの違いは何ですか？</span>
+          </div>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="p-lp-faq__body">
+            <div class="p-lp-faq__icon"><img src="<?php echo get_template_directory_uri() ?>/img/cost/answer-icon.svg" width="25" height="32" class="" alt="A."></div>
+            <p itemprop="text" class="p-lp-faq__text">
+              商社・大手ハウスメーカーの購買部門出身のプロが直接交渉を代行する点と、期間が1年間のみの成果報酬型である点が主な違いです。削減できなかった場合は費用が一切発生しないため、リスクなくご利用いただけます。
+            </p>
+          </div>
+        </li>
+        <li itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="p-lp-faq__item">
+          <div itemprop="name" class="p-lp-faq__head">
+            <div class="p-lp-faq__icon"><img src="<?php echo get_template_directory_uri() ?>/img/cost/question-icon.svg" width="25" height="32" class="" alt="Q."></div><span class="p-lp-faq__head-text">どのような規模の会社が対象ですか？</span>
+          </div>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="p-lp-faq__body">
+            <div class="p-lp-faq__icon"><img src="<?php echo get_template_directory_uri() ?>/img/cost/answer-icon.svg" width="25" height="32" class="" alt="A."></div>
+            <p itemprop="text" class="p-lp-faq__text">
+              年間10棟以上の住宅建築を手がけるハウスメーカー・パワービルダー・工務店が対象です。50棟規模から1,000棟超まで、規模を問わず支援実績がございます。まずはお気軽にご相談ください。
+            </p>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
+  <section class="p-lp-consult">
+    <div class="p-lp-consult__inner">
+      <h2 class="p-lp-consult__heading">まずは無料相談から<br>お気軽にご連絡ください</h2>
+      <p class="p-lp-consult__text">資料ダウンロードの前に、サービス内容や費用について<br>直接確認したい方はこちらからどうぞ。</p>
+      <div class="p-lp-consult__btn">
+        <a href="#form" class="btn">無料相談のお申し込みはこちら</a>
+      </div>
+      <p class="p-lp-consult__note">※ 強引な営業は一切行いません</p>
+    </div>
+  </section>
+
   <?php the_content(); ?>
   <?php //echo do_shortcode('[mwform_formkey key="1428"]'); 
   ?>

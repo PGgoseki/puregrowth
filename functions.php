@@ -98,13 +98,21 @@ function my_script_init()
     wp_enqueue_style('page-privacy-policy', get_template_directory_uri() . '/css/page-privacy-policy.css', array(), '1.0.0', 'all');
   } elseif(is_page('law')) {
     wp_enqueue_style('page-law', get_template_directory_uri() . '/css/page-law.css', array(), '1.0.0', 'all');
-	} elseif(is_page('2639') || is_page('costcut02')) {
+	} elseif(is_page('2639')) {
     wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
     wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
     wp_enqueue_style('costcut-style', get_template_directory_uri() . '/css/lp-style.css', array(), '1.0.0', 'all');
     wp_enqueue_script('costcut-js', get_template_directory_uri() . '/js/lp-script.js', array( 'jquery' ), '1.0.0', true);
 		wp_enqueue_style('page-top-new', get_template_directory_uri() . '/css/page-top-new.css', array(), '1.0.0', 'all');
 		    wp_enqueue_script('top-js', get_template_directory_uri() . '/js/top.js', array( 'jquery' ), '1.0.0', true);
+	} elseif(is_page('costcut02')) {
+    wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('costcut-style', get_template_directory_uri() . '/css/lp-style.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('costcut-js', get_template_directory_uri() . '/js/lp-script.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('page-top-new', get_template_directory_uri() . '/css/page-top-new.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('top-js', get_template_directory_uri() . '/js/top.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_style('costcut02-style', get_template_directory_uri() . '/css/page-costcut02.css', array('costcut-style'), '1.0.0', 'all');
 	}
 
 	  if(is_singular( 'seminar' ) || is_singular( 'download' )) {
