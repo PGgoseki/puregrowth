@@ -98,7 +98,7 @@ function my_script_init()
     wp_enqueue_style('page-privacy-policy', get_template_directory_uri() . '/css/page-privacy-policy.css', array(), '1.0.0', 'all');
   } elseif(is_page('law')) {
     wp_enqueue_style('page-law', get_template_directory_uri() . '/css/page-law.css', array(), '1.0.0', 'all');
-	} elseif(is_page('2639')) {
+	} elseif(is_page('2639') || is_page('costcut02')) {
     wp_enqueue_style('swiper-css', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all');
     wp_enqueue_script('swiper-js', get_template_directory_uri() . '/js/swiper.min.js', array( 'jquery' ), '1.0.0', true);
     wp_enqueue_style('costcut-style', get_template_directory_uri() . '/css/lp-style.css', array(), '1.0.0', 'all');
