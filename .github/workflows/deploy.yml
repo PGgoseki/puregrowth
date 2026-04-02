@@ -1,0 +1,25 @@
+name: Deploy to Onamae.com
+
+# mainブランチにプッシュしたら自動で動く
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: FTP Deploy
+    runs-on: ubuntu-latest
+    steps:
+      # リポジトリのコードを取得
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # FTPでサーバーにアップロード
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /pure-growth.co.jp/wp-content/themes/pure-growth/
