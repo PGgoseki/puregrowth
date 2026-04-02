@@ -848,7 +848,7 @@
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="p-lp-faq__body">
             <div class="p-lp-faq__icon"><img src="<?php echo get_template_directory_uri() ?>/img/cost/answer-icon.svg" width="25" height="32" class="" alt="A."></div>
             <p itemprop="text" class="p-lp-faq__text">
-              年間10棟以上の住宅建築を手がけるハウスメーカー・パワービルダー・工務店が対象です。50棟規模から1,000棟超まで、規模を問わず支援実績がございます。まずはお気軽にご相談ください。
+              年間10棟以上の住宅建築を手がけるハウスメーカー・工務店が対象です。50棟規模から1,000棟超まで、規模を問わず支援実績がございます。まずはお気軽にご相談ください。
             </p>
           </div>
         </li>
