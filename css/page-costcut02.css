@@ -2,206 +2,301 @@
    costcut02 Dark Theme Override
    ============================================= */
 
-/* Base */
-body,
+/* ---- Base ---- */
+body {
+  background-color: #0d0d0d !important;
+}
+
 .p-lp-wrapper {
-  background-color: #0d0d0d;
-  color: #f0f0f0;
+  background-color: #0d0d0d !important;
 }
 
+/* ---- FV ---- */
 .p-lp-fv {
-  background-color: #0d0d0d;
+  background: #0d0d0d url(../img/cost/fv-bg.webp) no-repeat bottom 0 right 0/71.375rem 80.625rem !important;
+  background-color: #0d0d0d !important;
 }
 
-/* Sections */
-.p-lp-intro,
-.p-lp-point,
-.p-lp-case,
-.p-lp-support,
-.p-lp-staff,
-.p-lp-price,
-.p-lp-faq {
-  background-color: #0d0d0d;
+.p-lp-fv::after {
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 
+/* ---- Logo Slider ---- */
 .p-logo-slider {
-  background-color: #111111;
+  background: #111111 !important;
 }
 
 .p-logo-slider__title {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
-/* Titles */
+/* ---- Intro (お悩み) ---- */
+.p-lp-intro {
+  background: #111111 !important;
+}
+
+.p-lp-intro::before {
+  background: none !important;
+  display: none !important;
+}
+
 .c-lp-title {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
-/* Text */
-.p-lp-intro__list-item,
-.p-lp-point__text,
-.p-lp-support__text,
-.p-lp-staff__text,
-.p-lp-price__text,
-.p-lp-faq__text,
-.p-lp-voice__text {
-  color: #cccccc;
+.p-lp-intro__list-item {
+  background-color: #1a1a1a !important;
+  color: #f0f0f0 !important;
+  border-left: 4px solid #c9a227;
 }
 
-.p-lp-point__heading .c-marker,
-.p-lp-support__heading,
-.p-lp-staff__name,
-.p-lp-case__list-item {
-  color: #f0f0f0;
+.p-lp-intro__list-item strong {
+  color: #c9a227 !important;
 }
 
-/* Buttons */
+.p-lp-intro__bottom {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+}
+
+.p-lp-intro__bottom strong {
+  background-color: #c9a227 !important;
+  color: #0d0d0d !important;
+}
+
+.p-lp-intro__bottom-text {
+  color: #f0f0f0 !important;
+}
+
+/* ---- Point (3つのポイント) ---- */
+.p-lp-point {
+  background-color: #0d0d0d !important;
+}
+
+.p-lp-point__media {
+  border-bottom-color: #333 !important;
+}
+
+.p-lp-point__body::after {
+  background-color: #333 !important;
+}
+
+.p-lp-point__heading {
+  color: #f0f0f0 !important;
+}
+
+.p-lp-point__heading .c-marker {
+  background: linear-gradient(transparent 75%, #c9a227 75%) !important;
+  color: #f0f0f0 !important;
+}
+
+.p-lp-point__text {
+  color: #cccccc !important;
+}
+
+.p-lp-point__text strong {
+  color: #c9a227 !important;
+}
+
+/* ---- CTA ---- */
+.p-lp-cta {
+  background: #111111 !important;
+  border-top: 2px solid #c9a227 !important;
+  border-bottom: 2px solid #c9a227 !important;
+}
+
+.p-lp-cta__heading {
+  color: #f0f0f0 !important;
+}
+
+.p-lp-cta__heading strong {
+  color: #c9a227 !important;
+}
+
+/* ---- Buttons ---- */
 .btn {
   background-color: #c9a227 !important;
   border-color: #c9a227 !important;
   color: #0d0d0d !important;
-  font-weight: bold;
 }
 
-.btn:hover {
-  background-color: #e6b92e !important;
-  border-color: #e6b92e !important;
+.btn::after {
+  background-image: url(../img/common/btn-arrow.svg) !important;
+  filter: invert(1) !important;
 }
 
-/* CTA section */
-.p-lp-cta {
-  background-color: #111111;
-  border-top: 2px solid #c9a227;
-  border-bottom: 2px solid #c9a227;
+/* ---- Case ---- */
+.p-lp-case {
+  background-color: #0d0d0d !important;
 }
 
-.p-lp-cta__heading {
-  color: #f0f0f0;
-}
-
-/* Intro list */
-.p-lp-intro__list-item {
-  background-color: #1a1a1a;
-  border-left: 4px solid #c9a227;
-  color: #f0f0f0;
-}
-
-.p-lp-intro__bottom {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-}
-
-.p-lp-intro__bottom-text {
-  color: #f0f0f0;
-}
-
-/* Case section */
 .p-lp-case__content {
-  background-color: #111111;
-  border: 1px solid #333;
+  background-color: #111111 !important;
+  border: 1px solid #333 !important;
+}
+
+.p-lp-case__title {
+  color: #f0f0f0 !important;
 }
 
 .p-lp-case__item {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
+  background-color: #1a1a1a !important;
+  color: #f0f0f0 !important;
 }
 
 .p-lp-case__item-title {
-  background-color: #333;
-  color: #c9a227;
+  background-color: #333 !important;
+  color: #c9a227 !important;
 }
 
 .p-lp-case__item--type02 .p-lp-case__item-title {
-  background-color: #c9a227;
-  color: #0d0d0d;
+  background-color: #c9a227 !important;
+  color: #0d0d0d !important;
+}
+
+.p-lp-case__list-item {
+  color: #cccccc !important;
+}
+
+.p-lp-case__list-item::before {
+  background-image: url(../img/cost/check-blue.png) !important;
+  filter: sepia(1) saturate(3) hue-rotate(10deg) !important;
 }
 
 .p-lp-case__cost {
-  background-color: #111111;
+  background-color: #111111 !important;
 }
 
 .p-lp-case__cost-item {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
+  background-color: #1a1a1a !important;
+  color: #f0f0f0 !important;
 }
 
 .p-lp-case__cost-text {
-  color: #999;
+  color: #888 !important;
 }
 
 .p-lp-case__cost-num {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
 .p-lp-case__cost-num strong {
-  color: #c9a227;
+  color: #c9a227 !important;
 }
 
 .p-lp-case__cost-item--type02 {
-  background-color: #c9a227;
-  color: #0d0d0d;
+  background-color: #c9a227 !important;
 }
 
 .p-lp-case__cost-item--type02 .p-lp-case__cost-text,
 .p-lp-case__cost-item--type02 .p-lp-case__cost-num,
 .p-lp-case__cost-item--type02 .p-lp-case__cost-num strong {
-  color: #0d0d0d;
+  color: #0d0d0d !important;
 }
 
-/* Voice section */
+/* ---- Voice ---- */
 .p-lp-voice {
-  background-color: #111111;
+  background: #111111 !important;
 }
 
 .p-lp-voice__post {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a !important;
 }
 
 .p-lp-voice__body {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a !important;
+}
+
+.p-lp-voice__badge {
+  background-color: #c9a227 !important;
+  color: #0d0d0d !important;
 }
 
 .p-lp-voice__heading {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
-/* Support section */
+.p-lp-voice__text {
+  color: #cccccc !important;
+}
+
+/* ---- Support ---- */
+.p-lp-support {
+  background-color: #0d0d0d !important;
+}
+
 .p-lp-support__media {
-  border-bottom: 1px solid #222;
+  border-bottom-color: #333 !important;
 }
 
 .p-lp-support__heading {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
-/* Staff section */
+.p-lp-support__text {
+  color: #cccccc !important;
+}
+
+/* ---- Staff ---- */
+.p-lp-staff {
+  background: #111111 !important;
+}
+
+.p-lp-staff__media {
+  background: none !important;
+}
+
+.p-lp-staff__name {
+  color: #f0f0f0 !important;
+}
+
 .p-lp-staff__name span {
-  color: #999;
+  color: #888 !important;
 }
 
-/* Price section */
+.p-lp-staff__text {
+  color: #cccccc !important;
+}
+
+/* ---- Price ---- */
 .p-lp-price {
-  border: 1px solid #333;
   background-color: #111111 !important;
 }
 
-/* FAQ */
+.p-lp-price__text {
+  color: #cccccc !important;
+}
+
+/* ---- FAQ ---- */
+.p-lp-faq {
+  background-color: #0d0d0d !important;
+}
+
 .p-lp-faq__item {
-  border: 1px solid #333;
-  background-color: #111111;
+  background-color: #111111 !important;
+  border-color: #333 !important;
 }
 
 .p-lp-faq__head {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
+  background-color: #1a1a1a !important;
 }
 
 .p-lp-faq__head-text {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
 .p-lp-faq__body {
-  background-color: #111111;
+  background-color: #111111 !important;
+}
+
+.p-lp-faq__text {
+  color: #cccccc !important;
+}
+
+/* ---- Swiper nav ---- */
+.swiper-button-prev,
+.swiper-button-next {
+  filter: invert(1) !important;
 }
 
 /* =============================================
@@ -366,9 +461,6 @@ body,
   background-color: transparent !important;
   border: 2px solid #c9a227 !important;
   color: #c9a227 !important;
-  padding: 14px 40px;
-  font-size: 1rem;
-  transition: all 0.3s;
 }
 
 .p-lp-consult__btn .btn:hover {
