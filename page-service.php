@@ -28,7 +28,7 @@
     </div>
     <div class="l-service__img">
       <picture class="image">
-        <img src="<?php echo get_template_directory_uri()?>/img/service/service01.png" alt="取引会社数 80社超">
+        <img src="<?php echo get_template_directory_uri()?>/img/service/service01.png" alt="取引会社数 140社超">
       </picture>
       <picture class="image">
         <img src="<?php echo get_template_directory_uri()?>/img/service/service02.png" alt="平均継続年数 7年超">
