@@ -50,6 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									'採用チャンネル作成' => 'service/channel/',
 									'成功報酬型コストダウン' => 'costcut/',
 									'成長ビルダー視察会・勉強会' => 'pgc/',
+									'土地・顧客管理システム' => 'https://sugokawa.jp/lp/',
 								),
 							),
 							'事例' => array(
