@@ -177,7 +177,7 @@ jQuery(function($){
 			<!-- -->
 			<div class="cell">
 				<a href="s7" class="q"><div class="icon"><?php include("img/newcon/s7svg.php"); ?></div><h2>顧客・土地管理システム</h2><div class="toggle"><img class="show" src="<?php echo get_template_directory_uri() ?>/img/newcon/toggle1.png"><img src="<?php echo get_template_directory_uri() ?>/img/newcon/toggle2.png"></div></a>
-				<div class="a"><p>住宅業界に特化した顧客・土地情報の一元管理ツール「すごいぞ荒川くん」を提供しています。</p><p>見込み客の追客状況から保有土地の仕入れ進捗まで、営業に必要な情報をひとつの画面で可視化できます。属人化しがちな営業活動をシステム化することで、チーム全体の受注力を底上げし、機会損失を防ぎます。ピュアグロースのコンサルノウハウをシステムに落とし込んだ、住宅会社のためのオリジナルツールです。</p></div>
+				<div class="a"><p>月々5万円～で利用でき、社員さんが何人で利用しても定額で利用できる顧客・土地管理システム。</p><p>実務家×コンサルのピュアグロースだからこそ作れる便利なシステムで「集客数」と「契約率」、「生産性」を高め住宅会社の業績UPに貢献します。</p></div>
 			</div>
 			<!-- -->
 		</div>

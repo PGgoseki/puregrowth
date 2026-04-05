@@ -679,10 +679,8 @@
           <div class="c-normal-card__img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/top/approach05.jpg" width="640" height="364" alt="顧客・土地管理システム"></div>
           <h3 class="c-normal-card__heading">顧客・土地管理システム</h3>
           <p class="c-normal-card__text">
-            住宅業界に特化した顧客・土地情報の一元管理ツール「すごいぞ荒川くん」を提供しています。<br>
-            見込み客の追客状況から保有土地の仕入れ進捗まで、営業に必要な情報をひとつの画面で可視化できます。<br>
-            属人化しがちな営業活動をシステム化することで、チーム全体の受注力を底上げし、機会損失を防ぎます。<br>
-            ピュアグロースのコンサルノウハウをシステムに落とし込んだ、住宅会社のためのオリジナルツールです。
+            月々5万円～で利用でき、社員さんが何人で利用しても定額で利用できる顧客・土地管理システム。<br>
+            実務家×コンサルのピュアグロースだからこそ作れる便利なシステムで「集客数」と「契約率」、「生産性」を高め住宅会社の業績UPに貢献します。
           </p>
           <div class="c-normal-card__btn"><a href="https://sugokawa.jp/lp/" class="c-btn --txt-sm txt-sm">詳細を見る</a></div>
         </div>
