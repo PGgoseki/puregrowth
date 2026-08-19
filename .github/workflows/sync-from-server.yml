@@ -1,19 +1,20 @@
 name: Sync from server
 
-# 本番サーバ（FTP）の中身を「正」として取り込み、
-# リポジトリとの差分があれば Pull Request を作成します。
+# 本番サーバ（FTP）のテーマを「正」として取り込み、
+# 結果を server-state ブランチに書き出します。
 #
-# main を直接書き換えることはありません。必ず PR の差分を確認してから
-# マージしてください。マージすると deploy.yml が走り、
-# 同じ内容がサーバへ返るだけなので実質無害です。
+# ・サーバへの書き込みは一切行いません（ダウンロードのみ）
+# ・main を書き換えないので deploy.yml は起動しません
+# ・取り込み結果は server-state ブランチで差分確認できます
 #
-# 実行方法: Actions タブ → "Sync from server" → Run workflow
+# 実行方法: このブランチに push する、または Actions タブから手動実行
 on:
+  push:
+    branches: [chore/sync-from-server]
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
   group: server-sync
@@ -22,12 +23,16 @@ concurrency:
 env:
   # deploy.yml の server-dir と同じ場所を指すこと
   REMOTE_DIR: /pure-growth.co.jp/wp-content/themes/pure-growth/
+  SNAPSHOT_BRANCH: server-state
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Install lftp
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
@@ -38,17 +43,41 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          mkdir -p "$RUNNER_TEMP/server"
-          lftp -c "
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set ssl:verify-certificate no;
-            set net:max-retries 3;
-            set net:timeout 30;
-            open -u \"$FTP_USERNAME\",\"$FTP_PASSWORD\" \"$FTP_SERVER\";
-            mirror --parallel=4 --exclude-glob .git/ \"$REMOTE_DIR\" \"$RUNNER_TEMP/server\";
-          "
-          echo "ダウンロードしたファイル数: $(find "$RUNNER_TEMP/server" -type f | wc -l)"
+          set -u
+          DEST="$RUNNER_TEMP/server"
+          mkdir -p "$DEST"
+
+          # deploy.yml は平文 FTP で動いているため、まず FTPS を試し、
+          # 失敗したら平文にフォールバックする。
+          download() {
+            lftp -c "
+              set ftp:ssl-allow $1;
+              set ftp:ssl-force $1;
+              set ftp:ssl-protect-data $1;
+              set ssl:verify-certificate no;
+              set ftp:passive-mode true;
+              set net:max-retries 3;
+              set net:timeout 30;
+              set xfer:clobber true;
+              open -u \"\$FTP_USERNAME\",\"\$FTP_PASSWORD\" \"\$FTP_SERVER\";
+              mirror --parallel=4 --no-perms \"\$REMOTE_DIR\" \"$DEST\";
+            "
+          }
+
+          if download true; then
+            echo "FTPS で取得しました"
+          else
+            echo "FTPS に失敗したため平文 FTP で再試行します"
+            rm -rf "$DEST"; mkdir -p "$DEST"
+            download false
+          fi
+
+          COUNT=$(find "$DEST" -type f | wc -l)
+          echo "ダウンロードしたファイル数: $COUNT"
+          if [ "$COUNT" -lt 100 ]; then
+            echo "::error::取得ファイル数が少なすぎます。REMOTE_DIR の指定を確認してください。"
+            exit 1
+          fi
 
       # サーバの内容でワークツリーを置き換える。
       # .git と .github（CI設定そのもの）はサーバ側に無いので除外する。
@@ -60,27 +89,27 @@ jobs:
             "$RUNNER_TEMP/server/" ./
 
       - name: Show diff summary
-        run: git --no-pager diff --stat | tail -40
+        run: |
+          echo "### main とサーバの差分" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          git --no-pager diff --stat >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          git --no-pager diff --stat | tail -60
 
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: chore/server-sync
-          delete-branch: true
-          title: "chore: 本番サーバの内容を取り込み"
-          commit-message: |
-            chore: 本番サーバの内容を取り込み
+      - name: Push snapshot branch
+        run: |
+          if git diff --quiet; then
+            echo "サーバと main は一致しています。ブランチは作成しません。"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$SNAPSHOT_BRANCH"
+          git add -A
+          git commit -q -m "chore: 本番サーバのテーマ内容を取り込み
 
-            FTP 上の wp-content/themes/pure-growth/ をそのまま反映。
-            サーバを正とした同期のため、リポジトリ側にしか無かった変更は
-            この差分で削除として現れる。マージ前に必ず確認すること。
-          body: |
-            本番サーバ（FTP）の内容をそのまま取り込んだ差分です。
-
-            - **追加/変更**: サーバにあってリポジトリに無い（または内容が違う）ファイル
-            - **削除**: リポジトリにあってサーバに無いファイル
-
-            サーバを正とする同期なので、リポジトリ側にしか無かった作業中の変更が
-            あればここで消えます。**マージ前に必ず差分を確認してください。**
-
-            `.github/` は CI 設定のためサーバには存在せず、同期対象外です。
+          FTP 上の ${REMOTE_DIR} をそのまま反映したスナップショット。
+          サーバを正とした同期のため、リポジトリ側にしか無かった変更は
+          この差分で削除として現れる。マージ前に必ず確認すること。"
+          git push -f origin "$SNAPSHOT_BRANCH"
+          echo "server-state ブランチに書き出しました。"
