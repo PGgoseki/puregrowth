@@ -1,4 +1,10 @@
 <?php
+/**
+ * トップページ「クライアント一覧」（日本地図）のデータ層。
+ * エリア／都道府県マスタ: template/data/client-areas.php
+ */
+require_once get_theme_file_path( 'inc/client-map.php' );
+
 function my_setup()
 {
   add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化

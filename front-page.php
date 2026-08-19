@@ -390,98 +390,41 @@
     </div>
   </section>
 
+  <?php
+  $pg_client_areas    = function_exists( 'pg_client_areas' ) ? pg_client_areas() : array();
+  $pg_client_headline = function_exists( 'pg_client_headline_count' ) ? pg_client_headline_count( 100, 10 ) : 100;
+  ?>
   <section class="l-top-sec l-map-client lazyload">
     <div class="inner l-inner">
       <div class="c-map-client">
-        <h2 class="c-map-client__heading">日本全国、0-20棟規模から<br class="only-sp">100棟超の規模まで、<br>100社以上のクライアントから<br class="only-sp">ご満足いただいています</h2>
+        <h2 class="c-map-client__heading">日本全国、0-20棟規模から<br class="only-sp">100棟超の規模まで、<br><?php echo esc_html( $pg_client_headline ); ?>社以上のクライアントから<br class="only-sp">ご満足いただいています</h2>
         <p class="c-map-client__text">ピュアグロースは1都道府県10社制を引いております。担当は双方変更するため情報漏洩はございませんので、ご安心ください。</p>
         <div class="c-map-client__title">クライアント一覧</div>
         <div class="c-map-client__map">
           <div class="c-map-client__img"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/top/map-jp.webp" width="956" height="577" alt="クライアント一覧"></div>
-          <button type="button" class="c-map-client__item js-modal-btn" id="area01" data-modal-id="area01-contents">北海道・東北地方</button>
-          <button type="button" class="c-map-client__item js-modal-btn" id="area02" data-modal-id="area02-contents">関東地方</button>
-          <button type="button" class="c-map-client__item js-modal-btn" id="area03" data-modal-id="area03-contents">北陸・中部地方</button>
-          <button type="button" class="c-map-client__item js-modal-btn" id="area04" data-modal-id="area04-contents">関西地方</button>
-          <button type="button" class="c-map-client__item js-modal-btn" id="area05" data-modal-id="area05-contents">中国・四国地方</button>
-          <button type="button" class="c-map-client__item js-modal-btn" id="area06" data-modal-id="area06-contents">九州・沖縄地方</button>
+          <?php foreach ( $pg_client_areas as $pg_area_key => $pg_area ) : ?>
+            <button type="button" class="c-map-client__item js-modal-btn" id="<?php echo esc_attr( $pg_area_key ); ?>" data-modal-id="<?php echo esc_attr( $pg_area_key ); ?>-contents" data-client-count="<?php echo esc_attr( pg_client_area_count( $pg_area_key ) ); ?>"><?php echo esc_html( $pg_area['name'] ); ?></button>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- モーダル -->
-  <div id="area01-contents" class="c-map-modal">
-    <!-- モーダルダイアログ -->
-    <div class="c-map-modal__content">
-      <span class="c-map-modal__close"></span>
-      <div class="c-map-modal__heading">北海道・東北地方の<br class="only-sp">クライアント一覧</div>
-      <div class="c-map-modal__box">
-        <div class="c-map-modal__scroll">
-          <?php get_template_part('template/modal-area01'); ?>
+  <!-- モーダル（template/data/client-areas.php から自動生成） -->
+  <?php foreach ( $pg_client_areas as $pg_area_key => $pg_area ) : ?>
+    <div id="<?php echo esc_attr( $pg_area_key ); ?>-contents" class="c-map-modal">
+      <!-- モーダルダイアログ -->
+      <div class="c-map-modal__content">
+        <span class="c-map-modal__close"></span>
+        <div class="c-map-modal__heading"><?php echo esc_html( $pg_area['name'] ); ?>の<br class="only-sp">クライアント一覧</div>
+        <div class="c-map-modal__box">
+          <div class="c-map-modal__scroll">
+            <?php get_template_part( 'template/modal-area', null, array( 'area' => $pg_area_key ) ); ?>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="area02-contents" class="c-map-modal">
-    <!-- モーダルダイアログ -->
-    <div class="c-map-modal__content">
-      <span class="c-map-modal__close"></span>
-      <div class="c-map-modal__heading">関東地方の<br class="only-sp">クライアント一覧</div>
-      <div class="c-map-modal__box">
-        <div class="c-map-modal__scroll">
-          <?php get_template_part('template/modal-area02'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="area03-contents" class="c-map-modal">
-    <!-- モーダルダイアログ -->
-    <div class="c-map-modal__content">
-      <span class="c-map-modal__close"></span>
-      <div class="c-map-modal__heading">北陸・中部地方の<br class="only-sp">クライアント一覧</div>
-      <div class="c-map-modal__box">
-        <div class="c-map-modal__scroll">
-          <?php get_template_part('template/modal-area03'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="area04-contents" class="c-map-modal">
-    <!-- モーダルダイアログ -->
-    <div class="c-map-modal__content">
-      <span class="c-map-modal__close"></span>
-      <div class="c-map-modal__heading">関西地方の<br class="only-sp">クライアント一覧</div>
-      <div class="c-map-modal__box">
-        <div class="c-map-modal__scroll">
-          <?php get_template_part('template/modal-area04'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="area05-contents" class="c-map-modal">
-    <!-- モーダルダイアログ -->
-    <div class="c-map-modal__content">
-      <span class="c-map-modal__close"></span>
-      <div class="c-map-modal__heading">中国・四国地方の<br class="only-sp">クライアント一覧</div>
-      <div class="c-map-modal__box">
-        <div class="c-map-modal__scroll">
-          <?php get_template_part('template/modal-area05'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="area06-contents" class="c-map-modal">
-    <!-- モーダルダイアログ -->
-    <div class="c-map-modal__content">
-      <span class="c-map-modal__close"></span>
-      <div class="c-map-modal__heading">九州・沖縄地方の<br class="only-sp">クライアント一覧</div>
-      <div class="c-map-modal__box">
-        <div class="c-map-modal__scroll">
-          <?php get_template_part('template/modal-area06'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
+  <?php endforeach; ?>
 
   <section class="l-top-sec l-client lazyload">
     <div class="inner l-inner c-top-card --full full">
