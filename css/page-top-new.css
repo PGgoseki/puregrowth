@@ -799,11 +799,11 @@
   opacity: 0.7; }
 
 .c-map-modal__link.nolink {
-  border: none;
-  background-color: #F7F7F7;
-  box-shadow: none;
-  color: #000;
-  font-weight: 400; }
+  border: 1px solid currentColor;
+  background-color: #F2FBFC;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
+  color: #0096B4;
+  font-weight: 500; }
 
 .c-map-modal__link.nolink::after {
   display: none; }

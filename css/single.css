@@ -1079,6 +1079,8 @@ button {
       .l-single__content #toc_container.contracted .toc_title .toc_toggle a:before {
         top: 0.4rem;
         transform: rotate(135deg); }
+    body.single-seminar .l-single__content #toc_container {
+      display: none !important; }
   .l-single__author {
     margin: 1.5625rem 0 3.125rem;
     padding: 0.8125rem 1.0625rem 1.25rem;

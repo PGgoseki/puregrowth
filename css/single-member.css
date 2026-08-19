@@ -539,6 +539,21 @@ button {
           font-size: 2.5rem;
           line-height: 1.45;
           text-align: left; } }
+    .l-intro__ttl .lower-ttl--role {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.75rem;
+      line-height: 1.4166666667;
+      letter-spacing: 0.06rem;
+      text-align: center;
+      color: #00B6C9; }
+      @media only screen and (min-width: 768px) {
+        .l-intro__ttl .lower-ttl--role {
+          margin-top: 0.6rem;
+          font-size: 1.25rem;
+          line-height: 1.45;
+          letter-spacing: 0.06em;
+          text-align: left; } }
   .l-intro__sns {
     display: flex;
     justify-content: center;

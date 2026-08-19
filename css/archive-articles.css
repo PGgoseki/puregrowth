@@ -571,4 +571,67 @@ button {
 .l-articles .c-card__item-body {
   padding: 0.4rem 0 2.5rem 0 !important; }
 
+/* ====================================================
+   メンバー一覧ページ：役職セクションの横並び表示
+   隣接する役職グループの合計人数が3名以下の場合、
+   PHP側で <div class="member-role-row --merged"> でラップされる
+   下段の3カラム並びと縦軸を揃えるため、3カラムグリッドで管理
+   ==================================================== */
+@media only screen and (min-width: 768px) {
+  .member-role-row.--merged {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+  }
+  .member-role-row.--merged > .member-role-section {
+    margin: 0;
+    min-width: 0; /* グリッド子要素が縮めるよう許可 */
+  }
+  /* 人数分のカラムをスパン */
+  .member-role-row.--merged > .member-role-section[data-member-count="1"] {
+    grid-column: span 1;
+  }
+  .member-role-row.--merged > .member-role-section[data-member-count="2"] {
+    grid-column: span 2;
+  }
+  /* セクション内のカードは flex-basis: 28rem で広がりたがるが、
+     グリッドカラム内に収めたいので shrink を有効化 */
+  .member-role-row.--merged > .member-role-section .c-card.--list .c-card__list {
+    width: 100%;
+  }
+  .member-role-row.--merged > .member-role-section .c-card.--list .c-card__item {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  /* スマホでは縦並びで従来通り */
+  .member-role-row.--merged {
+    display: block;
+  }
+  /* ====================================================
+     メンバー一覧ページ：SP表示を2カラムに
+     ==================================================== */
+  .member-archive .c-card.--list .c-card__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.6rem;
+  }
+  /* SPは既定で写真+テキストの横並び（flex）だが、2列幅では狭いので縦並びに */
+  .member-archive .c-card__list:not(.type1) .c-card__item-wrap {
+    display: block;
+  }
+  /* テキスト領域の幅指定をリセット */
+  .member-archive .c-card__list:not(.type1) .c-card__item-headline {
+    flex-basis: auto;
+    padding: 0.6rem 0.6rem 0.8rem;
+  }
+  /* タイトルサイズを2列に合わせて少し縮める */
+  .member-archive .c-card__list:not(.type1) .c-card__item-headline .c-card__item-ttl {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
 /*# sourceMappingURL=archive-articles.css.map */

@@ -103,6 +103,7 @@
 					<ul class="l-footer__subnav">
 						<li class="half"><a href="<?php echo esc_url(home_url('post/member/')); ?>" target="_blank" class="individual-link"><span class="_border">メンバー紹介</span></a></li>
 						<li class="half"><a href="<?php echo esc_url(home_url('about/')); ?>" target="_blank" class="individual-link"><span class="_border">会社概要</span></a></li>
+						<li class="half"><a href="https://pg-healthcare.jp/" target="_blank" rel="noopener noreferrer" class="individual-link"><span class="_border">ヘルスケア事業本部</span></a></li>
 						<li class="half"><a href="https://pure-growth.co.jp/recruit/" target="_blank" class="individual-link"><span class="_border">採用情報</span></a></li>
 						<li class="half"><a href="<?php echo esc_url(home_url('contact/')); ?>" target="_blank" class="individual-link"><span class="_border">お問い合わせ</span></a></li>
 					</ul>
@@ -142,6 +143,17 @@
 <?php elseif(is_singular('seminar')): ?>
 <div class="l-floating">
   <div class="l-floating__btn"><a href="#form">セミナーに申し込む</a></div>
+</div>
+<?php elseif(is_singular() && in_category('member')): ?>
+<?php
+  // single-member.php 側でフォーム表示有無のフラグをセットしている。
+  // フォームが描画された場合はそのアンカーに、無い場合は /contact/ にフォールバック。
+  $member_floating_href = !empty($GLOBALS['pg_member_has_consultation_form'])
+      ? '#contactformCta'
+      : esc_url(home_url('contact/'));
+?>
+<div class="l-floating">
+  <div class="l-floating__btn"><a href="<?php echo $member_floating_href; ?>">無料相談してみる</a></div>
 </div>
 <?php elseif(!is_page(array('pgc', 'contact', '1289', '1320', '1323', '1324', '1325', '1401', '1322', '1332', '1333', '1334', '1335', '1336', '1337', '1350', '1353', '1354', '1355', '1356', '1357', '1358', '1371', '1372', '1373', '1374', '1375', '1376', '1450', '1482', '2639') )): ?>
 <div class="l-floating">

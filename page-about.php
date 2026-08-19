@@ -197,6 +197,18 @@
         </dd>
       </dl>
       <dl class="l-outline2__table-row">
+        <dt class="l-outline2__table-head">登録免許</dt>
+        <dd class="l-outline2__table-data">
+          <p>大阪府知事登録旅行業　第2-3340号</p>
+        </dd>
+      </dl>
+      <dl class="l-outline2__table-row">
+        <dt class="l-outline2__table-head">宅地建物取引業免許</dt>
+        <dd class="l-outline2__table-data">
+          <p>東京都知事（1）第114171号</p>
+        </dd>
+      </dl>
+      <dl class="l-outline2__table-row">
         <dt class="l-outline2__table-head">事業内容</dt>
         <dd class="l-outline2__table-data">
           <p>経営コンサルティング業（経営者対象/住宅不動産業界対象）<br>成功報酬型経営サービス（コストダウン/経営人材紹介/M＆A）<br>住宅FCの本部運営（ハウスメーカー・工務店向け）<br>業界特化型SaaS開発運営（ハウスメーカー・工務店向け）</p>

@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<style>
+  /* セミナー個別ページのみ目次（プラグイン生成のTOC）を非表示 */
+  .l-single__content #toc_container { display: none !important; }
+</style>
+
 <script>
   // 記事タイトルを取得してフォームにセットする関数
   function setSeminarName() {

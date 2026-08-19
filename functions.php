@@ -76,7 +76,9 @@ function my_script_init()
     wp_enqueue_style('single', get_template_directory_uri() . '/css/single.css', array(), '1.0.0', 'all');
     wp_enqueue_script('single-js', get_template_directory_uri() . '/js/single.js', array( 'jquery' ), '1.0.0', true);
     if(has_category('member')) {
-      wp_enqueue_style('single-member', get_template_directory_uri() . '/css/single-member.css', array(), '1.0.0', 'all');
+      // フォーム用CSSを先に読み込み、メンバーページ固有CSSで上書きさせる
+      wp_enqueue_style('page-contact', get_template_directory_uri() . '/css/page-contact.css', array(), '1.0.0', 'all');
+      wp_enqueue_style('single-member', get_template_directory_uri() . '/css/single-member.css', array('page-contact'), '1.0.0', 'all');
       wp_enqueue_script('single-member-js', get_template_directory_uri() . '/js/single-member.js', array( 'jquery' ), '1.0.0', true);
     }
   } elseif(is_page('project')) {
@@ -86,7 +88,7 @@ function my_script_init()
 //    }
     wp_enqueue_script('project-js', get_template_directory_uri() . '/js/project.js', array( 'jquery' ), '1.0.0', true);
     wp_enqueue_style('page-project', get_template_directory_uri() . '/css/page-project.css', array(), '1.0.0', 'all');
-  } elseif(is_page('contact') || is_page('newcon') || is_page('thanks') || is_page('seminar-thanks') || is_page('download-thanks') || is_page('mail') || is_page('mail/thanks')) {
+  } elseif(is_page('contact') || is_page('newcon') || is_page('thanks') || is_page('seminar-thanks') || is_page('download-thanks') || is_page('questionnaire-thanks') || is_page('mail') || is_page('mail/thanks')) {
     wp_enqueue_style('page-contact', get_template_directory_uri() . '/css/page-contact.css', array(), '1.0.0', 'all');
   } elseif(is_page_template('page_questionnaire.php')) {
     wp_enqueue_style('page-contact', get_template_directory_uri() . '/css/page-contact.css', array(), '1.0.0', 'all');
@@ -429,6 +431,50 @@ function tag_category_rewrite()
   );
 }
 add_action('init', 'tag_category_rewrite');
+
+/*************************
+子カテゴリーのアーカイブURL（例: post/column/四国/）が404になるのを防ぐ
+※投稿のパーマリンク（post/%category%/%postname%/）と衝突し、
+　2階層目（post/column/四国/）が「単一記事」と誤認されるため、
+　実在する子カテゴリーのパスを明示的にカテゴリーアーカイブとして登録する。
+　ページャー（post/.../page/2/）は上の tag_category_rewrite で処理済み。
+*************************/
+function pg_subcategory_archive_rewrite()
+{
+  $terms = get_terms(array(
+    'taxonomy'   => 'category',
+    'hide_empty' => false,
+  ));
+
+  if (is_wp_error($terms) || empty($terms)) {
+    return;
+  }
+
+  foreach ($terms as $term) {
+    // 親を持つ（子・孫）カテゴリーのみ対象。トップレベルは既定ルールで処理される
+    if ((int) $term->parent === 0) {
+      continue;
+    }
+
+    // 祖先をたどって完全なスラッグパスを組み立てる（例: column/四国）
+    $slugs     = array($term->slug);
+    $ancestors = get_ancestors($term->term_id, 'category');
+    foreach ($ancestors as $ancestor_id) {
+      $ancestor = get_term($ancestor_id, 'category');
+      if ($ancestor && !is_wp_error($ancestor)) {
+        array_unshift($slugs, $ancestor->slug);
+      }
+    }
+    $path = implode('/', $slugs);
+
+    add_rewrite_rule(
+      'post/' . $path . '/?$',
+      'index.php?category_name=' . $path,
+      'top'
+    );
+  }
+}
+add_action('init', 'pg_subcategory_archive_rewrite');
 
 
 
@@ -1232,3 +1278,16 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
   return false;
 }
+
+add_action('wp_footer', function () {
+    if (!is_page_template('page_questionnaire.php')) return;
+    ?>
+    <script>
+    document.addEventListener('wpcf7submit', function (event) {
+        if (event.detail.apiResponse.status === 'mail_sent') {
+            window.location.href = 'https://pure-growth.co.jp/questionnaire-thanks/';
+        }
+    }, false);
+    </script>
+    <?php
+});
