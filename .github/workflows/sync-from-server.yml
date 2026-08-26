@@ -70,20 +70,24 @@ jobs:
           echo '```' >> "$GITHUB_STEP_SUMMARY"
           git --no-pager diff --stat | tail -60
 
+      # 一致していてもスナップショットを必ず書き出す。
+      # こうすると server-state と main を git で比較するだけで
+      # 「サーバと Git が一致しているか」を判定できる。
       - name: Push snapshot branch
         run: |
-          if git diff --quiet; then
-            echo "サーバと main は一致しています。ブランチは作成しません。"
-            exit 0
-          fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$SNAPSHOT_BRANCH"
           git add -A
-          git commit -q -m "chore: 本番サーバのテーマ内容を取り込み
+          if git diff --cached --quiet HEAD; then
+            echo "サーバと main は一致しています。"
+            git commit -q --allow-empty -m "chore: サーバ取得スナップショット (run ${{ github.run_id }}) — main と一致"
+          else
+            echo "サーバと main に差分があります。"
+            git commit -q -m "chore: 本番サーバのテーマ内容を取り込み (run ${{ github.run_id }})
 
           FTP 上の ${REMOTE_DIR} をそのまま反映したスナップショット。
           サーバを正とした同期のため、リポジトリ側にしか無かった変更は
           この差分で削除として現れる。マージ前に必ず確認すること。"
+          fi
           git push -f origin "$SNAPSHOT_BRANCH"
-          echo "server-state ブランチに書き出しました。"
